@@ -1,0 +1,1276 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: GitlabProject/headers.json
+  oauthPath: null
+testConfiguration:
+  operations:
+    # - testPath: /projects
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: archived
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: id_after
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1300
+    #               objectValues: null
+    #           valid: true
+    #     - name: id_before
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1300
+    #               objectValues: null
+    #           valid: true
+    #     - name: last_activity_after
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomDate
+    #           genParameters:
+    #             - name: format
+    #               values:
+    #                 - yyyy-MM-dd'T'HH:mm:ss'Z'
+    #               objectValues: null
+    #           valid: true
+    #     - name: last_activity_before
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomDate
+    #           genParameters:
+    #             - name: format
+    #               values:
+    #                 - yyyy-MM-dd'T'HH:mm:ss'Z'
+    #               objectValues: null
+    #           valid: true
+    #     - name: membership
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: min_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 0
+    #                 - 10
+    #                 - 20
+    #                 - 30
+    #                 - 40
+    #                 - 50
+    #               objectValues: null
+    #           valid: true
+    #     - name: order_by
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - id
+    #                 - name
+    #                 - path
+    #                 - created_at
+    #                 - updated_at
+    #                 - last_activity_at
+    #                 - repository_size
+    #                 - storage_size
+    #                 - packages_size
+    #                 - wiki_size
+    #               objectValues: null
+    #           valid: true
+    #     - name: owned
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: repository_storage
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - default
+    #                 - nfs-01
+    #                 - gitaly-ssd-01
+    #                 - gitaly-archive
+    #                 - nfs-secondary
+    #                 - satellite-east
+    #                 - shared-fs-cluster
+    #                 - ceph-cluster-a
+    #                 - nvme-01
+    #                 - high-speed-storage
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: search_namespaces
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: search
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/name_project_search.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: simple
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: sort
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - asc
+    #                 - desc
+    #               objectValues: null
+    #           valid: true
+    #     - name: starred
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: statistics
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: visibility
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - public
+    #                 - internal
+    #                 - private
+    #               objectValues: null
+    #           valid: true
+    #     - name: with_custom_attributes
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_issues_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_merge_requests_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_programming_language
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/program_language.csv
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: /projects
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: allow_merge_on_skipped_pipeline
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: auto_cancel_pending_pipelines
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - enabled
+    #                 - disabled
+    #               objectValues: null
+    #           valid: true
+    #     - name: auto_devops_deploy_strategy
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - continuous
+    #                 - manual
+    #                 - timed_incremental
+    #               objectValues: null
+    #           valid: true
+    #     - name: auto_devops_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: autoclose_referenced_issues
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: avatar
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - "src/test/resources/images/beautiful.jpg"
+    #                 - "src/test/resources/images/chart01.png"
+    #                 - "src/test/resources/images/chartdemo.png"
+    #                 - "src/test/resources/images/colors.jpg"
+    #                 - "src/test/resources/images/directors.jpg"
+    #                 - "src/test/resources/images/employee.png"
+    #                 - "src/test/resources/images/gallary.png"
+    #                 - "src/test/resources/images/org.jpg"
+    #                 - "src/test/resources/images/personalized.jpg"
+    #                 - "src/test/resources/images/run.jpg"
+    #                 - "src/test/resources/images/sales.jpg"
+    #                 - "src/test/resources/images/soil.jpg"
+    #                 - "src/test/resources/images/trend.png"
+    #           valid: true
+    #         # - type: RandomEnglishWord
+    #         #   genParameters:
+    #         #     - name: maxWords
+    #         #       values:
+    #         #         - 1
+    #         #       objectValues: null
+    #         #   valid: true
+    #     - name: build_coverage_regex
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - '/TOTAL.*\s+(\d+%)$/'
+    #                 - '\(\d+\.\d+%\)\s+covered'
+    #                 - 'All\s+files.*\|\s+([\d\.]+)%'
+    #                 - '^\d+\.\d+%\s+coverage'
+    #                 - "Total.*?([0-9]{1,3})%"
+    #                 - '^\s*Lines:\s*\d+\.\d+%'
+    #                 - '^\s*Coverage:\s*\d+%'
+    #                 - '\d+\.\d+%[ ]*lines\s+covered'
+    #                 - '\d+\s+of\s+\d+\s+lines\s+covered\s+\((\d+%)\)'
+    #                 - "^"
+    #               objectValues: null
+    #           valid: true
+    #     - name: build_git_strategy
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - fetch
+    #                 - clone
+    #                 - gitflow
+    #                 - trunk-based
+    #                 - github-flow
+    #                 - gitlab-flow
+    #                 - shallow-fetch
+    #                 - mirror
+    #                 - sparse-checkout
+    #                 - custom-pipeline
+    #               objectValues: null
+    #           valid: true
+    #     - name: build_timeout
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100000
+    #               objectValues: null
+    #           valid: true
+    #     - name: builds_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #               objectValues: null
+    #           valid: true
+    #     - name: ci_config_path
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - .gitlab-ci.yml
+    #                 - ci/.gitlab-ci.yml
+    #                 - build/ci/pipeline.yml
+    #                 - .gitlab/ci/config.yml
+    #                 - configs/gitlab-ci.yml
+    #                 - .ci/gitlab.yml
+    #                 - ci/configs/main.yml
+    #                 - ci/templates/default.yml
+    #                 - ci/.gitlab-ci.remote.yml
+    #                 - https://example.com/ci/config.yml
+    #               objectValues: null
+    #           valid: true
+    #     - name: container_registry_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: default_branch
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - main
+    #                 - master
+    #                 - develop
+    #                 - trunk
+    #                 - release
+    #                 - staging
+    #                 - production
+    #                 - integration
+    #                 - default
+    #                 - next
+    #               objectValues: null
+    #           valid: true
+    #     - name: description
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: emails_disabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: forking_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #               objectValues: null
+    #           valid: true
+    #     - name: import_url
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - https://github.com/example/repo.git
+    #                 - https://gitlab.com/user/project.git
+    #                 - https://bitbucket.org/org/example-repo.git
+    #                 - https://dev.azure.com/company/project/_git/repo
+    #                 - https://git-codecommit.us-west-2.amazonaws.com/v1/repos/myrepo
+    #                 - https://example.com/scm/myproject.git
+    #                 - git@example.com:username/repo.git
+    #                 - ssh://git@server:7999/team/repo.git
+    #                 - https://gitlab.company.internal/group/repo.git
+    #                 - https://user:token@github.com/private/repo.git
+    #                 - https://user:password@git.example.com/secure/repo.git
+    #                 - https://git.gitea.io/example/project.git
+    #                 - https://source.developers.google.com/p/project/r/repo
+    #                 - https://gitlab.company.com/infrastructure/ansible.git
+    #                 - https://svn.apache.org/repos/asf/subversion/trunk (if migration tool supports SVN)
+    #                 - https://user@bitbucket.org/team/project.git
+    #                 - ssh://git@bitbucket.org:repo-name/repo.git
+    #                 - git@gitlab.com:organization/private-repo.git
+    #                 - git@git.example.com:group/app.git
+    #                 - https://gitlab.example.org/group-name/microservice-a.git
+    #                 - https://repo.example.dev/backend.git
+    #                 - https://git.myserver.local/service/configs.git
+    #                 - https://user:token@dev.azure.com/org/_git/project
+    #                 - https://git@git.ssh.example.com:2222/infra/tools.git
+    #                 - https://user@source.mycorp.com:443/eng/platform.git
+    #                 - https://internal.git.repo/services/payment.git
+    #                 - https://gitea.company.com/data-science/project-ml.git
+    #                 - https://gitbucket.example.com/group/legacy-app.git
+    #                 - https://vcs.example.net/scm/devops/terraform.git
+    #                 - https://gitlab.dev/org/project.git
+    #                 - https://user:api_key@git.cloud.org/team/api.git
+    #                 - https://company.com/git/repos/utils/scripts.git
+    #                 - https://localhost:8080/internal/dev.git
+    #                 - git@mydomain.com:user/repo.git
+    #                 - ssh://git@source.net:2222/infra/repo.git
+    #                 - https://token:abcd1234@git.example.org/restricted/code.git
+    #                 - https://gerrit-review.googlesource.com/platform/frameworks/base.git
+    #                 - https://user:pass@git.enterprise.net/tools/sre.git
+    #                 - git@ssh.code-host.org:ops/config.git
+    #                 - https://gitlab.example.dev/group/infra.git
+    #                 - https://gitlab-hosted.local/org/repo.git
+    #                 - https://mirror.example.org/external/opensource/lib.git
+    #                 - https://secure.hosting.net/customers/apps/api.git
+    #                 - ssh://dev@repo.corp.int:2222/team/legacy.git
+    #                 - https://internal-tools.company.net/devops/ansible.git
+    #                 - https://git.company.network/team/dashboard.git
+    #                 - https://user:pat@git.internal/cicd/ci-template.git
+    #                 - https://oauth2:token1234@gitlab.company.org/restricted/project.git
+    #                 - https://example.org/git/marketing/website.git
+    #               objectValues: null
+    #           valid: true
+    #     - name: initialize_with_readme
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: issues_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #               objectValues: null
+    #           valid: true
+    #     - name: issues_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: jobs_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: lfs_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: merge_method
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - merge
+    #                 - rebase_merge
+    #                 - ff
+    #               objectValues: null
+    #           valid: true
+    #     - name: merge_requests_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #               objectValues: null
+    #           valid: true
+    #     - name: merge_requests_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: name
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 5
+    #               objectValues: null
+    #           valid: true
+    #     - name: namespace_id
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: only_allow_merge_if_all_discussions_are_resolved
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: only_allow_merge_if_pipeline_succeeds
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: packages_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: pages_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #                 - public
+    #               objectValues: null
+    #           valid: true
+    #     - name: requirements_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #                 - public
+    #               objectValues: null
+    #           valid: true
+    #     - name: path
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: printing_merge_request_link_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: public_builds
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: remove_source_branch_after_merge
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: repository_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #               objectValues: null
+    #           valid: true
+    #     - name: repository_storage
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - default
+    #                 - nfs-01
+    #                 - gitaly-ssd-01
+    #                 - gitaly-archive
+    #                 - nfs-secondary
+    #                 - satellite-east
+    #                 - shared-fs-cluster
+    #                 - ceph-cluster-a
+    #                 - nvme-01
+    #                 - high-speed-storage
+    #               objectValues: null
+    #           valid: true
+    #     - name: request_access_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: resolve_outdated_diff_discussions
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: shared_runners_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: show_default_award_emojis
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: snippets_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #               objectValues: null
+    #           valid: true
+    #     - name: snippets_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: tag_list
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/tag_list.csv
+    #             - name: minValues
+    #               values:
+    #                 - 1
+    #             - name: maxValues
+    #               values:
+    #                 - 10
+    #           valid: true
+    #     - name: template_name
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: visibility
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - private
+    #                 - internal
+    #                 - public
+    #               objectValues: null
+    #           valid: true
+    #     - name: wiki_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - disabled
+    #                 - private
+    #                 - enabled
+    #               objectValues: null
+    #           valid: true
+    #     - name: wiki_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: cadence
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - "0"
+    #                 - 1d
+    #                 - 3d
+    #                 - 4d
+    #                 - 5d
+    #                 - 7d
+    #                 - 14d
+    #                 - 1month
+    #                 - 3month
+    #                 - 2d
+    #                 - 18d
+    #                 - 28d
+    #                 - 2month
+    #                 - 1year
+    #                 - 10year
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: enabled
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: keep_n
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - -1000000
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1000000
+    #               objectValues: null
+    #           valid: true
+    #     - name: older_than
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 7d
+    #                 - 14d
+    #                 - 30d
+    #                 - 90d
+    #                 - 120d
+    #                 - 1month
+    #                 - 1year
+    #                 - 3month
+    #                 - 12month
+    #                 - 1d
+    #                 - "0"
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: name_regex
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - ".*"
+    #                 - '^v\d+.*$'
+    #                 - "release.*"
+    #                 - "main"
+    #                 - "dev-.+"
+    #                 - "feature/.*"
+    #                 - "bugfix-[0-9]+"
+    #                 - "^[a-z]{3}-[0-9]+$"
+    #                 - "staging.*"
+    #                 - "(hotfix|patch).*"
+    #               objectValues: null
+    #           valid: true
+    #     - name: name_regex_delete
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - ".*"
+    #                 - '^v\d+.*$'
+    #                 - "release.*"
+    #                 - "main"
+    #                 - "dev-.+"
+    #                 - "feature/.*"
+    #                 - "bugfix-[0-9]+"
+    #                 - "^[a-z]{3}-[0-9]+$"
+    #                 - "staging.*"
+    #                 - "(hotfix|patch).*"
+    #               objectValues: null
+    #           valid: true
+    #     - name: name_regex_keep
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - ".*"
+    #                 - '^v\d+.*$'
+    #                 - "release.*"
+    #                 - "main"
+    #                 - "dev-.+"
+    #                 - "feature/.*"
+    #                 - "bugfix-[0-9]+"
+    #                 - "^[a-z]{3}-[0-9]+$"
+    #                 - "staging.*"
+    #                 - "(hotfix|patch).*"
+    #               objectValues: null
+    #           valid: true
+    #     - name: next_run_at
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomDate
+    #           genParameters:
+    #             - name: format
+    #               values:
+    #                 - yyyy-MM-dd'T'HH:mm:ss'Z'
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    - testPath: "/projects/{id}/repository/branches"
+      operationId: <SET OPERATION ID>
+      method: get
+      testParameters:
+        - name: id
+          in: path
+          weight: null
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/all_projects.csv
+        - name: search
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/gitlab_commit_branch.csv
+                  objectValues: null
+      expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/branches"
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/customize_projects.csv
+    #         # - type: RandomNumber
+    #         #   genParameters:
+    #         #     - name: type
+    #         #       values:
+    #         #         - integer
+    #         #       objectValues: null
+    #         #     - name: min
+    #         #       values:
+    #         #         - 1300
+    #         #       objectValues: null
+    #         #     - name: max
+    #         #       values:
+    #         #         - 1300
+    #         #       objectValues: null
+    #         #   valid: true
+    #     - name: branch
+    #       in: query
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/branch_create.csv
+    #               objectValues: null
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: ref
+    #       in: query
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/all_branch.csv
+    #               objectValues: null
+    #         # - type: RandomEnglishWord
+    #         #   genParameters:
+    #         #     - name: maxWords
+    #         #       values:
+    #         #         - 1
+    #         #       objectValues: null
+    #         #   valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/branches/{branch}"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/gitlab_commit_projectid.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: branch
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/gitlab_commit_branch.csv
+    #               objectValues: null
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/protected_branches"
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1300
+    #               objectValues: null
+    #           valid: true
+    #     - name: name
+    #       in: query
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/branch_name.csv
+    #               objectValues: null
+    #         # - type: RandomEnglishWord
+    #         #   genParameters:
+    #         #     - name: maxWords
+    #         #       values:
+    #         #         - 1
+    #         #       objectValues: null
+    #         #   valid: true
+    #     - name: push_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 0
+    #                 - 30
+    #                 - 40
+    #                 - 60
+    #               objectValues: null
+    #           valid: true
+    #     - name: merge_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 0
+    #                 - 30
+    #                 - 40
+    #                 - 60
+    #               objectValues: null
+    #           valid: true
+    #     - name: unprotect_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 0
+    #                 - 30
+    #                 - 40
+    #                 - 60
+    #               objectValues: null
+    #           valid: true
+    #     - name: allow_force_push
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #   expectedResponse: 200

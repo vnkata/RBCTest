@@ -1,0 +1,106 @@
+{
+  "_metadata": {
+    "operation_count": 5,
+    "extracted_constraints_count": 1
+  },
+  "constraints_of_fields": {
+    "apiKey": {
+      "type": "string",
+      "constraints": {
+        "format": "password"
+      }
+    }
+  },
+  "detail_endpoint_schema": {
+    "post-/check": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {}
+      },
+      "constraints_response": {
+        "200": {}
+      }
+    },
+    "get-/languages": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "name",
+                "code",
+                "longCode"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/words": {
+      "request_params": {
+        "offset": {
+          "type": "integer",
+          "description": "Offset of where to start in the list of words. Defaults to 0."
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Maximum number of words to return. Defaults to 10."
+        },
+        "username": {
+          "type": "string",
+          "description": "Your username as used to log in at languagetool.org."
+        },
+        "apiKey": {
+          "type": "string",
+          "constraints": {
+            "format": "password"
+          },
+          "description": "<a target='_blank' href='https://languagetool.org/editor/settings/access-tokens'>Your API key</a>"
+        },
+        "dicts": {
+          "type": "string",
+          "description": "Comma-separated list of dictionaries to include words from; uses special default dictionary if this is unset"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {}
+      },
+      "constraints_response": {
+        "200": {}
+      }
+    },
+    "post-/words/add": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {}
+      },
+      "constraints_response": {
+        "200": {}
+      }
+    },
+    "post-/words/delete": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {}
+      },
+      "constraints_response": {
+        "200": {}
+      }
+    }
+  },
+  "edge_results": []
+}

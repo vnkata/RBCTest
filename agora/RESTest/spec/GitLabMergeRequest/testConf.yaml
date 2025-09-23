@@ -1,0 +1,31 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: GitlabProject/headers.json
+  oauthPath: null
+testConfiguration:
+  operations:
+    - testPath: "/projects/{id}/merge_requests"
+      operationId: createMergeRequest
+      method: post
+      testParameters:
+        - name: id
+          in: path
+          weight: null
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/all_projects.csv
+        - name: body
+          in: body
+          weight: null
+          generators:
+            - valid: true
+              type: BodyGenerator
+              genParameters: []
+      expectedResponse: 200

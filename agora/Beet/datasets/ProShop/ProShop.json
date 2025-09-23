@@ -1,0 +1,1147 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "ProShop API",
+    "description": "This is the API for ProShop e-Commerce",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "http://165.232.175.160:5000/",
+      "description": "Railway server"
+    }
+  ],
+  "paths": {
+    "/users/": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get all users",
+        "operationId": "read_users_users__get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "type": "integer",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "default": 100
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Read Users Users  Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Create user",
+        "operationId": "create_user_users__post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/id/{user_id}": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get user by id",
+        "operationId": "read_user_users_id__user_id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "User Id",
+              "type": "integer"
+            },
+            "name": "user_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Update user",
+        "operationId": "update_user_users_id__user_id__put",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "User Id",
+              "type": "integer"
+            },
+            "name": "user_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Delete user",
+        "operationId": "delete_user_users_id__user_id__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "User Id",
+              "type": "integer"
+            },
+            "name": "user_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/": {
+      "get": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Get all products",
+        "operationId": "read_products_products__get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "type": "integer",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "default": 100
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Read Products Products  Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Create product",
+        "operationId": "create_product_products__post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "User Id",
+              "type": "integer"
+            },
+            "name": "user_id",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/id/{product_id}": {
+      "get": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Get product by id",
+        "operationId": "read_product_products_id__product_id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Product Id",
+              "type": "integer"
+            },
+            "name": "product_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Update product",
+        "operationId": "update_product_products_id__product_id__put",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Product Id",
+              "type": "integer"
+            },
+            "name": "product_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "products"
+        ],
+        "summary": "Delete product",
+        "operationId": "delete_product_products_id__product_id__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Product Id",
+              "type": "integer"
+            },
+            "name": "product_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/": {
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Get all orders",
+        "operationId": "read_orders_orders__get",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Skip",
+              "type": "integer",
+              "default": 0
+            },
+            "name": "skip",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "default": 100
+            },
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Read Orders Orders  Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Order"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Order not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Create order",
+        "operationId": "create_order_orders__post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "User Id",
+              "type": "integer"
+            },
+            "name": "user_id",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Order not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/id/{order_id}": {
+      "get": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Get order by id",
+        "operationId": "read_order_orders_id__order_id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Order Id",
+              "type": "integer"
+            },
+            "name": "order_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Order not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Update order",
+        "operationId": "update_order_orders_id__order_id__put",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Order Id",
+              "type": "integer"
+            },
+            "name": "order_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrderCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Order not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "orders"
+        ],
+        "summary": "Delete order",
+        "operationId": "delete_order_orders_id__order_id__delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Order Id",
+              "type": "integer"
+            },
+            "name": "order_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Order not found"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Root",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "Order": {
+        "title": "Order",
+        "required": [
+          "address",
+          "phone",
+          "id",
+          "user_id",
+          "updated_at",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OrderStatus"
+              }
+            ],
+            "default": "Pending"
+          },
+          "quantity": {
+            "title": "Quantity",
+            "type": "integer",
+            "default": 0
+          },
+          "address": {
+            "title": "Address",
+            "type": "string"
+          },
+          "phone": {
+            "title": "Phone",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "integer"
+          },
+          "products": {
+            "title": "Products",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product"
+            },
+            "default": []
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OrderCreate": {
+        "title": "OrderCreate",
+        "required": [
+          "address",
+          "phone"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OrderStatus"
+              }
+            ],
+            "default": "Pending"
+          },
+          "quantity": {
+            "title": "Quantity",
+            "type": "integer",
+            "default": 0
+          },
+          "address": {
+            "title": "Address",
+            "type": "string"
+          },
+          "phone": {
+            "title": "Phone",
+            "type": "string"
+          }
+        }
+      },
+      "OrderStatus": {
+        "title": "OrderStatus",
+        "enum": [
+          "Pending",
+          "Delivered",
+          "Cancelled"
+        ],
+        "type": "string",
+        "description": "An enumeration."
+      },
+      "Product": {
+        "title": "Product",
+        "required": [
+          "name",
+          "image",
+          "brand",
+          "description",
+          "id",
+          "updated_at",
+          "created_at",
+          "user_id"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "image": {
+            "title": "Image",
+            "type": "string"
+          },
+          "brand": {
+            "title": "Brand",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "rating": {
+            "title": "Rating",
+            "type": "integer",
+            "default": 0
+          },
+          "price": {
+            "title": "Price",
+            "type": "integer",
+            "default": 0
+          },
+          "count_in_stock": {
+            "title": "Count In Stock",
+            "type": "integer",
+            "default": 0
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string",
+            "format": "date-time"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "integer"
+          }
+        }
+      },
+      "ProductCreate": {
+        "title": "ProductCreate",
+        "required": [
+          "name",
+          "image",
+          "brand",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "image": {
+            "title": "Image",
+            "type": "string"
+          },
+          "brand": {
+            "title": "Brand",
+            "type": "string"
+          },
+          "description": {
+            "title": "Description",
+            "type": "string"
+          },
+          "rating": {
+            "title": "Rating",
+            "type": "integer",
+            "default": 0
+          },
+          "price": {
+            "title": "Price",
+            "type": "integer",
+            "default": 0
+          },
+          "count_in_stock": {
+            "title": "Count In Stock",
+            "type": "integer",
+            "default": 0
+          }
+        }
+      },
+      "User": {
+        "title": "User",
+        "required": [
+          "name",
+          "email",
+          "password",
+          "id",
+          "updated_at",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "type": "string"
+          },
+          "password": {
+            "title": "Password",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "is_admin": {
+            "title": "Is Admin",
+            "type": "boolean",
+            "default": false
+          },
+          "products": {
+            "title": "Products",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Product"
+            },
+            "default": []
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "UserCreate": {
+        "title": "UserCreate",
+        "required": [
+          "name",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "type": "string"
+          },
+          "password": {
+            "title": "Password",
+            "type": "string"
+          }
+        }
+      },
+      "UserUpdate": {
+        "title": "UserUpdate",
+        "required": [
+          "name",
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "type": "string"
+          },
+          "password": {
+            "title": "Password",
+            "type": "string"
+          },
+          "is_admin": {
+            "title": "Is Admin",
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7069 @@
+{
+  "_metadata": {
+    "operation_count": 47,
+    "extracted_constraints_count": 46
+  },
+  "constraints_of_fields": {
+    "available_currency_codes": {
+      "type": "array"
+    },
+    "exchange_rates": {
+      "type": "array",
+      "item": "directory-data-exchange-rate-interface"
+    },
+    "inline_response_object": {
+      "available_regions": {
+        "type": "array",
+        "item": "directory-data-region-information-interface"
+      }
+    },
+    "available_regions": {
+      "type": "array",
+      "item": "directory-data-region-information-interface"
+    },
+    "item": {
+      "custom_attributes": {
+        "type": "array",
+        "item": "framework-attribute-interface"
+      }
+    },
+    "items": {
+      "type": "array",
+      "item": "item"
+    },
+    "addresse": {
+      "street": {
+        "type": "array"
+      },
+      "custom_attributes": {
+        "type": "array",
+        "item": "framework-attribute-interface"
+      }
+    },
+    "customer": {
+      "addresses": {
+        "type": "array",
+        "item": "addresse"
+      },
+      "extension_attributes": {
+        "type": "object",
+        "ref": "extension_attributes"
+      },
+      "custom_attributes": {
+        "type": "array",
+        "item": "custom_attribute"
+      }
+    },
+    "addresses": {
+      "type": "array",
+      "item": "customer-data-address-interface"
+    },
+    "custom_attributes": {
+      "type": "array",
+      "item": "framework-attribute-interface"
+    },
+    "extension_attributes": {
+      "agreement_ids": {
+        "type": "array"
+      }
+    },
+    "paymentMethod": {
+      "additional_data": {
+        "type": "array"
+      },
+      "extension_attributes": {
+        "type": "object",
+        "ref": "extension_attributes"
+      }
+    },
+    "address": {
+      "street": {
+        "type": "array"
+      },
+      "extension_attributes": {
+        "type": "object",
+        "ref": "extension_attributes"
+      },
+      "custom_attributes": {
+        "type": "array",
+        "item": "custom_attribute"
+      }
+    },
+    "cartItem": {
+      "product_option": {
+        "type": "object",
+        "ref": "product_option"
+      },
+      "extension_attributes": {
+        "type": "object",
+        "ref": "extension_attributes"
+      }
+    },
+    "additional_data": {
+      "type": "array"
+    },
+    "method": {
+      "additional_data": {
+        "type": "array"
+      },
+      "extension_attributes": {
+        "type": "object",
+        "ref": "extension_attributes"
+      }
+    },
+    "street": {
+      "type": "array"
+    },
+    "additionalData": {
+      "extension_attributes": {
+        "type": "object",
+        "ref": "extension_attributes"
+      },
+      "custom_attributes": {
+        "type": "array",
+        "item": "custom_attribute"
+      }
+    },
+    "total_segments": {
+      "type": "array",
+      "item": "quote-data-total-segment-interface"
+    },
+    "shipping_address": {
+      "street": {
+        "type": "array"
+      },
+      "custom_attributes": {
+        "type": "array",
+        "item": "framework-attribute-interface"
+      }
+    },
+    "billing_address": {
+      "street": {
+        "type": "array"
+      },
+      "custom_attributes": {
+        "type": "array",
+        "item": "framework-attribute-interface"
+      }
+    },
+    "addressInformation": {
+      "shipping_address": {
+        "type": "object",
+        "ref": "shipping_address"
+      },
+      "billing_address": {
+        "type": "object",
+        "ref": "billing_address"
+      },
+      "custom_attributes": {
+        "type": "array",
+        "item": "custom_attribute"
+      }
+    },
+    "payment_methods": {
+      "type": "array",
+      "item": "quote-data-payment-method-interface"
+    },
+    "billingAddress": {
+      "street": {
+        "type": "array"
+      },
+      "extension_attributes": {
+        "type": "object",
+        "ref": "extension_attributes"
+      },
+      "custom_attributes": {
+        "type": "array",
+        "item": "custom_attribute"
+      }
+    },
+    "giftMessage": {
+      "extension_attributes": {
+        "type": "object",
+        "ref": "extension_attributes"
+      }
+    },
+    "street_address": {
+      "type": "array"
+    }
+  },
+  "detail_endpoint_schema": {
+    "get-/V1/directory/currency": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "base_currency_code": {
+            "type": "string",
+            "description": "The base currency code for the store."
+          },
+          "base_currency_symbol": {
+            "type": "string",
+            "description": "The currency symbol of the base currency for the store."
+          },
+          "default_display_currency_code": {
+            "type": "string",
+            "description": "The default display currency code for the store."
+          },
+          "default_display_currency_symbol": {
+            "type": "string",
+            "description": "The currency symbol of the default display currency for the store."
+          },
+          "available_currency_codes": {
+            "type": "array",
+            "description": "The list of allowed currency codes for the store.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exchange_rates": {
+            "type": "array",
+            "description": "The list of exchange rate information for the store.",
+            "item": "directory-data-exchange-rate-interface"
+          },
+          "extension_attributes": {}
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "base_currency_code": {
+            "type": "string"
+          },
+          "base_currency_symbol": {
+            "type": "string"
+          },
+          "default_display_currency_code": {
+            "type": "string"
+          },
+          "default_display_currency_symbol": {
+            "type": "string"
+          },
+          "available_currency_codes": {
+            "type": "array"
+          },
+          "exchange_rates": {
+            "type": "array",
+            "item": "directory-data-exchange-rate-interface"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/directory/countries": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Country Information interface.",
+            "constraints": {
+              "required": [
+                "id",
+                "two_letter_abbreviation",
+                "three_letter_abbreviation",
+                "full_name_locale",
+                "full_name_english"
+              ]
+            }
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/directory/countries/{countryId}": {
+      "request_params": {
+        "countryId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "id": {
+            "type": "string",
+            "description": "The country id for the store."
+          },
+          "two_letter_abbreviation": {
+            "type": "string",
+            "description": "The country 2 letter abbreviation for the store."
+          },
+          "three_letter_abbreviation": {
+            "type": "string",
+            "description": "The country 3 letter abbreviation for the store."
+          },
+          "full_name_locale": {
+            "type": "string",
+            "description": "The country full name (in store locale) for the store."
+          },
+          "full_name_english": {
+            "type": "string",
+            "description": "The country full name (in English) for the store."
+          },
+          "available_regions": {
+            "type": "array",
+            "description": "The available regions for the store.",
+            "item": "directory-data-region-information-interface"
+          },
+          "extension_attributes": {}
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "id": {
+            "type": "string"
+          },
+          "two_letter_abbreviation": {
+            "type": "string"
+          },
+          "three_letter_abbreviation": {
+            "type": "string"
+          },
+          "full_name_locale": {
+            "type": "string"
+          },
+          "full_name_english": {
+            "type": "string"
+          },
+          "available_regions": {
+            "type": "array",
+            "item": "directory-data-region-information-interface"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/search": {
+      "request_params": {
+        "searchCriteria[requestName]": {
+          "type": "string"
+        },
+        "searchCriteria[filterGroups][0][filters][0][field]": {
+          "type": "string",
+          "description": "Field"
+        },
+        "searchCriteria[filterGroups][0][filters][0][value]": {
+          "type": "string",
+          "description": "Value"
+        },
+        "searchCriteria[filterGroups][0][filters][0][conditionType]": {
+          "type": "string",
+          "description": "Condition type"
+        },
+        "searchCriteria[sortOrders][0][field]": {
+          "type": "string",
+          "description": "Sorting field."
+        },
+        "searchCriteria[sortOrders][0][direction]": {
+          "type": "string",
+          "description": "Sorting direction."
+        },
+        "searchCriteria[pageSize]": {
+          "type": "integer",
+          "description": "Page size."
+        },
+        "searchCriteria[currentPage]": {
+          "type": "integer",
+          "description": "Current page."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "Interface \\Magento\\Framework\\Api\\Search\\DocumentInterface",
+              "constraints": {
+                "required": [
+                  "id"
+                ]
+              }
+            }
+          },
+          "aggregations": {},
+          "search_criteria": {},
+          "total_count": {
+            "type": "integer",
+            "description": "Total count."
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "items": {
+            "type": "array"
+          },
+          "total_count": {
+            "type": "integer"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/customers": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "customer": {
+            "type": "object",
+            "description": "Customer entity interface for API handling.",
+            "constraints": {
+              "required": [
+                "email",
+                "firstname",
+                "lastname"
+              ]
+            }
+          },
+          "password": {
+            "type": "string"
+          },
+          "redirectUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "id": {
+            "type": "integer",
+            "description": "Customer id"
+          },
+          "group_id": {
+            "type": "integer",
+            "description": "Group id"
+          },
+          "default_billing": {
+            "type": "string",
+            "description": "Default billing address id"
+          },
+          "default_shipping": {
+            "type": "string",
+            "description": "Default shipping address id"
+          },
+          "confirmation": {
+            "type": "string",
+            "description": "Confirmation"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Created at time"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Updated at time"
+          },
+          "created_in": {
+            "type": "string",
+            "description": "Created in area"
+          },
+          "dob": {
+            "type": "string",
+            "description": "In keeping with current security and privacy best practices, be sure you are aware of any potential legal and security risks associated with the storage of customers\u2019 full date of birth (month, day, year) along with other personal identifiers (e.g., full name) before collecting or processing such data."
+          },
+          "email": {
+            "type": "string",
+            "description": "Email address"
+          },
+          "firstname": {
+            "type": "string",
+            "description": "First name"
+          },
+          "lastname": {
+            "type": "string",
+            "description": "Last name"
+          },
+          "middlename": {
+            "type": "string",
+            "description": "Middle name"
+          },
+          "prefix": {
+            "type": "string",
+            "description": "Prefix"
+          },
+          "suffix": {
+            "type": "string",
+            "description": "Suffix"
+          },
+          "gender": {
+            "type": "integer",
+            "description": "Gender"
+          },
+          "store_id": {
+            "type": "integer",
+            "description": "Store id"
+          },
+          "taxvat": {
+            "type": "string",
+            "description": "Tax Vat"
+          },
+          "website_id": {
+            "type": "integer",
+            "description": "Website id"
+          },
+          "addresses": {
+            "type": "array",
+            "description": "Customer addresses.",
+            "item": "customer-data-address-interface"
+          },
+          "disable_auto_group_change": {
+            "type": "integer",
+            "description": "Disable auto group change flag."
+          },
+          "extension_attributes": {},
+          "custom_attributes": {
+            "type": "array",
+            "description": "Custom attributes values.",
+            "item": "framework-attribute-interface"
+          }
+        },
+        "500": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "id": {
+            "type": "integer"
+          },
+          "group_id": {
+            "type": "integer"
+          },
+          "default_billing": {
+            "type": "string"
+          },
+          "default_shipping": {
+            "type": "string"
+          },
+          "confirmation": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_in": {
+            "type": "string"
+          },
+          "dob": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "middlename": {
+            "type": "string"
+          },
+          "prefix": {
+            "type": "string"
+          },
+          "suffix": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "integer"
+          },
+          "store_id": {
+            "type": "integer"
+          },
+          "taxvat": {
+            "type": "string"
+          },
+          "website_id": {
+            "type": "integer"
+          },
+          "addresses": {
+            "type": "array",
+            "item": "customer-data-address-interface"
+          },
+          "disable_auto_group_change": {
+            "type": "integer"
+          },
+          "custom_attributes": {
+            "type": "array",
+            "item": "framework-attribute-interface"
+          }
+        },
+        "500": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken}": {
+      "request_params": {
+        "customerId": {
+          "type": "integer",
+          "description": "If null is given then a customer will be matched by the RP token."
+        },
+        "resetPasswordLinkToken": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "boolean",
+          "description": "True if the token is valid"
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "500": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "500": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "put-/V1/customers/password": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "email": {
+            "type": "string"
+          },
+          "template": {
+            "type": "string"
+          },
+          "websiteId": {
+            "type": "integer"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "boolean",
+          "description": "true on success"
+        },
+        "500": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "500": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/customers/resetPassword": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "email": {
+            "type": "string",
+            "description": "If empty value given then the customer will be matched by the RP token."
+          },
+          "resetToken": {
+            "type": "string"
+          },
+          "newPassword": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "boolean",
+          "description": "true on success"
+        },
+        "500": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "500": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/customers/isEmailAvailable": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "customerEmail": {
+            "type": "string"
+          },
+          "websiteId": {
+            "type": "integer",
+            "description": "If not set, will use the current websiteId"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "boolean"
+        },
+        "500": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "500": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/products-render-info": {
+      "request_params": {
+        "searchCriteria[filterGroups][0][filters][0][field]": {
+          "type": "string",
+          "description": "Field"
+        },
+        "searchCriteria[filterGroups][0][filters][0][value]": {
+          "type": "string",
+          "description": "Value"
+        },
+        "searchCriteria[filterGroups][0][filters][0][conditionType]": {
+          "type": "string",
+          "description": "Condition type"
+        },
+        "searchCriteria[sortOrders][0][field]": {
+          "type": "string",
+          "description": "Sorting field."
+        },
+        "searchCriteria[sortOrders][0][direction]": {
+          "type": "string",
+          "description": "Sorting direction."
+        },
+        "searchCriteria[pageSize]": {
+          "type": "integer",
+          "description": "Page size."
+        },
+        "searchCriteria[currentPage]": {
+          "type": "integer",
+          "description": "Current page."
+        },
+        "storeId": {
+          "type": "integer"
+        },
+        "currencyCode": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "items": {
+            "type": "array",
+            "description": "List of products rendered information",
+            "items": {
+              "type": "object",
+              "description": "Represents Data Object which holds enough information to render product This information is put into part as Add To Cart or Add to Compare Data or Price Data",
+              "constraints": {
+                "required": [
+                  "add_to_cart_button",
+                  "add_to_compare_button",
+                  "price_info",
+                  "images",
+                  "url",
+                  "id",
+                  "name",
+                  "type",
+                  "is_salable",
+                  "store_id",
+                  "currency_code",
+                  "extension_attributes"
+                ]
+              }
+            }
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "items": {
+            "type": "array"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "id": {
+            "type": "integer",
+            "description": "Cart/quote ID."
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Cart creation date and time. Otherwise, null."
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Cart last update date and time. Otherwise, null."
+          },
+          "converted_at": {
+            "type": "string",
+            "description": "Cart conversion date and time. Otherwise, null."
+          },
+          "is_active": {
+            "type": "boolean",
+            "description": "Active status flag value. Otherwise, null."
+          },
+          "is_virtual": {
+            "type": "boolean",
+            "description": "Virtual flag value. Otherwise, null."
+          },
+          "items": {
+            "type": "array",
+            "description": "Array of items. Otherwise, null.",
+            "items": {
+              "type": "object",
+              "description": "Interface CartItemInterface",
+              "constraints": {
+                "required": [
+                  "qty",
+                  "quote_id"
+                ]
+              }
+            }
+          },
+          "items_count": {
+            "type": "integer",
+            "description": "Number of different items or products in the cart. Otherwise, null."
+          },
+          "items_qty": {
+            "type": "number",
+            "description": "Total quantity of all cart items. Otherwise, null."
+          },
+          "customer": {},
+          "billing_address": {},
+          "reserved_order_id": {
+            "type": "string",
+            "description": "Reserved order ID. Otherwise, null."
+          },
+          "orig_order_id": {
+            "type": "integer",
+            "description": "Original order ID. Otherwise, null."
+          },
+          "currency": {},
+          "customer_is_guest": {
+            "type": "boolean",
+            "description": "For guest customers, false for logged in customers"
+          },
+          "customer_note": {
+            "type": "string",
+            "description": "Notice text"
+          },
+          "customer_note_notify": {
+            "type": "boolean",
+            "description": "Customer notification flag"
+          },
+          "customer_tax_class_id": {
+            "type": "integer",
+            "description": "Customer tax class ID."
+          },
+          "store_id": {
+            "type": "integer",
+            "description": "Store identifier"
+          },
+          "extension_attributes": {}
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "id": {
+            "type": "integer"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "converted_at": {
+            "type": "string"
+          },
+          "is_active": {
+            "type": "boolean"
+          },
+          "is_virtual": {
+            "type": "boolean"
+          },
+          "items": {
+            "type": "array"
+          },
+          "items_count": {
+            "type": "integer"
+          },
+          "items_qty": {
+            "type": "number"
+          },
+          "reserved_order_id": {
+            "type": "string"
+          },
+          "orig_order_id": {
+            "type": "integer"
+          },
+          "customer_is_guest": {
+            "type": "boolean"
+          },
+          "customer_note": {
+            "type": "string"
+          },
+          "customer_note_notify": {
+            "type": "boolean"
+          },
+          "customer_tax_class_id": {
+            "type": "integer"
+          },
+          "store_id": {
+            "type": "integer"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "string",
+          "description": "Cart ID."
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "string"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "put-/V1/guest-carts/{cartId}/order": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "paymentMethod": {
+            "type": "object",
+            "description": "Interface PaymentInterface",
+            "constraints": {
+              "required": [
+                "method"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "integer",
+          "description": "Order ID."
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "integer"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/shipping-methods": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The shopping cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Interface ShippingMethodInterface",
+            "constraints": {
+              "required": [
+                "carrier_code",
+                "method_code",
+                "amount",
+                "base_amount",
+                "available",
+                "error_message",
+                "price_excl_tax",
+                "price_incl_tax"
+              ]
+            }
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/estimate-shipping-methods": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "address": {
+            "type": "object",
+            "description": "Interface AddressInterface",
+            "constraints": {
+              "required": [
+                "region",
+                "region_id",
+                "region_code",
+                "country_id",
+                "street",
+                "telephone",
+                "postcode",
+                "city",
+                "firstname",
+                "lastname",
+                "email"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Interface ShippingMethodInterface",
+            "constraints": {
+              "required": [
+                "carrier_code",
+                "method_code",
+                "amount",
+                "base_amount",
+                "available",
+                "error_message",
+                "price_excl_tax",
+                "price_incl_tax"
+              ]
+            }
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/items": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Interface CartItemInterface",
+            "constraints": {
+              "required": [
+                "qty",
+                "quote_id"
+              ]
+            }
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/items": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "cartItem": {
+            "type": "object",
+            "description": "Interface CartItemInterface",
+            "constraints": {
+              "required": [
+                "qty",
+                "quote_id"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "item_id": {
+            "type": "integer",
+            "description": "Item ID. Otherwise, null."
+          },
+          "sku": {
+            "type": "string",
+            "description": "Product SKU. Otherwise, null."
+          },
+          "qty": {
+            "type": "number",
+            "description": "Product quantity."
+          },
+          "name": {
+            "type": "string",
+            "description": "Product name. Otherwise, null."
+          },
+          "price": {
+            "type": "number",
+            "description": "Product price. Otherwise, null."
+          },
+          "product_type": {
+            "type": "string",
+            "description": "Product type. Otherwise, null."
+          },
+          "quote_id": {
+            "type": "string",
+            "description": "Quote id."
+          },
+          "product_option": {},
+          "extension_attributes": {}
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "item_id": {
+            "type": "integer"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "product_type": {
+            "type": "string"
+          },
+          "quote_id": {
+            "type": "string"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "put-/V1/guest-carts/{cartId}/items/{itemId}": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        },
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "cartItem": {
+            "type": "object",
+            "description": "Interface CartItemInterface",
+            "constraints": {
+              "required": [
+                "qty",
+                "quote_id"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "item_id": {
+            "type": "integer",
+            "description": "Item ID. Otherwise, null."
+          },
+          "sku": {
+            "type": "string",
+            "description": "Product SKU. Otherwise, null."
+          },
+          "qty": {
+            "type": "number",
+            "description": "Product quantity."
+          },
+          "name": {
+            "type": "string",
+            "description": "Product name. Otherwise, null."
+          },
+          "price": {
+            "type": "number",
+            "description": "Product price. Otherwise, null."
+          },
+          "product_type": {
+            "type": "string",
+            "description": "Product type. Otherwise, null."
+          },
+          "quote_id": {
+            "type": "string",
+            "description": "Quote id."
+          },
+          "product_option": {},
+          "extension_attributes": {}
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "item_id": {
+            "type": "integer"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "product_type": {
+            "type": "string"
+          },
+          "quote_id": {
+            "type": "string"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "delete-/V1/guest-carts/{cartId}/items/{itemId}": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        },
+        "itemId": {
+          "type": "integer",
+          "description": "The item ID of the item to be removed."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/selected-payment-method": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "po_number": {
+            "type": "string",
+            "description": "Purchase order number"
+          },
+          "method": {
+            "type": "string",
+            "description": "Payment method code"
+          },
+          "additional_data": {
+            "type": "array",
+            "description": "Payment additional details",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extension_attributes": {}
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "po_number": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "additional_data": {
+            "type": "array"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "put-/V1/guest-carts/{cartId}/selected-payment-method": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "method": {
+            "type": "object",
+            "description": "Interface PaymentInterface",
+            "constraints": {
+              "required": [
+                "method"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "integer",
+          "description": "Payment method ID."
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "integer"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/payment-methods": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "Interface PaymentMethodInterface",
+            "constraints": {
+              "required": [
+                "code",
+                "title"
+              ]
+            }
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/billing-address": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "id": {
+            "type": "integer",
+            "description": "Id"
+          },
+          "region": {
+            "type": "string",
+            "description": "Region name"
+          },
+          "region_id": {
+            "type": "integer",
+            "description": "Region id"
+          },
+          "region_code": {
+            "type": "string",
+            "description": "Region code"
+          },
+          "country_id": {
+            "type": "string",
+            "description": "Country id"
+          },
+          "street": {
+            "type": "array",
+            "description": "Street",
+            "items": {
+              "type": "string"
+            }
+          },
+          "company": {
+            "type": "string",
+            "description": "Company"
+          },
+          "telephone": {
+            "type": "string",
+            "description": "Telephone number"
+          },
+          "fax": {
+            "type": "string",
+            "description": "Fax number"
+          },
+          "postcode": {
+            "type": "string",
+            "description": "Postcode"
+          },
+          "city": {
+            "type": "string",
+            "description": "City name"
+          },
+          "firstname": {
+            "type": "string",
+            "description": "First name"
+          },
+          "lastname": {
+            "type": "string",
+            "description": "Last name"
+          },
+          "middlename": {
+            "type": "string",
+            "description": "Middle name"
+          },
+          "prefix": {
+            "type": "string",
+            "description": "Prefix"
+          },
+          "suffix": {
+            "type": "string",
+            "description": "Suffix"
+          },
+          "vat_id": {
+            "type": "string",
+            "description": "Vat id"
+          },
+          "customer_id": {
+            "type": "integer",
+            "description": "Customer id"
+          },
+          "email": {
+            "type": "string",
+            "description": "Billing/shipping email"
+          },
+          "same_as_billing": {
+            "type": "integer",
+            "description": "Same as billing flag"
+          },
+          "customer_address_id": {
+            "type": "integer",
+            "description": "Customer address id"
+          },
+          "save_in_address_book": {
+            "type": "integer",
+            "description": "Save in address book flag"
+          },
+          "extension_attributes": {},
+          "custom_attributes": {
+            "type": "array",
+            "description": "Custom attributes values.",
+            "item": "framework-attribute-interface"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "id": {
+            "type": "integer"
+          },
+          "region": {
+            "type": "string"
+          },
+          "region_id": {
+            "type": "integer"
+          },
+          "region_code": {
+            "type": "string"
+          },
+          "country_id": {
+            "type": "string"
+          },
+          "street": {
+            "type": "array"
+          },
+          "company": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "fax": {
+            "type": "string"
+          },
+          "postcode": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "middlename": {
+            "type": "string"
+          },
+          "prefix": {
+            "type": "string"
+          },
+          "suffix": {
+            "type": "string"
+          },
+          "vat_id": {
+            "type": "string"
+          },
+          "customer_id": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "same_as_billing": {
+            "type": "integer"
+          },
+          "customer_address_id": {
+            "type": "integer"
+          },
+          "save_in_address_book": {
+            "type": "integer"
+          },
+          "custom_attributes": {
+            "type": "array",
+            "item": "framework-attribute-interface"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/billing-address": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "address": {
+            "type": "object",
+            "description": "Interface AddressInterface",
+            "constraints": {
+              "required": [
+                "region",
+                "region_id",
+                "region_code",
+                "country_id",
+                "street",
+                "telephone",
+                "postcode",
+                "city",
+                "firstname",
+                "lastname",
+                "email"
+              ]
+            }
+          },
+          "useForShipping": {
+            "type": "boolean"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "integer",
+          "description": "Address ID."
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "integer"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/coupons": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "string",
+          "description": "The coupon code data."
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "string"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "delete-/V1/guest-carts/{cartId}/coupons": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "put-/V1/guest-carts/{cartId}/coupons/{couponCode}": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        },
+        "couponCode": {
+          "type": "string",
+          "description": "The coupon code data."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "put-/V1/guest-carts/{cartId}/collect-totals": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "paymentMethod": {
+            "type": "object",
+            "description": "Interface PaymentInterface",
+            "constraints": {
+              "required": [
+                "method"
+              ]
+            }
+          },
+          "shippingCarrierCode": {
+            "type": "string",
+            "description": "The carrier code."
+          },
+          "shippingMethodCode": {
+            "type": "string",
+            "description": "The shipping method code."
+          },
+          "additionalData": {
+            "type": "object",
+            "description": "Additional data for totals collection."
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "grand_total": {
+            "type": "number",
+            "description": "Grand total in quote currency"
+          },
+          "base_grand_total": {
+            "type": "number",
+            "description": "Grand total in base currency"
+          },
+          "subtotal": {
+            "type": "number",
+            "description": "Subtotal in quote currency"
+          },
+          "base_subtotal": {
+            "type": "number",
+            "description": "Subtotal in base currency"
+          },
+          "discount_amount": {
+            "type": "number",
+            "description": "Discount amount in quote currency"
+          },
+          "base_discount_amount": {
+            "type": "number",
+            "description": "Discount amount in base currency"
+          },
+          "subtotal_with_discount": {
+            "type": "number",
+            "description": "Subtotal in quote currency with applied discount"
+          },
+          "base_subtotal_with_discount": {
+            "type": "number",
+            "description": "Subtotal in base currency with applied discount"
+          },
+          "shipping_amount": {
+            "type": "number",
+            "description": "Shipping amount in quote currency"
+          },
+          "base_shipping_amount": {
+            "type": "number",
+            "description": "Shipping amount in base currency"
+          },
+          "shipping_discount_amount": {
+            "type": "number",
+            "description": "Shipping discount amount in quote currency"
+          },
+          "base_shipping_discount_amount": {
+            "type": "number",
+            "description": "Shipping discount amount in base currency"
+          },
+          "tax_amount": {
+            "type": "number",
+            "description": "Tax amount in quote currency"
+          },
+          "base_tax_amount": {
+            "type": "number",
+            "description": "Tax amount in base currency"
+          },
+          "weee_tax_applied_amount": {
+            "type": "number",
+            "description": "Item weee tax applied amount in quote currency."
+          },
+          "shipping_tax_amount": {
+            "type": "number",
+            "description": "Shipping tax amount in quote currency"
+          },
+          "base_shipping_tax_amount": {
+            "type": "number",
+            "description": "Shipping tax amount in base currency"
+          },
+          "subtotal_incl_tax": {
+            "type": "number",
+            "description": "Subtotal including tax in quote currency"
+          },
+          "base_subtotal_incl_tax": {
+            "type": "number",
+            "description": "Subtotal including tax in base currency"
+          },
+          "shipping_incl_tax": {
+            "type": "number",
+            "description": "Shipping including tax in quote currency"
+          },
+          "base_shipping_incl_tax": {
+            "type": "number",
+            "description": "Shipping including tax in base currency"
+          },
+          "base_currency_code": {
+            "type": "string",
+            "description": "Base currency code"
+          },
+          "quote_currency_code": {
+            "type": "string",
+            "description": "Quote currency code"
+          },
+          "coupon_code": {
+            "type": "string",
+            "description": "Applied coupon code"
+          },
+          "items_qty": {
+            "type": "integer",
+            "description": "Items qty"
+          },
+          "items": {
+            "type": "array",
+            "description": "Totals by items",
+            "items": {
+              "type": "object",
+              "description": "Interface TotalsItemInterface",
+              "constraints": {
+                "required": [
+                  "item_id",
+                  "price",
+                  "base_price",
+                  "qty",
+                  "row_total",
+                  "base_row_total",
+                  "options",
+                  "weee_tax_applied_amount",
+                  "weee_tax_applied"
+                ]
+              }
+            }
+          },
+          "total_segments": {
+            "type": "array",
+            "description": "Dynamically calculated totals",
+            "item": "quote-data-total-segment-interface"
+          },
+          "extension_attributes": {}
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "grand_total": {
+            "type": "number"
+          },
+          "base_grand_total": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          },
+          "base_subtotal": {
+            "type": "number"
+          },
+          "discount_amount": {
+            "type": "number"
+          },
+          "base_discount_amount": {
+            "type": "number"
+          },
+          "subtotal_with_discount": {
+            "type": "number"
+          },
+          "base_subtotal_with_discount": {
+            "type": "number"
+          },
+          "shipping_amount": {
+            "type": "number"
+          },
+          "base_shipping_amount": {
+            "type": "number"
+          },
+          "shipping_discount_amount": {
+            "type": "number"
+          },
+          "base_shipping_discount_amount": {
+            "type": "number"
+          },
+          "tax_amount": {
+            "type": "number"
+          },
+          "base_tax_amount": {
+            "type": "number"
+          },
+          "weee_tax_applied_amount": {
+            "type": "number"
+          },
+          "shipping_tax_amount": {
+            "type": "number"
+          },
+          "base_shipping_tax_amount": {
+            "type": "number"
+          },
+          "subtotal_incl_tax": {
+            "type": "number"
+          },
+          "base_subtotal_incl_tax": {
+            "type": "number"
+          },
+          "shipping_incl_tax": {
+            "type": "number"
+          },
+          "base_shipping_incl_tax": {
+            "type": "number"
+          },
+          "base_currency_code": {
+            "type": "string"
+          },
+          "quote_currency_code": {
+            "type": "string"
+          },
+          "coupon_code": {
+            "type": "string"
+          },
+          "items_qty": {
+            "type": "integer"
+          },
+          "items": {
+            "type": "array"
+          },
+          "total_segments": {
+            "type": "array",
+            "item": "quote-data-total-segment-interface"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/totals": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "grand_total": {
+            "type": "number",
+            "description": "Grand total in quote currency"
+          },
+          "base_grand_total": {
+            "type": "number",
+            "description": "Grand total in base currency"
+          },
+          "subtotal": {
+            "type": "number",
+            "description": "Subtotal in quote currency"
+          },
+          "base_subtotal": {
+            "type": "number",
+            "description": "Subtotal in base currency"
+          },
+          "discount_amount": {
+            "type": "number",
+            "description": "Discount amount in quote currency"
+          },
+          "base_discount_amount": {
+            "type": "number",
+            "description": "Discount amount in base currency"
+          },
+          "subtotal_with_discount": {
+            "type": "number",
+            "description": "Subtotal in quote currency with applied discount"
+          },
+          "base_subtotal_with_discount": {
+            "type": "number",
+            "description": "Subtotal in base currency with applied discount"
+          },
+          "shipping_amount": {
+            "type": "number",
+            "description": "Shipping amount in quote currency"
+          },
+          "base_shipping_amount": {
+            "type": "number",
+            "description": "Shipping amount in base currency"
+          },
+          "shipping_discount_amount": {
+            "type": "number",
+            "description": "Shipping discount amount in quote currency"
+          },
+          "base_shipping_discount_amount": {
+            "type": "number",
+            "description": "Shipping discount amount in base currency"
+          },
+          "tax_amount": {
+            "type": "number",
+            "description": "Tax amount in quote currency"
+          },
+          "base_tax_amount": {
+            "type": "number",
+            "description": "Tax amount in base currency"
+          },
+          "weee_tax_applied_amount": {
+            "type": "number",
+            "description": "Item weee tax applied amount in quote currency."
+          },
+          "shipping_tax_amount": {
+            "type": "number",
+            "description": "Shipping tax amount in quote currency"
+          },
+          "base_shipping_tax_amount": {
+            "type": "number",
+            "description": "Shipping tax amount in base currency"
+          },
+          "subtotal_incl_tax": {
+            "type": "number",
+            "description": "Subtotal including tax in quote currency"
+          },
+          "base_subtotal_incl_tax": {
+            "type": "number",
+            "description": "Subtotal including tax in base currency"
+          },
+          "shipping_incl_tax": {
+            "type": "number",
+            "description": "Shipping including tax in quote currency"
+          },
+          "base_shipping_incl_tax": {
+            "type": "number",
+            "description": "Shipping including tax in base currency"
+          },
+          "base_currency_code": {
+            "type": "string",
+            "description": "Base currency code"
+          },
+          "quote_currency_code": {
+            "type": "string",
+            "description": "Quote currency code"
+          },
+          "coupon_code": {
+            "type": "string",
+            "description": "Applied coupon code"
+          },
+          "items_qty": {
+            "type": "integer",
+            "description": "Items qty"
+          },
+          "items": {
+            "type": "array",
+            "description": "Totals by items",
+            "items": {
+              "type": "object",
+              "description": "Interface TotalsItemInterface",
+              "constraints": {
+                "required": [
+                  "item_id",
+                  "price",
+                  "base_price",
+                  "qty",
+                  "row_total",
+                  "base_row_total",
+                  "options",
+                  "weee_tax_applied_amount",
+                  "weee_tax_applied"
+                ]
+              }
+            }
+          },
+          "total_segments": {
+            "type": "array",
+            "description": "Dynamically calculated totals",
+            "item": "quote-data-total-segment-interface"
+          },
+          "extension_attributes": {}
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "grand_total": {
+            "type": "number"
+          },
+          "base_grand_total": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          },
+          "base_subtotal": {
+            "type": "number"
+          },
+          "discount_amount": {
+            "type": "number"
+          },
+          "base_discount_amount": {
+            "type": "number"
+          },
+          "subtotal_with_discount": {
+            "type": "number"
+          },
+          "base_subtotal_with_discount": {
+            "type": "number"
+          },
+          "shipping_amount": {
+            "type": "number"
+          },
+          "base_shipping_amount": {
+            "type": "number"
+          },
+          "shipping_discount_amount": {
+            "type": "number"
+          },
+          "base_shipping_discount_amount": {
+            "type": "number"
+          },
+          "tax_amount": {
+            "type": "number"
+          },
+          "base_tax_amount": {
+            "type": "number"
+          },
+          "weee_tax_applied_amount": {
+            "type": "number"
+          },
+          "shipping_tax_amount": {
+            "type": "number"
+          },
+          "base_shipping_tax_amount": {
+            "type": "number"
+          },
+          "subtotal_incl_tax": {
+            "type": "number"
+          },
+          "base_subtotal_incl_tax": {
+            "type": "number"
+          },
+          "shipping_incl_tax": {
+            "type": "number"
+          },
+          "base_shipping_incl_tax": {
+            "type": "number"
+          },
+          "base_currency_code": {
+            "type": "string"
+          },
+          "quote_currency_code": {
+            "type": "string"
+          },
+          "coupon_code": {
+            "type": "string"
+          },
+          "items_qty": {
+            "type": "integer"
+          },
+          "items": {
+            "type": "array"
+          },
+          "total_segments": {
+            "type": "array",
+            "item": "quote-data-total-segment-interface"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/shipping-information": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "addressInformation": {
+            "type": "object",
+            "description": "Interface ShippingInformationInterface",
+            "constraints": {
+              "required": [
+                "shipping_address",
+                "shipping_method_code",
+                "shipping_carrier_code"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "payment_methods": {
+            "type": "array",
+            "item": "quote-data-payment-method-interface"
+          },
+          "totals": {},
+          "extension_attributes": {}
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "payment_methods": {
+            "type": "array",
+            "item": "quote-data-payment-method-interface"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/totals-information": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "addressInformation": {
+            "type": "object",
+            "description": "Interface TotalsInformationInterface",
+            "constraints": {
+              "required": [
+                "address"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "grand_total": {
+            "type": "number",
+            "description": "Grand total in quote currency"
+          },
+          "base_grand_total": {
+            "type": "number",
+            "description": "Grand total in base currency"
+          },
+          "subtotal": {
+            "type": "number",
+            "description": "Subtotal in quote currency"
+          },
+          "base_subtotal": {
+            "type": "number",
+            "description": "Subtotal in base currency"
+          },
+          "discount_amount": {
+            "type": "number",
+            "description": "Discount amount in quote currency"
+          },
+          "base_discount_amount": {
+            "type": "number",
+            "description": "Discount amount in base currency"
+          },
+          "subtotal_with_discount": {
+            "type": "number",
+            "description": "Subtotal in quote currency with applied discount"
+          },
+          "base_subtotal_with_discount": {
+            "type": "number",
+            "description": "Subtotal in base currency with applied discount"
+          },
+          "shipping_amount": {
+            "type": "number",
+            "description": "Shipping amount in quote currency"
+          },
+          "base_shipping_amount": {
+            "type": "number",
+            "description": "Shipping amount in base currency"
+          },
+          "shipping_discount_amount": {
+            "type": "number",
+            "description": "Shipping discount amount in quote currency"
+          },
+          "base_shipping_discount_amount": {
+            "type": "number",
+            "description": "Shipping discount amount in base currency"
+          },
+          "tax_amount": {
+            "type": "number",
+            "description": "Tax amount in quote currency"
+          },
+          "base_tax_amount": {
+            "type": "number",
+            "description": "Tax amount in base currency"
+          },
+          "weee_tax_applied_amount": {
+            "type": "number",
+            "description": "Item weee tax applied amount in quote currency."
+          },
+          "shipping_tax_amount": {
+            "type": "number",
+            "description": "Shipping tax amount in quote currency"
+          },
+          "base_shipping_tax_amount": {
+            "type": "number",
+            "description": "Shipping tax amount in base currency"
+          },
+          "subtotal_incl_tax": {
+            "type": "number",
+            "description": "Subtotal including tax in quote currency"
+          },
+          "base_subtotal_incl_tax": {
+            "type": "number",
+            "description": "Subtotal including tax in base currency"
+          },
+          "shipping_incl_tax": {
+            "type": "number",
+            "description": "Shipping including tax in quote currency"
+          },
+          "base_shipping_incl_tax": {
+            "type": "number",
+            "description": "Shipping including tax in base currency"
+          },
+          "base_currency_code": {
+            "type": "string",
+            "description": "Base currency code"
+          },
+          "quote_currency_code": {
+            "type": "string",
+            "description": "Quote currency code"
+          },
+          "coupon_code": {
+            "type": "string",
+            "description": "Applied coupon code"
+          },
+          "items_qty": {
+            "type": "integer",
+            "description": "Items qty"
+          },
+          "items": {
+            "type": "array",
+            "description": "Totals by items",
+            "items": {
+              "type": "object",
+              "description": "Interface TotalsItemInterface",
+              "constraints": {
+                "required": [
+                  "item_id",
+                  "price",
+                  "base_price",
+                  "qty",
+                  "row_total",
+                  "base_row_total",
+                  "options",
+                  "weee_tax_applied_amount",
+                  "weee_tax_applied"
+                ]
+              }
+            }
+          },
+          "total_segments": {
+            "type": "array",
+            "description": "Dynamically calculated totals",
+            "item": "quote-data-total-segment-interface"
+          },
+          "extension_attributes": {}
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "grand_total": {
+            "type": "number"
+          },
+          "base_grand_total": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          },
+          "base_subtotal": {
+            "type": "number"
+          },
+          "discount_amount": {
+            "type": "number"
+          },
+          "base_discount_amount": {
+            "type": "number"
+          },
+          "subtotal_with_discount": {
+            "type": "number"
+          },
+          "base_subtotal_with_discount": {
+            "type": "number"
+          },
+          "shipping_amount": {
+            "type": "number"
+          },
+          "base_shipping_amount": {
+            "type": "number"
+          },
+          "shipping_discount_amount": {
+            "type": "number"
+          },
+          "base_shipping_discount_amount": {
+            "type": "number"
+          },
+          "tax_amount": {
+            "type": "number"
+          },
+          "base_tax_amount": {
+            "type": "number"
+          },
+          "weee_tax_applied_amount": {
+            "type": "number"
+          },
+          "shipping_tax_amount": {
+            "type": "number"
+          },
+          "base_shipping_tax_amount": {
+            "type": "number"
+          },
+          "subtotal_incl_tax": {
+            "type": "number"
+          },
+          "base_subtotal_incl_tax": {
+            "type": "number"
+          },
+          "shipping_incl_tax": {
+            "type": "number"
+          },
+          "base_shipping_incl_tax": {
+            "type": "number"
+          },
+          "base_currency_code": {
+            "type": "string"
+          },
+          "quote_currency_code": {
+            "type": "string"
+          },
+          "coupon_code": {
+            "type": "string"
+          },
+          "items_qty": {
+            "type": "integer"
+          },
+          "items": {
+            "type": "array"
+          },
+          "total_segments": {
+            "type": "array",
+            "item": "quote-data-total-segment-interface"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/payment-information": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "payment_methods": {
+            "type": "array",
+            "item": "quote-data-payment-method-interface"
+          },
+          "totals": {},
+          "extension_attributes": {}
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "payment_methods": {
+            "type": "array",
+            "item": "quote-data-payment-method-interface"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/payment-information": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "email": {
+            "type": "string"
+          },
+          "paymentMethod": {
+            "type": "object",
+            "description": "Interface PaymentInterface",
+            "constraints": {
+              "required": [
+                "method"
+              ]
+            }
+          },
+          "billingAddress": {
+            "type": "object",
+            "description": "Interface AddressInterface",
+            "constraints": {
+              "required": [
+                "region",
+                "region_id",
+                "region_code",
+                "country_id",
+                "street",
+                "telephone",
+                "postcode",
+                "city",
+                "firstname",
+                "lastname",
+                "email"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "integer",
+          "description": "Order ID."
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "integer"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/set-payment-information": {
+      "request_params": {
+        "cartId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "email": {
+            "type": "string"
+          },
+          "paymentMethod": {
+            "type": "object",
+            "description": "Interface PaymentInterface",
+            "constraints": {
+              "required": [
+                "method"
+              ]
+            }
+          },
+          "billingAddress": {
+            "type": "object",
+            "description": "Interface AddressInterface",
+            "constraints": {
+              "required": [
+                "region",
+                "region_id",
+                "region_code",
+                "country_id",
+                "street",
+                "telephone",
+                "postcode",
+                "city",
+                "firstname",
+                "lastname",
+                "email"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "integer",
+          "description": "Order ID."
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "integer"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/integration/admin/token": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "string",
+          "description": "Token created"
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "500": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "string"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "500": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/integration/customer/token": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "string",
+          "description": "Token created"
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "string"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/gift-message": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The shopping cart ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "gift_message_id": {
+            "type": "integer",
+            "description": "Gift message ID. Otherwise, null."
+          },
+          "customer_id": {
+            "type": "integer",
+            "description": "Customer ID. Otherwise, null."
+          },
+          "sender": {
+            "type": "string",
+            "description": "Sender name."
+          },
+          "recipient": {
+            "type": "string",
+            "description": "Recipient name."
+          },
+          "message": {
+            "type": "string",
+            "description": "Message text."
+          },
+          "extension_attributes": {}
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "gift_message_id": {
+            "type": "integer"
+          },
+          "customer_id": {
+            "type": "integer"
+          },
+          "sender": {
+            "type": "string"
+          },
+          "recipient": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/gift-message": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "giftMessage": {
+            "type": "object",
+            "description": "Interface MessageInterface",
+            "constraints": {
+              "required": [
+                "sender",
+                "recipient",
+                "message"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/guest-carts/{cartId}/gift-message/{itemId}": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The shopping cart ID."
+        },
+        "itemId": {
+          "type": "integer",
+          "description": "The item ID."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "gift_message_id": {
+            "type": "integer",
+            "description": "Gift message ID. Otherwise, null."
+          },
+          "customer_id": {
+            "type": "integer",
+            "description": "Customer ID. Otherwise, null."
+          },
+          "sender": {
+            "type": "string",
+            "description": "Sender name."
+          },
+          "recipient": {
+            "type": "string",
+            "description": "Recipient name."
+          },
+          "message": {
+            "type": "string",
+            "description": "Message text."
+          },
+          "extension_attributes": {}
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "gift_message_id": {
+            "type": "integer"
+          },
+          "customer_id": {
+            "type": "integer"
+          },
+          "sender": {
+            "type": "string"
+          },
+          "recipient": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-carts/{cartId}/gift-message/{itemId}": {
+      "request_params": {
+        "cartId": {
+          "type": "string",
+          "description": "The cart ID."
+        },
+        "itemId": {
+          "type": "integer",
+          "description": "The item ID."
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "giftMessage": {
+            "type": "object",
+            "description": "Interface MessageInterface",
+            "constraints": {
+              "required": [
+                "sender",
+                "recipient",
+                "message"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "boolean"
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/inventory/in-store-pickup/pickup-locations/": {
+      "request_params": {
+        "searchRequest[area][radius]": {
+          "type": "integer",
+          "description": "Search radius in KM."
+        },
+        "searchRequest[area][searchTerm]": {
+          "type": "string",
+          "description": "Search term string."
+        },
+        "searchRequest[filters][country][value]": {
+          "type": "string",
+          "description": "Value."
+        },
+        "searchRequest[filters][country][conditionType]": {
+          "type": "string",
+          "description": "Condition Type."
+        },
+        "searchRequest[filters][postcode][value]": {
+          "type": "string",
+          "description": "Value."
+        },
+        "searchRequest[filters][postcode][conditionType]": {
+          "type": "string",
+          "description": "Condition Type."
+        },
+        "searchRequest[filters][region][value]": {
+          "type": "string",
+          "description": "Value."
+        },
+        "searchRequest[filters][region][conditionType]": {
+          "type": "string",
+          "description": "Condition Type."
+        },
+        "searchRequest[filters][regionId][value]": {
+          "type": "string",
+          "description": "Value."
+        },
+        "searchRequest[filters][regionId][conditionType]": {
+          "type": "string",
+          "description": "Condition Type."
+        },
+        "searchRequest[filters][city][value]": {
+          "type": "string",
+          "description": "Value."
+        },
+        "searchRequest[filters][city][conditionType]": {
+          "type": "string",
+          "description": "Condition Type."
+        },
+        "searchRequest[filters][street][value]": {
+          "type": "string",
+          "description": "Value."
+        },
+        "searchRequest[filters][street][conditionType]": {
+          "type": "string",
+          "description": "Condition Type."
+        },
+        "searchRequest[filters][name][value]": {
+          "type": "string",
+          "description": "Value."
+        },
+        "searchRequest[filters][name][conditionType]": {
+          "type": "string",
+          "description": "Condition Type."
+        },
+        "searchRequest[filters][pickupLocationCode][value]": {
+          "type": "string",
+          "description": "Value."
+        },
+        "searchRequest[filters][pickupLocationCode][conditionType]": {
+          "type": "string",
+          "description": "Condition Type."
+        },
+        "searchRequest[pageSize]": {
+          "type": "integer",
+          "description": "Page size."
+        },
+        "searchRequest[currentPage]": {
+          "type": "integer",
+          "description": "Current page."
+        },
+        "searchRequest[scopeType]": {
+          "type": "string",
+          "description": "Sales Channel Type."
+        },
+        "searchRequest[scopeCode]": {
+          "type": "string",
+          "description": "Sales Channel code."
+        },
+        "searchRequest[sort][0][field]": {
+          "type": "string",
+          "description": "Sorting field."
+        },
+        "searchRequest[sort][0][direction]": {
+          "type": "string",
+          "description": "Sorting direction."
+        },
+        "searchRequest[extensionAttributes][productsInfo][0][sku]": {
+          "type": "string",
+          "description": "Product SKU."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "items": {
+            "type": "array",
+            "description": "Items list.",
+            "items": {
+              "type": "object",
+              "description": "Represents sources projection on In-Store Pickup context. Realisation must follow immutable DTO concept. Partial immutability done according to restriction of current Extension Attributes implementation.",
+              "constraints": {
+                "required": [
+                  "pickup_location_code"
+                ]
+              }
+            }
+          },
+          "search_request": {},
+          "total_count": {
+            "type": "integer",
+            "description": "Total count."
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "items": {
+            "type": "array"
+          },
+          "total_count": {
+            "type": "integer"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "put-/V1/amazon-shipping-address/{amazonOrderReferenceId}": {
+      "request_params": {
+        "amazonOrderReferenceId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "addressConsentToken": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "string"
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "string"
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "put-/V1/amazon-billing-address/{amazonOrderReferenceId}": {
+      "request_params": {
+        "amazonOrderReferenceId": {
+          "type": "string"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "addressConsentToken": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "string"
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "string"
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "delete-/V1/amazon/order-ref": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/V1/applepay/auth": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "client_token": {
+            "type": "string",
+            "description": "Client token"
+          },
+          "display_name": {
+            "type": "string",
+            "description": "Display name"
+          },
+          "action_success": {
+            "type": "string",
+            "description": "To success page"
+          },
+          "logged_in": {
+            "type": "boolean"
+          },
+          "store_code": {
+            "type": "string",
+            "description": "Current store code"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "client_token": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "action_success": {
+            "type": "string"
+          },
+          "logged_in": {
+            "type": "boolean"
+          },
+          "store_code": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/guest-address/cleanse": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "cartId": {
+            "type": "string",
+            "description": "Guest Cart ID (used for auth)"
+          },
+          "address": {
+            "type": "object",
+            "description": "This is the interface for submission to the API.  For ease the API only takes interfaces the same as the SDK, but the SDK model cannot implement the interface.  Since the SDK model technically isn't API, we re-implement a simple DTO to handle the scenario.",
+            "constraints": {
+              "required": [
+                "street_address"
+              ]
+            }
+          },
+          "scopeCode": {
+            "type": "string"
+          },
+          "scopeType": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "city": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          },
+          "country_name": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "region_id": {
+            "type": "integer"
+          },
+          "region_name": {
+            "type": "string"
+          },
+          "street_address": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sub_division": {
+            "type": "string",
+            "description": "The regional sub division, such as a county or parish"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "500": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "city": {
+            "type": "string"
+          },
+          "country_code": {
+            "type": "string"
+          },
+          "country_name": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "region_id": {
+            "type": "integer"
+          },
+          "region_name": {
+            "type": "string"
+          },
+          "street_address": {
+            "type": "array"
+          },
+          "sub_division": {
+            "type": "string"
+          }
+        },
+        "400": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "500": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/V1/vertex-address-validation/vertex-address": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "address": {
+            "type": "object",
+            "description": "Interface AddressInterface",
+            "constraints": {
+              "required": [
+                "region",
+                "region_id",
+                "region_code",
+                "country_id",
+                "street",
+                "telephone",
+                "postcode",
+                "city",
+                "firstname",
+                "lastname",
+                "email"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "id": {
+            "type": "integer",
+            "description": "Id"
+          },
+          "region": {
+            "type": "string",
+            "description": "Region name"
+          },
+          "region_id": {
+            "type": "integer",
+            "description": "Region id"
+          },
+          "region_code": {
+            "type": "string",
+            "description": "Region code"
+          },
+          "country_id": {
+            "type": "string",
+            "description": "Country id"
+          },
+          "street": {
+            "type": "array",
+            "description": "Street",
+            "items": {
+              "type": "string"
+            }
+          },
+          "company": {
+            "type": "string",
+            "description": "Company"
+          },
+          "telephone": {
+            "type": "string",
+            "description": "Telephone number"
+          },
+          "fax": {
+            "type": "string",
+            "description": "Fax number"
+          },
+          "postcode": {
+            "type": "string",
+            "description": "Postcode"
+          },
+          "city": {
+            "type": "string",
+            "description": "City name"
+          },
+          "firstname": {
+            "type": "string",
+            "description": "First name"
+          },
+          "lastname": {
+            "type": "string",
+            "description": "Last name"
+          },
+          "middlename": {
+            "type": "string",
+            "description": "Middle name"
+          },
+          "prefix": {
+            "type": "string",
+            "description": "Prefix"
+          },
+          "suffix": {
+            "type": "string",
+            "description": "Suffix"
+          },
+          "vat_id": {
+            "type": "string",
+            "description": "Vat id"
+          },
+          "customer_id": {
+            "type": "integer",
+            "description": "Customer id"
+          },
+          "email": {
+            "type": "string",
+            "description": "Billing/shipping email"
+          },
+          "same_as_billing": {
+            "type": "integer",
+            "description": "Same as billing flag"
+          },
+          "customer_address_id": {
+            "type": "integer",
+            "description": "Customer address id"
+          },
+          "save_in_address_book": {
+            "type": "integer",
+            "description": "Save in address book flag"
+          },
+          "extension_attributes": {},
+          "custom_attributes": {
+            "type": "array",
+            "description": "Custom attributes values.",
+            "item": "framework-attribute-interface"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "errors": {},
+          "code": {
+            "type": "integer",
+            "description": "Error code"
+          },
+          "parameters": {},
+          "trace": {
+            "type": "string",
+            "description": "Stack trace"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "id": {
+            "type": "integer"
+          },
+          "region": {
+            "type": "string"
+          },
+          "region_id": {
+            "type": "integer"
+          },
+          "region_code": {
+            "type": "string"
+          },
+          "country_id": {
+            "type": "string"
+          },
+          "street": {
+            "type": "array"
+          },
+          "company": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "fax": {
+            "type": "string"
+          },
+          "postcode": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "middlename": {
+            "type": "string"
+          },
+          "prefix": {
+            "type": "string"
+          },
+          "suffix": {
+            "type": "string"
+          },
+          "vat_id": {
+            "type": "string"
+          },
+          "customer_id": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "same_as_billing": {
+            "type": "integer"
+          },
+          "customer_address_id": {
+            "type": "integer"
+          },
+          "save_in_address_book": {
+            "type": "integer"
+          },
+          "custom_attributes": {
+            "type": "array",
+            "item": "framework-attribute-interface"
+          }
+        },
+        "default": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer"
+          },
+          "trace": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "edge_results": [
+    [
+      "GET /V1/directory/currency",
+      "GET /V1/directory/countries"
+    ],
+    [
+      "GET /V1/directory/currency",
+      "GET /V1/directory/countries/{countryId}"
+    ],
+    [
+      "GET /V1/directory/countries",
+      "GET /V1/directory/countries/{countryId}"
+    ],
+    [
+      "POST /V1/customers",
+      "GET /V1/customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken}"
+    ],
+    [
+      "POST /V1/customers",
+      "PUT /V1/customers/password"
+    ],
+    [
+      "POST /V1/customers",
+      "POST /V1/customers/resetPassword"
+    ],
+    [
+      "POST /V1/customers",
+      "POST /V1/customers/isEmailAvailable"
+    ],
+    [
+      "GET /V1/customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken}",
+      "PUT /V1/customers/password"
+    ],
+    [
+      "GET /V1/customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken}",
+      "POST /V1/customers/resetPassword"
+    ],
+    [
+      "GET /V1/customers/{customerId}/password/resetLinkToken/{resetPasswordLinkToken}",
+      "POST /V1/customers/isEmailAvailable"
+    ],
+    [
+      "PUT /V1/customers/password",
+      "POST /V1/customers/resetPassword"
+    ],
+    [
+      "PUT /V1/customers/password",
+      "POST /V1/customers/isEmailAvailable"
+    ],
+    [
+      "POST /V1/customers/resetPassword",
+      "POST /V1/customers/isEmailAvailable"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "PUT /V1/guest-carts/{cartId}/order"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/shipping-methods"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "PUT /V1/guest-carts/{cartId}/order"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/shipping-methods"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/shipping-methods"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/order",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/shipping-methods",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "POST /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/estimate-shipping-methods",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/items"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/items",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/items/{itemId}",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/payment-methods"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/selected-payment-method",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "GET /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-methods",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/billing-address"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/billing-address",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "DELETE /V1/guest-carts/{cartId}/coupons"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "DELETE /V1/guest-carts/{cartId}/coupons",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "PUT /V1/guest-carts/{cartId}/collect-totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/coupons/{couponCode}",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "GET /V1/guest-carts/{cartId}/totals"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/guest-carts/{cartId}/collect-totals",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "POST /V1/guest-carts/{cartId}/shipping-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/totals",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/shipping-information",
+      "POST /V1/guest-carts/{cartId}/totals-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/shipping-information",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/shipping-information",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/shipping-information",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/shipping-information",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/shipping-information",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/shipping-information",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/shipping-information",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/totals-information",
+      "GET /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/totals-information",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/totals-information",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/totals-information",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/totals-information",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/totals-information",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/totals-information",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-information",
+      "POST /V1/guest-carts/{cartId}/payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-information",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-information",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-information",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-information",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/payment-information",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/payment-information",
+      "POST /V1/guest-carts/{cartId}/set-payment-information"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/payment-information",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/payment-information",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/payment-information",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/payment-information",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/set-payment-information",
+      "GET /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/set-payment-information",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/set-payment-information",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/set-payment-information",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/integration/admin/token",
+      "POST /V1/integration/customer/token"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/gift-message",
+      "POST /V1/guest-carts/{cartId}/gift-message"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/gift-message",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/gift-message",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/gift-message",
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "POST /V1/guest-carts/{cartId}/gift-message",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "GET /V1/guest-carts/{cartId}/gift-message/{itemId}",
+      "POST /V1/guest-carts/{cartId}/gift-message/{itemId}"
+    ],
+    [
+      "PUT /V1/amazon-shipping-address/{amazonOrderReferenceId}",
+      "PUT /V1/amazon-billing-address/{amazonOrderReferenceId}"
+    ]
+  ]
+}

@@ -1,0 +1,1496 @@
+{
+  "_metadata": {
+    "operation_count": 16,
+    "extracted_constraints_count": 7
+  },
+  "constraints_of_fields": {
+    "inline_response_object": {
+      "products": {
+        "type": "array",
+        "item": "product"
+      },
+      "updated_at": {
+        "type": "string",
+        "constraints": {
+          "format": "date-time"
+        }
+      },
+      "created_at": {
+        "type": "string",
+        "constraints": {
+          "format": "date-time"
+        }
+      }
+    },
+    "detail": {
+      "type": "array",
+      "item": "validation_error"
+    },
+    "products": {
+      "type": "array",
+      "item": "product"
+    },
+    "updated_at": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    }
+  },
+  "detail_endpoint_schema": {
+    "get-/users/": {
+      "request_params": {
+        "skip": {
+          "type": "integer"
+        },
+        "limit": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "name",
+                "email",
+                "password",
+                "id",
+                "updated_at",
+                "created_at"
+              ]
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "post-/users/": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "get-/users/id/{user_id}": {
+      "request_params": {
+        "user_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "put-/users/id/{user_id}": {
+      "request_params": {
+        "user_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "is_admin": {
+            "type": "boolean"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "delete-/users/id/{user_id}": {
+      "request_params": {
+        "user_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_admin": {
+            "type": "boolean"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "get-/products/": {
+      "request_params": {
+        "skip": {
+          "type": "integer"
+        },
+        "limit": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "name",
+                "image",
+                "brand",
+                "description",
+                "id",
+                "updated_at",
+                "created_at",
+                "user_id"
+              ]
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "post-/products/": {
+      "request_params": {
+        "user_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "get-/products/id/{product_id}": {
+      "request_params": {
+        "product_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "put-/products/id/{product_id}": {
+      "request_params": {
+        "product_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "delete-/products/id/{product_id}": {
+      "request_params": {
+        "product_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "brand": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "count_in_stock": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "user_id": {
+            "type": "integer"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "get-/orders/": {
+      "request_params": {
+        "skip": {
+          "type": "integer"
+        },
+        "limit": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "address",
+                "phone",
+                "id",
+                "user_id",
+                "updated_at",
+                "created_at"
+              ]
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "post-/orders/": {
+      "request_params": {
+        "user_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "status": {},
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "status": {},
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "get-/orders/id/{order_id}": {
+      "request_params": {
+        "order_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "status": {},
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "put-/orders/id/{order_id}": {
+      "request_params": {
+        "order_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {
+        "application/json": {
+          "status": {},
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "status": {},
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "delete-/orders/id/{order_id}": {
+      "request_params": {
+        "order_id": {
+          "type": "integer"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "status": {},
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "quantity": {
+            "type": "integer"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "item": "product"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          }
+        },
+        "422": {
+          "detail": {
+            "type": "array",
+            "item": "validationerror"
+          }
+        }
+      }
+    },
+    "get-/": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {}
+      },
+      "constraints_response": {
+        "200": {}
+      }
+    }
+  },
+  "edge_results": [
+    [
+      "GET /users/",
+      "POST /users/"
+    ],
+    [
+      "GET /users/",
+      "GET /users/id/{user_id}"
+    ],
+    [
+      "GET /users/",
+      "PUT /users/id/{user_id}"
+    ],
+    [
+      "GET /users/",
+      "DELETE /users/id/{user_id}"
+    ],
+    [
+      "POST /users/",
+      "GET /users/id/{user_id}"
+    ],
+    [
+      "POST /users/",
+      "PUT /users/id/{user_id}"
+    ],
+    [
+      "POST /users/",
+      "DELETE /users/id/{user_id}"
+    ],
+    [
+      "GET /users/id/{user_id}",
+      "PUT /users/id/{user_id}"
+    ],
+    [
+      "GET /users/id/{user_id}",
+      "DELETE /users/id/{user_id}"
+    ],
+    [
+      "PUT /users/id/{user_id}",
+      "DELETE /users/id/{user_id}"
+    ],
+    [
+      "GET /products/",
+      "POST /products/"
+    ],
+    [
+      "GET /products/",
+      "GET /products/id/{product_id}"
+    ],
+    [
+      "GET /products/",
+      "PUT /products/id/{product_id}"
+    ],
+    [
+      "GET /products/",
+      "DELETE /products/id/{product_id}"
+    ],
+    [
+      "POST /products/",
+      "GET /products/id/{product_id}"
+    ],
+    [
+      "POST /products/",
+      "PUT /products/id/{product_id}"
+    ],
+    [
+      "POST /products/",
+      "DELETE /products/id/{product_id}"
+    ],
+    [
+      "GET /products/id/{product_id}",
+      "PUT /products/id/{product_id}"
+    ],
+    [
+      "GET /products/id/{product_id}",
+      "DELETE /products/id/{product_id}"
+    ],
+    [
+      "PUT /products/id/{product_id}",
+      "DELETE /products/id/{product_id}"
+    ],
+    [
+      "GET /orders/",
+      "POST /orders/"
+    ],
+    [
+      "GET /orders/",
+      "GET /orders/id/{order_id}"
+    ],
+    [
+      "GET /orders/",
+      "PUT /orders/id/{order_id}"
+    ],
+    [
+      "GET /orders/",
+      "DELETE /orders/id/{order_id}"
+    ],
+    [
+      "POST /orders/",
+      "GET /orders/id/{order_id}"
+    ],
+    [
+      "POST /orders/",
+      "PUT /orders/id/{order_id}"
+    ],
+    [
+      "POST /orders/",
+      "DELETE /orders/id/{order_id}"
+    ],
+    [
+      "GET /orders/id/{order_id}",
+      "PUT /orders/id/{order_id}"
+    ],
+    [
+      "GET /orders/id/{order_id}",
+      "DELETE /orders/id/{order_id}"
+    ],
+    [
+      "PUT /orders/id/{order_id}",
+      "DELETE /orders/id/{order_id}"
+    ]
+  ]
+}

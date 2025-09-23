@@ -1,0 +1,2972 @@
+{
+  "_metadata": {
+    "operation_count": 15,
+    "extracted_constraints_count": 49
+  },
+  "constraints_of_fields": {
+    "last_activity_after": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    },
+    "last_activity_before": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    },
+    "min_access_level": {
+      "type": "integer",
+      "constraints": {
+        "enum": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      }
+    },
+    "order_by": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "id",
+          "name",
+          "path",
+          "created_at",
+          "updated_at",
+          "last_activity_at",
+          "repository_size",
+          "storage_size",
+          "packages_size",
+          "wiki_size"
+        ]
+      }
+    },
+    "sort": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "asc",
+          "desc"
+        ]
+      }
+    },
+    "visibility": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "public",
+          "internal",
+          "private"
+        ]
+      }
+    },
+    "inline_response_object": {
+      "tag_list": {
+        "type": "array"
+      },
+      "created_at": {
+        "type": "string",
+        "constraints": {
+          "format": "date-time"
+        }
+      },
+      "last_activity_at": {
+        "type": "string",
+        "constraints": {
+          "format": "date-time"
+        }
+      },
+      "shared_with_groups": {
+        "type": "array",
+        "item": "shared_with_groups"
+      },
+      "marked_for_deletion_at": {
+        "type": "string",
+        "constraints": {
+          "format": "date"
+        }
+      },
+      "marked_for_deletion_on": {
+        "type": "string",
+        "constraints": {
+          "format": "date"
+        }
+      }
+    },
+    "code": {
+      "type": "integer",
+      "constraints": {
+        "format": "int32"
+      }
+    },
+    "auto_cancel_pending_pipelines": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "enabled",
+          "disabled"
+        ]
+      }
+    },
+    "auto_devops_deploy_strategy": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "continuous",
+          "manual",
+          "timed_incremental"
+        ]
+      }
+    },
+    "avatar": {
+      "type": "string",
+      "constraints": {
+        "format": "file"
+      }
+    },
+    "builds_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled"
+        ]
+      }
+    },
+    "forking_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled"
+        ]
+      }
+    },
+    "issues_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled"
+        ]
+      }
+    },
+    "merge_method": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "merge",
+          "rebase_merge",
+          "ff"
+        ]
+      }
+    },
+    "merge_requests_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled"
+        ]
+      }
+    },
+    "pages_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled",
+          "public"
+        ]
+      }
+    },
+    "requirements_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled",
+          "public"
+        ]
+      }
+    },
+    "repository_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled"
+        ]
+      }
+    },
+    "snippets_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled"
+        ]
+      }
+    },
+    "tag_list": {
+      "type": "array"
+    },
+    "wiki_access_level": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "disabled",
+          "private",
+          "enabled"
+        ]
+      }
+    },
+    "next_run_at": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    },
+    "created_at": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    },
+    "last_activity_at": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    },
+    "shared_with_groups": {
+      "type": "array",
+      "item": "shared_with_groups"
+    },
+    "marked_for_deletion_at": {
+      "type": "string",
+      "constraints": {
+        "format": "date"
+      }
+    },
+    "marked_for_deletion_on": {
+      "type": "string",
+      "constraints": {
+        "format": "date"
+      }
+    },
+    "since": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    },
+    "until": {
+      "type": "string",
+      "constraints": {
+        "format": "date-time"
+      }
+    },
+    "order": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "default",
+          "topo"
+        ]
+      }
+    },
+    "parent_ids": {
+      "type": "array"
+    },
+    "type": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "branch",
+          "tag",
+          "all"
+        ]
+      }
+    },
+    "line": {
+      "type": "integer",
+      "description": "The line number where the comment should be placed",
+      "constraints": {
+        "format": "int32"
+      }
+    },
+    "line_type": {
+      "type": "string",
+      "description": "The line type.",
+      "constraints": {
+        "enum": [
+          "new",
+          "old"
+        ]
+      }
+    },
+    "stage": {
+      "type": "string",
+      "constraints": {
+        "enum": [
+          "build",
+          "test",
+          "deploy"
+        ]
+      }
+    },
+    "page": {
+      "type": "integer",
+      "constraints": {
+        "format": "int32"
+      }
+    },
+    "per_page": {
+      "type": "integer",
+      "constraints": {
+        "format": "int32"
+      }
+    },
+    "state": {
+      "type": "string",
+      "description": "The state of the status",
+      "constraints": {
+        "enum": [
+          "pending",
+          "running",
+          "success",
+          "failed",
+          "canceled"
+        ]
+      }
+    },
+    "pipeline_id": {
+      "type": "integer",
+      "description": "The ID of the pipeline to set status. Use in case of several pipeline on same SHA.",
+      "constraints": {
+        "format": "int32"
+      }
+    }
+  },
+  "detail_endpoint_schema": {
+    "get-/projects": {
+      "request_params": {
+        "archived": {
+          "type": "boolean",
+          "description": "Limit by archived status"
+        },
+        "id_after": {
+          "type": "integer",
+          "description": "Limit results to projects with IDs greater than the specified ID."
+        },
+        "id_before": {
+          "type": "integer",
+          "description": "Limit results to projects with IDs less than the specified ID."
+        },
+        "last_activity_after": {
+          "type": "string",
+          "constraints": {
+            "format": "date-time"
+          },
+          "description": "Limit results to projects with last_activity after specified time.ISO 8601 YYYY-MM-DDTHH:MM:SSZ"
+        },
+        "last_activity_before": {
+          "type": "string",
+          "constraints": {
+            "format": "date-time"
+          },
+          "description": "Limit results to projects with last_activity before specified time. ISO 8601 YYYY-MM-DDTHH:MM:SSZ"
+        },
+        "membership": {
+          "type": "boolean",
+          "description": "Limit by projects that the current user is a member of."
+        },
+        "min_access_level": {
+          "type": "integer",
+          "constraints": {
+            "enum": [
+              0,
+              10,
+              20,
+              30,
+              40,
+              50
+            ]
+          },
+          "description": "Limit by current user minimal access level."
+        },
+        "order_by": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "id",
+              "name",
+              "path",
+              "created_at",
+              "updated_at",
+              "last_activity_at",
+              "repository_size",
+              "storage_size",
+              "packages_size",
+              "wiki_size"
+            ]
+          },
+          "description": "Return projects ordered by field"
+        },
+        "owned": {
+          "type": "boolean",
+          "description": "Limit by projects explicitly owned by the current user."
+        },
+        "repository_storage": {
+          "type": "string",
+          "description": "Limit results to projects stored on repository_storage. (admins only)"
+        },
+        "search_namespaces": {
+          "type": "boolean",
+          "description": "Include ancestor namespaces when matching search criteria."
+        },
+        "search": {
+          "type": "string",
+          "description": "Return list of projects matching the search criteria."
+        },
+        "simple": {
+          "type": "boolean",
+          "description": "Return only limited fields for each project. This is a no-op without authentication as then only simple fields are returned."
+        },
+        "sort": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          },
+          "description": "Return projects sorted in asc or desc order. Default is desc"
+        },
+        "starred": {
+          "type": "boolean",
+          "description": "Limit by projects starred by the current user."
+        },
+        "statistics": {
+          "type": "boolean",
+          "description": "Include project statistics."
+        },
+        "visibility": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "public",
+              "internal",
+              "private"
+            ]
+          },
+          "description": "Limit by visibility"
+        },
+        "with_custom_attributes": {
+          "type": "boolean",
+          "description": "Include custom attributes in response. (admins only)"
+        },
+        "with_issues_enabled": {
+          "type": "boolean",
+          "description": "Limit by enabled issues feature."
+        },
+        "with_merge_requests_enabled": {
+          "type": "boolean",
+          "description": "Limit by enabled merge requests feature."
+        },
+        "with_programming_language": {
+          "type": "string",
+          "description": "Limit by projects which use the given programming language."
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/projects": {
+      "request_params": {
+        "allow_merge_on_skipped_pipeline": {
+          "type": "boolean",
+          "description": "Set whether or not merge requests can be merged with skipped jobs."
+        },
+        "auto_cancel_pending_pipelines": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "enabled",
+              "disabled"
+            ]
+          },
+          "description": "Auto-cancel pending pipelines. This isn\u2019t a boolean, but enabled/disabled."
+        },
+        "auto_devops_deploy_strategy": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "continuous",
+              "manual",
+              "timed_incremental"
+            ]
+          },
+          "description": "Auto Deploy strategy"
+        },
+        "auto_devops_enabled": {
+          "type": "boolean",
+          "description": "Enable Auto DevOps for this project."
+        },
+        "autoclose_referenced_issues": {
+          "type": "boolean",
+          "description": "Set whether auto-closing referenced issues on default branch."
+        },
+        "avatar": {
+          "type": "string",
+          "constraints": {
+            "format": "file"
+          },
+          "description": "Image file for avatar of the project."
+        },
+        "build_coverage_regex": {
+          "type": "string",
+          "description": "Test coverage parsing."
+        },
+        "build_git_strategy": {
+          "type": "string",
+          "description": "The Git strategy. Defaults to fetch."
+        },
+        "build_timeout": {
+          "type": "integer",
+          "description": "The maximum amount of time in minutes that a job is able run (in seconds)."
+        },
+        "builds_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled"
+            ]
+          },
+          "description": "One of disabled, private, or enabled."
+        },
+        "ci_config_path": {
+          "type": "string",
+          "description": "The path to CI configuration file."
+        },
+        "container_registry_enabled": {
+          "type": "boolean",
+          "description": "Enable container registry for this project."
+        },
+        "default_branch": {
+          "type": "string",
+          "description": "master by default."
+        },
+        "description": {
+          "type": "string",
+          "description": "Short project description."
+        },
+        "emails_disabled": {
+          "type": "boolean",
+          "description": "Disable email notifications."
+        },
+        "forking_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled"
+            ]
+          },
+          "description": "One of disabled,private, or enabled."
+        },
+        "import_url": {
+          "type": "string",
+          "description": "URL to import repository from. Either import_url or template_name is required, not both"
+        },
+        "initialize_with_readme": {
+          "type": "boolean",
+          "description": "false by default."
+        },
+        "issues_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled"
+            ]
+          },
+          "description": "One of disabled, private, or enabled."
+        },
+        "issues_enabled": {
+          "type": "boolean",
+          "description": "(Deprecated)Enable issues for this project. Use issues_access_level instead."
+        },
+        "jobs_enabled": {
+          "type": "boolean",
+          "description": "(Deprecated)Enable jobs for this project. Use builds_access_level instead."
+        },
+        "lfs_enabled": {
+          "type": "boolean",
+          "description": "Enable LFS."
+        },
+        "merge_method": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "merge",
+              "rebase_merge",
+              "ff"
+            ]
+          },
+          "description": "Set the merge method used."
+        },
+        "merge_requests_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled"
+            ]
+          },
+          "description": "One of disabled, private, or enabled."
+        },
+        "merge_requests_enabled": {
+          "type": "boolean",
+          "description": "(Deprecated)Enable merge requests for this project. Use merge_requests_access_level instead."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the new project. Either path or name is required, not both."
+        },
+        "namespace_id": {
+          "type": "integer",
+          "description": "Namespace for the new project (defaults to the current user's namespace)."
+        },
+        "only_allow_merge_if_all_discussions_are_resolved": {
+          "type": "boolean",
+          "description": "Set whether merge requests can only be merged when all the discussions are resolved."
+        },
+        "only_allow_merge_if_pipeline_succeeds": {
+          "type": "boolean",
+          "description": "Set whether merge requests can only be merged with successful jobs."
+        },
+        "packages_enabled": {
+          "type": "boolean",
+          "description": "Enable or disable packages repository feature."
+        },
+        "pages_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled",
+              "public"
+            ]
+          },
+          "description": "One of disabled, private,enabled, or public."
+        },
+        "requirements_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled",
+              "public"
+            ]
+          },
+          "description": "One of disabled,private,enabled or public"
+        },
+        "path": {
+          "type": "string",
+          "description": "Repository name for new project. Generated based on name if not provided (generated as lowercase with dashes)."
+        },
+        "printing_merge_request_link_enabled": {
+          "type": "boolean",
+          "description": "Show link to create/view merge request when pushing from the command line."
+        },
+        "public_builds": {
+          "type": "boolean",
+          "description": "If true, jobs can be viewed by non-project members."
+        },
+        "remove_source_branch_after_merge": {
+          "type": "boolean",
+          "description": "Enable Delete source branch option by default for all new merge requests."
+        },
+        "repository_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled"
+            ]
+          },
+          "description": "One of disabled, private, or enabled."
+        },
+        "repository_storage": {
+          "type": "string",
+          "description": "Which storage shard the repository is on.(admins only)"
+        },
+        "request_access_enabled": {
+          "type": "boolean",
+          "description": "Allow users to request member access."
+        },
+        "resolve_outdated_diff_discussions": {
+          "type": "boolean",
+          "description": "Automatically resolve merge request diffs discussions on lines changed with a push."
+        },
+        "shared_runners_enabled": {
+          "type": "boolean",
+          "description": "Enable shared runners for this project."
+        },
+        "show_default_award_emojis": {
+          "type": "boolean",
+          "description": "Show default award emojis."
+        },
+        "snippets_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled"
+            ]
+          },
+          "description": "One of disabled, private, or enabled."
+        },
+        "snippets_enabled": {
+          "type": "boolean",
+          "description": "(Deprecated)Enable snippets for this project. Use snippets_access_level instead."
+        },
+        "tag_list": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The list of tags for a project; put array of tags, that should be finally assigned to a project."
+        },
+        "template_name": {
+          "type": "string",
+          "description": "When used withoutuse_custom_template, name of abuilt-in project template. When used withuse_custom_template, name of a custom project template."
+        },
+        "visibility": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "private",
+              "internal",
+              "public"
+            ]
+          },
+          "description": "See project visibility level."
+        },
+        "wiki_access_level": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "disabled",
+              "private",
+              "enabled"
+            ]
+          },
+          "description": "One of disabled, private, or enabled."
+        },
+        "wiki_enabled": {
+          "type": "boolean",
+          "description": "(Deprecated)Enable wiki for this project. Use wiki_access_levelinstead."
+        }
+      },
+      "request_schema_constraints": {
+        "application/x-www-form-urlencoded": {
+          "cadence": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "keep_n": {
+            "type": "integer"
+          },
+          "older_than": {
+            "type": "string"
+          },
+          "name_regex": {
+            "type": "string"
+          },
+          "name_regex_delete": {
+            "type": "string"
+          },
+          "name_regex_keep": {
+            "type": "string"
+          },
+          "next_run_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "response_params": {
+        "201": {
+          "id": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "default_branch": {
+            "type": "string"
+          },
+          "visibility": {
+            "type": "string"
+          },
+          "ssh_url_to_repo": {
+            "type": "string"
+          },
+          "http_url_to_repo": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string"
+          },
+          "readme_url": {
+            "type": "string"
+          },
+          "tag_list": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "owner": {},
+          "name": {
+            "type": "string"
+          },
+          "name_with_namespace": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "path_with_namespace": {
+            "type": "string"
+          },
+          "issues_enabled": {
+            "type": "boolean"
+          },
+          "open_issues_count": {
+            "type": "integer"
+          },
+          "merge_requests_enabled": {
+            "type": "boolean"
+          },
+          "jobs_enabled": {
+            "type": "boolean"
+          },
+          "wiki_enabled": {
+            "type": "boolean"
+          },
+          "snippets_enabled": {
+            "type": "boolean"
+          },
+          "can_create_merge_request_in": {
+            "type": "boolean"
+          },
+          "resolve_outdated_diff_discussions": {
+            "type": "boolean"
+          },
+          "container_registry_enabled": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "last_activity_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date-time"
+            }
+          },
+          "creator_id": {
+            "type": "integer"
+          },
+          "namespace": {},
+          "import_status": {
+            "type": "string"
+          },
+          "import_error": {
+            "type": "string"
+          },
+          "permissions": {},
+          "archived": {
+            "type": "boolean"
+          },
+          "avatar_url": {
+            "type": "string"
+          },
+          "shared_runners_enabled": {
+            "type": "boolean"
+          },
+          "forks_count": {
+            "type": "integer"
+          },
+          "star_count": {
+            "type": "integer"
+          },
+          "runners_token": {
+            "type": "string"
+          },
+          "ci_default_git_depth": {
+            "type": "integer"
+          },
+          "ci_forward_deployment_enabled": {
+            "type": "boolean"
+          },
+          "public_jobs": {
+            "type": "boolean"
+          },
+          "shared_with_groups": {
+            "type": "array",
+            "item": "sharedwithgroups"
+          },
+          "only_allow_merge_if_pipeline_succeeds": {
+            "type": "boolean"
+          },
+          "allow_merge_on_skipped_pipeline": {
+            "type": "boolean"
+          },
+          "only_allow_merge_if_all_discussions_are_resolved": {
+            "type": "boolean"
+          },
+          "remove_source_branch_after_merge": {
+            "type": "boolean"
+          },
+          "request_access_enabled": {
+            "type": "boolean"
+          },
+          "merge_method": {
+            "type": "string"
+          },
+          "auto_devops_enabled": {
+            "type": "boolean"
+          },
+          "suggestion_commit_message": {
+            "type": "string"
+          },
+          "auto_devops_deploy_strategy": {
+            "type": "string"
+          },
+          "repository_storage": {
+            "type": "string"
+          },
+          "marked_for_deletion_at": {
+            "type": "string",
+            "constraints": {
+              "format": "date"
+            }
+          },
+          "marked_for_deletion_on": {
+            "type": "string",
+            "constraints": {
+              "format": "date"
+            }
+          },
+          "approvals_before_merge": {
+            "type": "integer"
+          },
+          "mirror": {
+            "type": "boolean"
+          },
+          "mirror_user_id": {
+            "type": "integer"
+          },
+          "mirror_trigger_builds": {
+            "type": "boolean"
+          },
+          "only_mirror_protected_branches": {
+            "type": "boolean"
+          },
+          "mirror_overwrites_diverged_branches": {
+            "type": "boolean"
+          },
+          "external_authorization_classification_label": {
+            "type": "string"
+          },
+          "packages_enabled": {
+            "type": "boolean"
+          },
+          "service_desk_enabled": {
+            "type": "boolean"
+          },
+          "service_desk_address": {
+            "type": "string"
+          },
+          "autoclose_referenced_issues": {
+            "type": "boolean"
+          },
+          "statistics": {},
+          "_links": {}
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "201": {
+          "id": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "default_branch": {
+            "type": "string"
+          },
+          "visibility": {
+            "type": "string"
+          },
+          "ssh_url_to_repo": {
+            "type": "string"
+          },
+          "http_url_to_repo": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string"
+          },
+          "readme_url": {
+            "type": "string"
+          },
+          "tag_list": {
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "name_with_namespace": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "path_with_namespace": {
+            "type": "string"
+          },
+          "issues_enabled": {
+            "type": "boolean"
+          },
+          "open_issues_count": {
+            "type": "integer"
+          },
+          "merge_requests_enabled": {
+            "type": "boolean"
+          },
+          "jobs_enabled": {
+            "type": "boolean"
+          },
+          "wiki_enabled": {
+            "type": "boolean"
+          },
+          "snippets_enabled": {
+            "type": "boolean"
+          },
+          "can_create_merge_request_in": {
+            "type": "boolean"
+          },
+          "resolve_outdated_diff_discussions": {
+            "type": "boolean"
+          },
+          "container_registry_enabled": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "last_activity_at": {
+            "type": "string"
+          },
+          "creator_id": {
+            "type": "integer"
+          },
+          "import_status": {
+            "type": "string"
+          },
+          "import_error": {
+            "type": "string"
+          },
+          "archived": {
+            "type": "boolean"
+          },
+          "avatar_url": {
+            "type": "string"
+          },
+          "shared_runners_enabled": {
+            "type": "boolean"
+          },
+          "forks_count": {
+            "type": "integer"
+          },
+          "star_count": {
+            "type": "integer"
+          },
+          "runners_token": {
+            "type": "string"
+          },
+          "ci_default_git_depth": {
+            "type": "integer"
+          },
+          "ci_forward_deployment_enabled": {
+            "type": "boolean"
+          },
+          "public_jobs": {
+            "type": "boolean"
+          },
+          "shared_with_groups": {
+            "type": "array",
+            "item": "sharedwithgroups"
+          },
+          "only_allow_merge_if_pipeline_succeeds": {
+            "type": "boolean"
+          },
+          "allow_merge_on_skipped_pipeline": {
+            "type": "boolean"
+          },
+          "only_allow_merge_if_all_discussions_are_resolved": {
+            "type": "boolean"
+          },
+          "remove_source_branch_after_merge": {
+            "type": "boolean"
+          },
+          "request_access_enabled": {
+            "type": "boolean"
+          },
+          "merge_method": {
+            "type": "string"
+          },
+          "auto_devops_enabled": {
+            "type": "boolean"
+          },
+          "suggestion_commit_message": {
+            "type": "string"
+          },
+          "auto_devops_deploy_strategy": {
+            "type": "string"
+          },
+          "repository_storage": {
+            "type": "string"
+          },
+          "marked_for_deletion_at": {
+            "type": "string"
+          },
+          "marked_for_deletion_on": {
+            "type": "string"
+          },
+          "approvals_before_merge": {
+            "type": "integer"
+          },
+          "mirror": {
+            "type": "boolean"
+          },
+          "mirror_user_id": {
+            "type": "integer"
+          },
+          "mirror_trigger_builds": {
+            "type": "boolean"
+          },
+          "only_mirror_protected_branches": {
+            "type": "boolean"
+          },
+          "mirror_overwrites_diverged_branches": {
+            "type": "boolean"
+          },
+          "external_authorization_classification_label": {
+            "type": "string"
+          },
+          "packages_enabled": {
+            "type": "boolean"
+          },
+          "service_desk_enabled": {
+            "type": "boolean"
+          },
+          "service_desk_address": {
+            "type": "string"
+          },
+          "autoclose_referenced_issues": {
+            "type": "boolean"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "ref_name": {
+          "type": "string",
+          "description": "The name of a repository branch, tag or revision range, or if not given the default branch"
+        },
+        "since": {
+          "type": "string",
+          "constraints": {
+            "format": "date-time"
+          },
+          "description": "Only commits after or on this date will be returned in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ"
+        },
+        "until": {
+          "type": "string",
+          "constraints": {
+            "format": "date-time"
+          },
+          "description": "Only commits before or on this date will be returned in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ"
+        },
+        "path": {
+          "type": "string",
+          "description": "The file path"
+        },
+        "all": {
+          "type": "boolean",
+          "description": "Retrieve every commit from the repository"
+        },
+        "with_stats": {
+          "type": "boolean",
+          "description": "Stats about each commit will be added to the response"
+        },
+        "first_parent": {
+          "type": "boolean",
+          "description": "Follow only the first parent commit upon seeing a merge commit"
+        },
+        "order": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "default",
+              "topo"
+            ]
+          },
+          "description": "List commits in order"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/projects/{id}/repository/commits": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "branch": {
+          "type": "string",
+          "description": "Name of the branch to commit into. To create a new branch, also provide either start_branch or start_sha, and optionally start_project"
+        },
+        "commit_message": {
+          "type": "string",
+          "description": "Commit message"
+        },
+        "start_branch": {
+          "type": "string",
+          "description": "Name of the branch to start the new branch from"
+        },
+        "start_sha": {
+          "type": "string",
+          "description": "SHA of the commit to start the new branch from"
+        },
+        "start_project": {
+          "type": "string",
+          "description": "The project ID or URL-encoded path of the project to start the new branch from. Defaults to the value of id."
+        },
+        "author_email": {
+          "type": "string",
+          "description": "Author email for commit"
+        },
+        "author_name": {
+          "type": "string",
+          "description": "Author name for commit"
+        },
+        "stats": {
+          "type": "boolean",
+          "description": "Include commit stats"
+        },
+        "force": {
+          "type": "boolean",
+          "description": "When true overwrites the target branch with a new commit based on the start_branch or start_sha"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "201": {
+          "author_email": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "authored_date": {
+            "type": "string"
+          },
+          "committed_date": {
+            "type": "string"
+          },
+          "committer_email": {
+            "type": "string"
+          },
+          "committer_name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "parent_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "short_id": {
+            "type": "string"
+          },
+          "stats": {},
+          "last_pipeline": {},
+          "status": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "201": {
+          "author_email": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "authored_date": {
+            "type": "string"
+          },
+          "committed_date": {
+            "type": "string"
+          },
+          "committer_email": {
+            "type": "string"
+          },
+          "committer_name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "parent_ids": {
+            "type": "array"
+          },
+          "short_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits/{sha}": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit hash or name of a repository branch or tag"
+        },
+        "stats": {
+          "type": "boolean",
+          "description": "Include commit stats"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "author_email": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "authored_date": {
+            "type": "string"
+          },
+          "committed_date": {
+            "type": "string"
+          },
+          "committer_email": {
+            "type": "string"
+          },
+          "committer_name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "parent_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "short_id": {
+            "type": "string"
+          },
+          "stats": {},
+          "last_pipeline": {},
+          "status": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "author_email": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "authored_date": {
+            "type": "string"
+          },
+          "committed_date": {
+            "type": "string"
+          },
+          "committer_email": {
+            "type": "string"
+          },
+          "committer_name": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "parent_ids": {
+            "type": "array"
+          },
+          "short_id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits/{sha}/refs": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit hash or name of a repository branch or tag"
+        },
+        "type": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "branch",
+              "tag",
+              "all"
+            ]
+          },
+          "description": "The scope of commits"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/projects/{id}/repository/commits/{sha}/cherry_pick": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit hash"
+        },
+        "dry_run": {
+          "type": "boolean",
+          "description": "Does not commit any changes"
+        }
+      },
+      "request_schema_constraints": {
+        "application/x-www-form-urlencoded": {
+          "branch": {
+            "type": "string",
+            "description": "The name of the branch"
+          }
+        }
+      },
+      "response_params": {
+        "201": {
+          "authored_date": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "committer_email": {
+            "type": "string"
+          },
+          "committer_name": {
+            "type": "string"
+          },
+          "committer_date": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "short_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "parent_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "201": {
+          "authored_date": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "committer_email": {
+            "type": "string"
+          },
+          "committer_name": {
+            "type": "string"
+          },
+          "committer_date": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "short_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "parent_ids": {
+            "type": "array"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/projects/{id}/repository/commits/{sha}/revert": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "Commit SHA to revert"
+        },
+        "dry_run": {
+          "type": "boolean",
+          "description": "Does not commit any changes"
+        }
+      },
+      "request_schema_constraints": {
+        "application/x-www-form-urlencoded": {
+          "branch": {
+            "type": "string",
+            "description": "Target branch name"
+          }
+        }
+      },
+      "response_params": {
+        "201": {
+          "authored_date": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "committer_email": {
+            "type": "string"
+          },
+          "committer_name": {
+            "type": "string"
+          },
+          "committer_date": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "short_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "parent_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "201": {
+          "authored_date": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "committer_email": {
+            "type": "string"
+          },
+          "committer_name": {
+            "type": "string"
+          },
+          "committer_date": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "short_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "parent_ids": {
+            "type": "array"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits/{sha}/diff": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit hash or name of a repository branch or tag"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits/{sha}/comments": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit hash or name of a repository branch or tag"
+        }
+      },
+      "request_schema_constraints": {
+        "application/x-www-form-urlencoded": {
+          "note": {
+            "type": "string",
+            "description": "The text of the comment"
+          },
+          "path": {
+            "type": "string",
+            "description": "The file path relative to the repository"
+          },
+          "line": {
+            "type": "integer",
+            "description": "The line number where the comment should be placed",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "line_type": {
+            "type": "string",
+            "description": "The line type.",
+            "constraints": {
+              "enum": [
+                "new",
+                "old"
+              ]
+            }
+          }
+        }
+      },
+      "response_params": {
+        "201": {
+          "author": {},
+          "created_at": {
+            "type": "string"
+          },
+          "line_type": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "line": {
+            "type": "integer"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "201": {
+          "created_at": {
+            "type": "string"
+          },
+          "line_type": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "line": {
+            "type": "integer"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits/{sha}/discussions": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit hash or name of a repository branch or tag"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits/{sha}/statuses": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit hash or name of a repository branch or tag"
+        },
+        "ref": {
+          "type": "string",
+          "description": "The name of a repository branch or tag or, if not given, the default branch"
+        },
+        "stage": {
+          "type": "string",
+          "constraints": {
+            "enum": [
+              "build",
+              "test",
+              "deploy"
+            ]
+          },
+          "description": "Filter by build stage, e.g., test"
+        },
+        "name": {
+          "type": "string",
+          "description": "Filter by job name, e.g., bundler:audit"
+        },
+        "all": {
+          "type": "boolean",
+          "description": "Return all statuses, not only the latest ones"
+        },
+        "page": {
+          "type": "integer",
+          "constraints": {
+            "format": "int32"
+          },
+          "description": "Current page number"
+        },
+        "per_page": {
+          "type": "integer",
+          "constraints": {
+            "format": "int32"
+          },
+          "description": "Number of items per page"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/projects/{id}/statuses/{sha}": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit SHA"
+        }
+      },
+      "request_schema_constraints": {
+        "application/x-www-form-urlencoded": {
+          "state": {
+            "type": "string",
+            "description": "The state of the status",
+            "constraints": {
+              "enum": [
+                "pending",
+                "running",
+                "success",
+                "failed",
+                "canceled"
+              ]
+            }
+          },
+          "ref": {
+            "type": "string",
+            "description": "The ref (branch or tag) to which the status refers"
+          },
+          "target_url": {
+            "type": "string",
+            "description": "The target URL to associate with this status"
+          },
+          "description": {
+            "type": "string",
+            "description": "A short description of the status"
+          },
+          "name": {
+            "type": "string",
+            "description": "The label to differentiate this status from the status of other systems"
+          },
+          "context": {
+            "type": "string",
+            "description": "The label to differentiate this status from the status of other systems"
+          },
+          "coverage": {
+            "type": "number",
+            "description": "The total code coverage"
+          },
+          "pipeline_id": {
+            "type": "integer",
+            "description": "The ID of the pipeline to set status. Use in case of several pipeline on same SHA.",
+            "constraints": {
+              "format": "int32"
+            }
+          }
+        }
+      },
+      "response_params": {
+        "201": {
+          "allow_failure": {
+            "type": "boolean"
+          },
+          "author": {},
+          "created_at": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "finished_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          },
+          "started_at": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "target_url": {
+            "type": "string"
+          },
+          "coverage": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "201": {
+          "allow_failure": {
+            "type": "boolean"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "finished_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          },
+          "started_at": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "target_url": {
+            "type": "string"
+          },
+          "coverage": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits/{sha}/merge_requests": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit SHA"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/projects/{id}/repository/commits/{sha}/signature": {
+      "request_params": {
+        "id": {
+          "type": "string",
+          "description": "The ID or URL-encoded path of the project owned by the authenticated user"
+        },
+        "sha": {
+          "type": "string",
+          "description": "The commit SHA"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "signature_type": {
+            "type": "string"
+          },
+          "verification_status": {
+            "type": "string"
+          },
+          "gpg_key_id": {
+            "type": "integer"
+          },
+          "gpg_key_primary_keyid": {
+            "type": "string"
+          },
+          "gpg_key_user_name": {
+            "type": "string"
+          },
+          "gpg_key_user_email": {
+            "type": "string"
+          },
+          "gpg_key_subkey_id": {
+            "type": "string"
+          },
+          "commit_source": {
+            "type": "string"
+          },
+          "x509_certificate": {}
+        },
+        "default": {
+          "code": {
+            "type": "integer",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "signature_type": {
+            "type": "string"
+          },
+          "verification_status": {
+            "type": "string"
+          },
+          "gpg_key_id": {
+            "type": "integer"
+          },
+          "gpg_key_primary_keyid": {
+            "type": "string"
+          },
+          "gpg_key_user_name": {
+            "type": "string"
+          },
+          "gpg_key_user_email": {
+            "type": "string"
+          },
+          "gpg_key_subkey_id": {
+            "type": "string"
+          },
+          "commit_source": {
+            "type": "string"
+          }
+        },
+        "default": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "edge_results": [
+    [
+      "GET /projects",
+      "POST /projects"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits/{sha}"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits/{sha}/refs"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits/{sha}/diff"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits/{sha}/comments"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "POST /projects",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "POST /projects/{id}/repository/commits"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/refs"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "POST /projects/{id}/repository/commits/{sha}/revert"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/diff"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/comments"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "GET /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/refs"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "POST /projects/{id}/repository/commits/{sha}/revert"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/diff"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/comments"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "POST /projects/{id}/repository/commits",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/refs"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "POST /projects/{id}/repository/commits/{sha}/revert"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/diff"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/comments"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "POST /projects/{id}/repository/commits/{sha}/revert"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "GET /projects/{id}/repository/commits/{sha}/diff"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "GET /projects/{id}/repository/commits/{sha}/comments"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/refs",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick",
+      "POST /projects/{id}/repository/commits/{sha}/revert"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick",
+      "GET /projects/{id}/repository/commits/{sha}/diff"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick",
+      "GET /projects/{id}/repository/commits/{sha}/comments"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/cherry_pick",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/revert",
+      "GET /projects/{id}/repository/commits/{sha}/diff"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/revert",
+      "GET /projects/{id}/repository/commits/{sha}/comments"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/revert",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/revert",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/revert",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/revert",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "POST /projects/{id}/repository/commits/{sha}/revert",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/diff",
+      "GET /projects/{id}/repository/commits/{sha}/comments"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/diff",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/diff",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/diff",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/diff",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/diff",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/comments",
+      "GET /projects/{id}/repository/commits/{sha}/discussions"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/comments",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/comments",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/comments",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/comments",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/discussions",
+      "GET /projects/{id}/repository/commits/{sha}/statuses"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/discussions",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/discussions",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/discussions",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/statuses",
+      "POST /projects/{id}/statuses/{sha}"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/statuses",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/statuses",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "POST /projects/{id}/statuses/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests"
+    ],
+    [
+      "POST /projects/{id}/statuses/{sha}",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ],
+    [
+      "GET /projects/{id}/repository/commits/{sha}/merge_requests",
+      "GET /projects/{id}/repository/commits/{sha}/signature"
+    ]
+  ]
+}

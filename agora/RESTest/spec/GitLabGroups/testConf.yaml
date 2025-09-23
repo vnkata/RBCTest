@@ -1,0 +1,1983 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: GitlabProject/headers.json
+  oauthPath: null
+testConfiguration:
+  operations:
+    # - testPath: /groups
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: per_page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: skip_groups
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1300
+    #               objectValues: null
+    #           valid: true
+    #     - name: all_available
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: search
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: order_by
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - name
+    #                 - path
+    #                 - id
+    #               objectValues: null
+    #           valid: true
+    #     - name: sort
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - desc
+    #                 - asc
+    #               objectValues: null
+    #           valid: true
+    #     - name: statistics
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_custom_attributes
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: owned
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: min_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 0
+    #                 - 10
+    #                 - 20
+    #                 - 30
+    #                 - 40
+    #                 - 50
+    #               objectValues: null
+    #           valid: true
+    #     - name: top_level_only
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: /groups
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: visibility
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - private
+    #                 - internal
+    #                 - public
+    #               objectValues: null
+    #           valid: true
+    #     - name: share_with_group_lock
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: require_two_factor_authentication
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: two_factor_grace_period
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: project_creation_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - noone
+    #                 - maintainer
+    #                 - developer
+    #               objectValues: null
+    #           valid: true
+    #     - name: auto_devops_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: subgroup_creation_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - owner
+    #                 - maintainer
+    #               objectValues: null
+    #           valid: true
+    #     - name: emails_disabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: mentions_disabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: lfs_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: request_access_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: parent_id
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 200
+    #               objectValues: null
+    #           valid: true
+    #     - name: default_branch_protection
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 0
+    #                 - 1
+    #                 - 2
+    #               objectValues: null
+    #           valid: true
+    #     - name: shared_runners_setting
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - enabled
+    #                 - disabled_with_override
+    #                 - disabled_and_unoverridable
+    #               objectValues: null
+    #           valid: true
+    #     - name: name
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: path
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: description
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: avatar
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - https://example.com/avatar.png
+    #                 - https://example.com/avatar.jpg
+    #                 - https://example.com/avatar.gif
+    #                 - https://example.com/avatar.svg
+    #                 - https://example.com/avatar.bmp
+    #                 - https://example.com/avatars/avatar.png
+    #                 - https://assets.mycompany.com/images/group_logo.jpg
+    #                 - http://cdn.yourdomain.net/profile_pics/user123.gif
+    #                 - https://gitlab.com/uploads/-/system/group/avatar/123/team_icon.svg
+    #                 - https://storage.cloud.google.com/my-bucket/my_avatar.jpeg
+    #                 - https://picsum.photos/200/300.webp
+    #                 - https://images.gitlab.com/gitlab_group_avatar.png
+    #                 - http://localhost:8080/temp/user_image.bmp
+    #                 - https://s3.amazonaws.com/your-bucket/company_logo.tiff
+    #                 - https://www.flaticon.com/icons/png/512/123/123456.ico
+    #                 - https://mycdn.net/new_avatar_2023.png
+    #                 - https://files.example.org/project_thumbnail.jpg
+    #                 - https://img.yourhost.com/team_avatar.gif
+    #                 - https://gravatar.com/avatar/somehash?d=retro
+    #                 - https://example.com/custom_avatars/custom_avatar.jpeg
+    #                 - https://profile.example.net/images/profile.png
+    #                 - https://assets.myservice.co/square_logo.jpg
+    #                 - https://gitlab.com/uploads/-/system/group/avatar/987/group_profile.webp
+    #                 - https://cdn.example.org/admin_avatar.png
+    #                 - https://api.example.com/v1/files/image_file.jpg
+    #               objectValues: null
+    #         # - type: RandomEnglishWord
+    #         #   genParameters:
+    #         #     - name: maxWords
+    #         #       values:
+    #         #         - 1
+    #         #       objectValues: null
+    #         #   valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1300
+    #               objectValues: null
+    #           valid: true
+    #     - name: with_custom_attributes
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_projects
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}"
+    #   operationId: <SET OPERATION ID>
+    #   method: put
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: name
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 5
+    #               objectValues: null
+    #           valid: true
+    #     - name: path
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: description
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 20
+    #               objectValues: null
+    #           valid: true
+    #     - name: share_with_group_lock
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: visibility
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - private
+    #                 - internal
+    #                 - public
+    #               objectValues: null
+    #           valid: true
+    #     - name: require_two_factor_authentication
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: two_factor_grace_period
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: project_creation_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - noone
+    #                 - maintainer
+    #                 - developer
+    #               objectValues: null
+    #           valid: true
+    #     - name: auto_devops_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: subgroup_creation_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - owner
+    #                 - maintainer
+    #               objectValues: null
+    #           valid: true
+    #     - name: emails_disabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: mentions_disabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: lfs_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: request_access_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: default_branch_protection
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 0
+    #                 - 1
+    #                 - 2
+    #           valid: true
+    #     - name: avatar
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - "src/test/resources/images/beautiful.jpg"
+    #                 - "src/test/resources/images/chart01.png"
+    #                 - "src/test/resources/images/chartdemo.png"
+    #                 - "src/test/resources/images/colors.jpg"
+    #                 - "src/test/resources/images/directors.jpg"
+    #                 - "src/test/resources/images/employee.png"
+    #                 - "src/test/resources/images/gallary.png"
+    #                 - "src/test/resources/images/org.jpg"
+    #                 - "src/test/resources/images/personalized.jpg"
+    #                 - "src/test/resources/images/run.jpg"
+    #                 - "src/test/resources/images/sales.jpg"
+    #                 - "src/test/resources/images/soil.jpg"
+    #                 - "src/test/resources/images/trend.png"
+    #               objectValues: null
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}"
+    #   operationId: <SET OPERATION ID>
+    #   method: delete
+    #   testParameters:
+    #   - name: id
+    #     in: path
+    #     weight: null
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/share"
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/hook_groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: group_id
+    #       in: query
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: group_access
+    #       in: query
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - 10
+    #                 - 20
+    #                 - 30
+    #                 - 40
+    #                 - 50
+    #               objectValues: null
+    #           valid: true
+    #     - name: expires_at
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomDate
+    #           genParameters:
+    #             - name: format
+    #               values:
+    #                 - yyyy-MM-dd
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/share/{group_id}"
+    #   operationId: <SET OPERATION ID>
+    #   method: delete
+    #   testParameters:
+    #   - name: id
+    #     in: path
+    #     weight: null
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   - name: group_id
+    #     in: path
+    #     weight: null
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   expectedResponse: 200
+
+    - testPath: "/groups/{id}/subgroups"
+      operationId: <SET OPERATION ID>
+      method: get
+      testParameters:
+        - name: page
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomNumber
+              genParameters:
+                - name: type
+                  values:
+                    - integer
+                  objectValues: null
+                - name: min
+                  values:
+                    - 1
+                  objectValues: null
+                - name: max
+                  values:
+                    - 100
+                  objectValues: null
+              valid: true
+        - name: per_page
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomNumber
+              genParameters:
+                - name: type
+                  values:
+                    - integer
+                  objectValues: null
+                - name: min
+                  values:
+                    - 1
+                  objectValues: null
+                - name: max
+                  values:
+                    - 100
+                  objectValues: null
+              valid: true
+        - name: id
+          in: path
+          weight: null
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/groups.csv
+                  objectValues: null
+              valid: true
+        - name: skip_groups
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/groups.csv
+                  objectValues: null
+              valid: true
+        - name: all_available
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomBoolean
+              genParameters: []
+              valid: true
+        - name: search
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomEnglishWord
+              genParameters:
+                - name: maxWords
+                  values:
+                    - 1
+                  objectValues: null
+              valid: true
+        - name: order_by
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: values
+                  values:
+                    - name
+                    - path
+                    - id
+                  objectValues: null
+              valid: true
+        - name: sort
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: values
+                  values:
+                    - asc
+                    - desc
+                  objectValues: null
+              valid: true
+        - name: statistics
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomBoolean
+              genParameters: []
+              valid: true
+        - name: with_custom_attributes
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomBoolean
+              genParameters: []
+              valid: true
+        - name: owned
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomBoolean
+              genParameters: []
+              valid: true
+        - name: min_access_level
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: values
+                  values:
+                    # - 0
+                    - 10
+                    - 20
+                    - 30
+                    - 40
+                    - 50
+                  objectValues: null
+              valid: true
+      expectedResponse: 200
+
+    # - testPath: "/groups/{id}/hooks"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1500
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/hooks"
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: url
+    #       in: query
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - https://api.example.com/webhook/receive
+    #                 - http://localhost:4000/callback
+    #                 - https://yourdomain.net/v1/hooks/data
+    #                 - https://www.google.com/calendar/event
+    #                 - http://192.168.0.1:8080/hook
+    #                 - https://subdomain.example.co/api/webhook_handler
+    #                 - https://my-app.cloud/notifications
+    #                 - http://dev.server.com/events
+    #                 - https://secure.service.io/hook/trigger
+    #                 - https://api.mycompany.com/v2/integrations
+    #                 - http://internal-tool.com/webhook/processor
+    #                 - https://example.com/path/to/specific/receiver
+    #                 - https://example.com
+    #                 - http://anotherdomain.org/
+    #                 - https://example.com/a/b/c
+    #                 - https://example.com/query?param=value&id=123
+    #                 - https://example.com/path%20with%20spaces/
+    #                 - https://xn--qcka1pmc.com/hook
+    #                 - https://user:pass@example.com/private/hook
+    #                 - https://api.callback.com/hook/send
+    #                 - https://webhook.site/12345abcde
+    #                 - https://automation.app/api/v2/webhook
+    #                 - https://service.com/api/callback
+    #                 - https://example.org/listener
+    #                 - https://notify-backend.com/trigger/event
+    #                 - https://myapi.io/callbacks/receive
+    #                 - https://gateway.example/api/v1/hooks
+    #                 - https://hook.integrations.dev/alert
+    #                 - https://hooks.exampleapp.com/report
+    #                 - https://client-app.io/onSuccess
+    #                 - https://server-node.net/api/hook
+    #                 - https://tools.webhook.store/post
+    #                 - https://manage.notifyapp.com/receive
+    #                 - https://backend.netlify.app/hook
+    #                 - https://secure.callbackzone.io/webhook
+    #                 - https://webhooks.buzz/accept
+    #                 - https://notify-api.techlist.co/receive
+    #                 - https://stream.listener.dev/webhook
+    #                 - https://api.push.io/hooks
+    #                 - https://alertmanager.io/notify/hook
+    #                 - https://demo-endpoint.fun/callbacks
+    #                 - https://client.connect/api/hook
+    #                 - https://automation.runner/api/post
+    #                 - https://service.domain/hook
+    #                 - https://webhook.example.dev/process
+    #                 - https://trigger-app.io/eventhook
+    #                 - https://service.test/webhook
+    #                 - https://customendpoint.cloud/callback
+    #                 - https://functions.api.com/hook
+    #                 - https://example.run/hooks
+    #                 - https://prod.listener.io/api/webhook
+    #                 - https://notifyme.services/hook
+    #                 - https://response.catcher.dev/on-event
+    #                 - https://thirdparty-hooks.com/recv
+    #                 - https://callout.receiver.io/incoming
+    #                 - https://notification-hub/api/push
+    #                 - https://real-time.alerts.dev/hook
+    #                 - https://receive-endpoint.com/listen
+    #                 - https://pushme.app/hooks/in
+    #                 - https://hooks-api.customapp.io/payload
+    #               objectValues: null
+    #     - name: push_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: issues_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: confidential_issues_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: merge_requests_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: tag_push_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: note_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: confidential_note_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: job_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: pipeline_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: wiki_page_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: deployment_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: releases_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: enable_ssl_verification
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: token
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - abc123XYZ789
+    #                 - secret-token-001
+    #                 - tk_n9d8237kdg9slf
+    #                 - 0a1b2c3d4e5f6g7h
+    #                 - mySecureToken!
+    #                 - s3cr3tT0k3n$
+    #                 - authToken-2025
+    #                 - key_1029384756
+    #                 - passphrase9876
+    #                 - tok@en#Secure1
+    #                 - validationToken123
+    #                 - zxy987SecureKey
+    #                 - BearerTokenA1B2C3
+    #                 - hook-verify-6677
+    #                 - callbackAuthToken
+    #                 - jwt-token-encoded
+    #                 - secret456value321
+    #                 - token_key_valid_1
+    #                 - aBcD1234EfGh5678
+    #                 - xXx_Secur3Key_xXx
+    #                 - 0001-a1b2-c3d4
+    #                 - accessKeyXY_888
+    #                 - prodHookAuthToken
+    #                 - U77r9P02FzP25h7W
+    #                 - client_secret2025
+    #                 - WebHookValidate!
+    #                 - key_For_Callback
+    #                 - returN0responseKey
+    #                 - WebH00k_T0k3n
+    #                 - SecureAccessGranted
+    #                 - KEY-999-XYZ-KEY
+    #                 - tok3n_validation_88
+    #                 - Secret_Validation_X
+    #                 - SuperSafeToken999
+    #                 - encryptedToken-555
+    #                 - NOTAPASSWORD456
+    #                 - Token~ForPayload
+    #                 - validate_me_now
+    #                 - qwertySecretKey
+    #                 - silentHandshake987
+    #                 - appl1cationHookKey
+    #                 - secure_response_ok
+    #                 - payloadVerify0000
+    #                 - QAZwsxEDC123token
+    #                 - hiddenKeyValid88
+    #                 - hookchain-access1
+    #                 - TokenValidation-Pass
+    #                 - trusted_secret_99
+    #                 - ACCESS-GRANT-000
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/hooks/{hook_id}"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: hook_id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/hook_id.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/hook_groups.csv
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/hooks/{hook_id}"
+    #   operationId: <SET OPERATION ID>
+    #   method: put
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/hook_groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: hook_id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/hook_id.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: url
+    #       in: query
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - https://api.example.com/webhook/receive
+    #                 - http://localhost:4000/callback
+    #                 - https://yourdomain.net/v1/hooks/data
+    #                 - https://www.google.com/calendar/event
+    #                 - http://192.168.0.1:8080/hook
+    #                 - https://subdomain.example.co/api/webhook_handler
+    #                 - https://my-app.cloud/notifications
+    #                 - http://dev.server.com/events
+    #                 - https://secure.service.io/hook/trigger
+    #                 - https://api.mycompany.com/v2/integrations
+    #                 - http://internal-tool.com/webhook/processor
+    #                 - https://example.com/path/to/specific/receiver
+    #                 - https://example.com
+    #                 - http://anotherdomain.org/
+    #                 - https://example.com/a/b/c
+    #                 - https://example.com/query?param=value&id=123
+    #                 - https://example.com/path%20with%20spaces/
+    #                 - https://xn--qcka1pmc.com/hook
+    #                 - https://user:pass@example.com/private/hook
+    #               objectValues: null
+    #     - name: push_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: issues_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: confidential_issues_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: merge_requests_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: tag_push_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: note_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: confidential_note_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: job_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: pipeline_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: wiki_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: deployment_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: releases_events
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: enable_ssl_verification
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: token
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - abc123XYZ789
+    #                 - secret-token-001
+    #                 - tk_n9d8237kdg9slf
+    #                 - 0a1b2c3d4e5f6g7h
+    #                 - mySecureToken!
+    #                 - s3cr3tT0k3n$
+    #                 - authToken-2025
+    #                 - key_1029384756
+    #                 - passphrase9876
+    #                 - tok@en#Secure1
+    #                 - validationToken123
+    #                 - zxy987SecureKey
+    #                 - BearerTokenA1B2C3
+    #                 - hook-verify-6677
+    #                 - callbackAuthToken
+    #                 - jwt-token-encoded
+    #                 - secret456value321
+    #                 - token_key_valid_1
+    #                 - aBcD1234EfGh5678
+    #                 - xXx_Secur3Key_xXx
+    #                 - 0001-a1b2-c3d4
+    #                 - accessKeyXY_888
+    #                 - prodHookAuthToken
+    #                 - U77r9P02FzP25h7W
+    #                 - client_secret2025
+    #                 - WebHookValidate!
+    #                 - key_For_Callback
+    #                 - returN0responseKey
+    #                 - WebH00k_T0k3n
+    #                 - SecureAccessGranted
+    #                 - KEY-999-XYZ-KEY
+    #                 - tok3n_validation_88
+    #                 - Secret_Validation_X
+    #                 - SuperSafeToken999
+    #                 - encryptedToken-555
+    #                 - NOTAPASSWORD456
+    #                 - Token~ForPayload
+    #                 - validate_me_now
+    #                 - qwertySecretKey
+    #                 - silentHandshake987
+    #                 - appl1cationHookKey
+    #                 - secure_response_ok
+    #                 - payloadVerify0000
+    #                 - QAZwsxEDC123token
+    #                 - hiddenKeyValid88
+    #                 - hookchain-access1
+    #                 - TokenValidation-Pass
+    #                 - trusted_secret_99
+    #                 - ACCESS-GRANT-000
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/hooks/{hook_id}"
+    #   operationId: <SET OPERATION ID>
+    #   method: delete
+    #   testParameters:
+    #   - name: id
+    #     in: path
+    #     weight: null
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   - name: hook_id
+    #     in: path
+    #     weight: null
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/descendant_groups"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: per_page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: skip_groups
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: all_available
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: search
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: order_by
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - name
+    #                 - path
+    #                 - id
+    #               objectValues: null
+    #           valid: true
+    #     - name: sort
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - asc
+    #                 - desc
+    #               objectValues: null
+    #           valid: true
+    #     - name: statistics
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_custom_attributes
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: owned
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: min_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 # - 0
+    #                 - 10
+    #                 - 20
+    #                 - 30
+    #                 - 40
+    #                 - 50
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/projects"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: per_page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: archived
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: visibility
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - public
+    #                 - internal
+    #                 - private
+    #               objectValues: null
+    #           valid: true
+    #     - name: order_by
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - id
+    #                 - name
+    #                 - path
+    #                 - created_at
+    #                 - updated_at
+    #                 - similarity
+    #                 - last_activity_at
+    #               objectValues: null
+    #           valid: true
+    #     - name: sort
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - asc
+    #                 - desc
+    #               objectValues: null
+    #           valid: true
+    #     - name: search
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: simple
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: owned
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: starred
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_issues_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_merge_requests_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_shared
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: include_subgroups
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: min_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 # - 0
+    #                 - 10
+    #                 - 20
+    #                 - 30
+    #                 - 40
+    #                 - 50
+    #               objectValues: null
+    #           valid: true
+    #     - name: with_custom_attributes
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/projects/{project_id}"
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1500
+    #               objectValues: null
+    #           valid: true
+    #     - name: project_id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 1300
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/groups/{id}/projects/shared"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: per_page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: csv
+    #               values:
+    #                 - src/test/resources/GitLabBranch/groups.csv
+    #               objectValues: null
+    #           valid: true
+    #     - name: archived
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: visibility
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - public
+    #                 - internal
+    #                 - private
+    #               objectValues: null
+    #           valid: true
+    #     - name: order_by
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - id
+    #                 - name
+    #                 - path
+    #                 - created_at
+    #                 - updated_at
+    #                 - last_activity_at
+    #               objectValues: null
+    #           valid: true
+    #     - name: sort
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - asc
+    #                 - desc
+    #               objectValues: null
+    #           valid: true
+    #     - name: search
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: simple
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: starred
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_issues_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_merge_requests_enabled
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: min_access_level
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 # - 0
+    #                 - 10
+    #                 - 20
+    #                 - 30
+    #                 - 40
+    #                 - 50
+    #               objectValues: null
+    #           valid: true
+    #     - name: with_custom_attributes
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #   expectedResponse: 200

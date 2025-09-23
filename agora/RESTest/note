@@ -1,0 +1,5 @@
+java -jar ./target/restest-cli.jar -o spec/GitLabProject/spec.json
+java -jar ./target/restest-cli.jar -g -e spec/GitLabProject/gitlab_project.properties
+
+
+java -jar ./target/restest-cli.jar -c spec/GitLab Branch/openapi.json

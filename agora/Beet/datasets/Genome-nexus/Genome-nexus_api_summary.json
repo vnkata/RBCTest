@@ -1,0 +1,1851 @@
+{
+  "_metadata": {
+    "operation_count": 23,
+    "extracted_constraints_count": 36
+  },
+  "constraints_of_fields": {
+    "fields": {
+      "type": "array"
+    },
+    "inline_response_object": {
+      "colocatedVariants": {
+        "type": "array",
+        "item": "colocated_variant"
+      },
+      "end": {
+        "type": "integer",
+        "description": "End position",
+        "constraints": {
+          "format": "int32"
+        }
+      },
+      "intergenic_consequences": {
+        "type": "array",
+        "item": "intergenic_consequences"
+      },
+      "start": {
+        "type": "integer",
+        "description": "Start position",
+        "constraints": {
+          "format": "int32"
+        }
+      },
+      "strand": {
+        "type": "integer",
+        "description": "Strand (negative or positive)",
+        "constraints": {
+          "format": "int32"
+        }
+      },
+      "transcript_consequences": {
+        "type": "array",
+        "item": "transcript_consequence"
+      }
+    },
+    "colocatedVariants": {
+      "type": "array",
+      "item": "colocated_variant"
+    },
+    "end": {
+      "type": "integer",
+      "description": "End position",
+      "constraints": {
+        "format": "int32"
+      }
+    },
+    "intergenic_consequences": {
+      "type": "array",
+      "item": "intergenic_consequences"
+    },
+    "start": {
+      "type": "integer",
+      "description": "Start position",
+      "constraints": {
+        "format": "int32"
+      }
+    },
+    "strand": {
+      "type": "integer",
+      "description": "Strand (negative or positive)",
+      "constraints": {
+        "format": "int32"
+      }
+    },
+    "transcript_consequences": {
+      "type": "array",
+      "item": "transcript_consequence"
+    },
+    "synonyms": {
+      "type": "array"
+    },
+    "previousSymbols": {
+      "type": "array"
+    },
+    "proteinLength": {
+      "type": "integer",
+      "description": "Length of protein",
+      "constraints": {
+        "format": "int32"
+      }
+    },
+    "pfamDomains": {
+      "type": "array",
+      "item": "pfam_domain_range"
+    },
+    "hugoSymbols": {
+      "type": "array"
+    },
+    "exons": {
+      "type": "array",
+      "item": "exon"
+    },
+    "utrs": {
+      "type": "array",
+      "item": "untranslated_region"
+    },
+    "geneIds": {
+      "type": "array"
+    },
+    "proteinIds": {
+      "type": "array"
+    },
+    "transcriptIds": {
+      "type": "array"
+    },
+    "annotationSourcesInfo": {
+      "type": "array",
+      "item": "source_version_info"
+    }
+  },
+  "detail_endpoint_schema": {
+    "post-/annotation": {
+      "request_params": {
+        "isoformOverrideSource": {
+          "type": "string",
+          "description": "Isoform override source. For example uniprot"
+        },
+        "token": {
+          "type": "string",
+          "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+        },
+        "fields": {
+          "type": "array",
+          "constraints": {
+            "enum": [
+              "annotation_summary",
+              "clinvar",
+              "hotspots",
+              "mutation_assessor",
+              "my_variant_info",
+              "nucleotide_context",
+              "oncokb",
+              "ptms",
+              "signal"
+            ]
+          },
+          "items": {
+            "type": "string"
+          },
+          "description": "Comma separated list of fields to include in the annotation (case-sensitive!). Defaults to \"annotation_summary\" if no value passed. Valid values: {annotation_summary, clinvar, hotspots, mutation_assessor, my_variant_info, nucleotide_context, oncokb, ptms, signal}"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "id",
+                "intergenic_consequences",
+                "originalVariantQuery",
+                "variant"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "post-/annotation/dbsnp/": {
+      "request_params": {
+        "isoformOverrideSource": {
+          "type": "string",
+          "description": "Isoform override source. For example uniprot"
+        },
+        "token": {
+          "type": "string",
+          "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+        },
+        "fields": {
+          "type": "array",
+          "constraints": {
+            "enum": [
+              "annotation_summary",
+              "clinvar",
+              "hotspots",
+              "mutation_assessor",
+              "my_variant_info",
+              "nucleotide_context",
+              "oncokb",
+              "ptms",
+              "signal"
+            ]
+          },
+          "items": {
+            "type": "string"
+          },
+          "description": "Comma separated list of fields to include in the annotation (case-sensitive!). Defaults to \"annotation_summary\" if no value passed. Valid values: {annotation_summary, clinvar, hotspots, mutation_assessor, my_variant_info, nucleotide_context, oncokb, ptms, signal}"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "id",
+                "intergenic_consequences",
+                "originalVariantQuery",
+                "variant"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/annotation/dbsnp/{variantId}": {
+      "request_params": {
+        "variantId": {
+          "type": "string",
+          "description": "dbSNP id. For example rs116035550."
+        },
+        "isoformOverrideSource": {
+          "type": "string",
+          "description": "Isoform override source. For example uniprot"
+        },
+        "token": {
+          "type": "string",
+          "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+        },
+        "fields": {
+          "type": "array",
+          "constraints": {
+            "enum": [
+              "annotation_summary",
+              "clinvar",
+              "hotspots",
+              "mutation_assessor",
+              "my_variant_info",
+              "nucleotide_context",
+              "oncokb",
+              "ptms",
+              "signal"
+            ]
+          },
+          "items": {
+            "type": "string"
+          },
+          "description": "Comma separated list of fields to include in the annotation (case-sensitive!). Defaults to \"annotation_summary\" if no value passed. Valid values: {annotation_summary, clinvar, hotspots, mutation_assessor, my_variant_info, nucleotide_context, oncokb, ptms, signal}"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "allele_string": {
+            "type": "string",
+            "description": "Allele string (e.g: A/T)"
+          },
+          "annotationJSON": {
+            "type": "string",
+            "description": "Annotation data as JSON string"
+          },
+          "annotation_summary": {},
+          "assembly_name": {
+            "type": "string",
+            "description": "NCBI build number"
+          },
+          "clinvar": {},
+          "colocatedVariants": {
+            "type": "array",
+            "item": "colocatedvariant"
+          },
+          "end": {
+            "type": "integer",
+            "description": "End position",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "genomicLocationExplanation": {
+            "type": "string"
+          },
+          "hgvsg": {
+            "type": "string"
+          },
+          "hotspots": {},
+          "id": {
+            "type": "string",
+            "description": "Variant id"
+          },
+          "intergenic_consequences": {
+            "type": "array",
+            "description": "intergenicConsequences",
+            "item": "intergenicconsequences"
+          },
+          "most_severe_consequence": {
+            "type": "string",
+            "description": "Most severe consequence"
+          },
+          "mutation_assessor": {},
+          "my_variant_info": {},
+          "nucleotide_context": {},
+          "oncokb": {},
+          "originalVariantQuery": {
+            "type": "string",
+            "description": "Original variant query"
+          },
+          "ptms": {},
+          "seq_region_name": {
+            "type": "string",
+            "description": "Chromosome"
+          },
+          "signalAnnotation": {},
+          "start": {
+            "type": "integer",
+            "description": "Start position",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "strand": {
+            "type": "integer",
+            "description": "Strand (negative or positive)",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "successfully_annotated": {
+            "type": "boolean",
+            "description": "Status flag indicating whether variant was succesfully annotated"
+          },
+          "transcript_consequences": {
+            "type": "array",
+            "description": "List of transcripts",
+            "item": "transcriptconsequence"
+          },
+          "variant": {
+            "type": "string",
+            "description": "Variant key"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "allele_string": {
+            "type": "string"
+          },
+          "annotationJSON": {
+            "type": "string"
+          },
+          "assembly_name": {
+            "type": "string"
+          },
+          "colocatedVariants": {
+            "type": "array",
+            "item": "colocatedvariant"
+          },
+          "end": {
+            "type": "integer"
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "genomicLocationExplanation": {
+            "type": "string"
+          },
+          "hgvsg": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "intergenic_consequences": {
+            "type": "array",
+            "item": "intergenicconsequences"
+          },
+          "most_severe_consequence": {
+            "type": "string"
+          },
+          "originalVariantQuery": {
+            "type": "string"
+          },
+          "seq_region_name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "strand": {
+            "type": "integer"
+          },
+          "successfully_annotated": {
+            "type": "boolean"
+          },
+          "transcript_consequences": {
+            "type": "array",
+            "item": "transcriptconsequence"
+          },
+          "variant": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/annotation/genomic": {
+      "request_params": {
+        "isoformOverrideSource": {
+          "type": "string",
+          "description": "Isoform override source. For example uniprot"
+        },
+        "token": {
+          "type": "string",
+          "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+        },
+        "fields": {
+          "type": "array",
+          "constraints": {
+            "enum": [
+              "annotation_summary",
+              "clinvar",
+              "hotspots",
+              "mutation_assessor",
+              "my_variant_info",
+              "nucleotide_context",
+              "oncokb",
+              "ptms",
+              "signal"
+            ]
+          },
+          "items": {
+            "type": "string"
+          },
+          "description": "Comma separated list of fields to include in the annotation (case-sensitive!). Defaults to \"annotation_summary\" if no value passed. Valid values: {annotation_summary, clinvar, hotspots, mutation_assessor, my_variant_info, nucleotide_context, oncokb, ptms, signal}"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "id",
+                "intergenic_consequences",
+                "originalVariantQuery",
+                "variant"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/annotation/genomic/{genomicLocation}": {
+      "request_params": {
+        "genomicLocation": {
+          "type": "string",
+          "description": "A genomic location. For example 7,140453136,140453136,A,T"
+        },
+        "isoformOverrideSource": {
+          "type": "string",
+          "description": "Isoform override source. For example uniprot"
+        },
+        "token": {
+          "type": "string",
+          "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+        },
+        "fields": {
+          "type": "array",
+          "constraints": {
+            "enum": [
+              "annotation_summary",
+              "clinvar",
+              "hotspots",
+              "mutation_assessor",
+              "my_variant_info",
+              "nucleotide_context",
+              "oncokb",
+              "ptms",
+              "signal"
+            ]
+          },
+          "items": {
+            "type": "string"
+          },
+          "description": "Comma separated list of fields to include in the annotation (case-sensitive!). Defaults to \"annotation_summary\" if no value passed. Valid values: {annotation_summary, clinvar, hotspots, mutation_assessor, my_variant_info, nucleotide_context, oncokb, ptms, signal}"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "allele_string": {
+            "type": "string",
+            "description": "Allele string (e.g: A/T)"
+          },
+          "annotationJSON": {
+            "type": "string",
+            "description": "Annotation data as JSON string"
+          },
+          "annotation_summary": {},
+          "assembly_name": {
+            "type": "string",
+            "description": "NCBI build number"
+          },
+          "clinvar": {},
+          "colocatedVariants": {
+            "type": "array",
+            "item": "colocatedvariant"
+          },
+          "end": {
+            "type": "integer",
+            "description": "End position",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "genomicLocationExplanation": {
+            "type": "string"
+          },
+          "hgvsg": {
+            "type": "string"
+          },
+          "hotspots": {},
+          "id": {
+            "type": "string",
+            "description": "Variant id"
+          },
+          "intergenic_consequences": {
+            "type": "array",
+            "description": "intergenicConsequences",
+            "item": "intergenicconsequences"
+          },
+          "most_severe_consequence": {
+            "type": "string",
+            "description": "Most severe consequence"
+          },
+          "mutation_assessor": {},
+          "my_variant_info": {},
+          "nucleotide_context": {},
+          "oncokb": {},
+          "originalVariantQuery": {
+            "type": "string",
+            "description": "Original variant query"
+          },
+          "ptms": {},
+          "seq_region_name": {
+            "type": "string",
+            "description": "Chromosome"
+          },
+          "signalAnnotation": {},
+          "start": {
+            "type": "integer",
+            "description": "Start position",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "strand": {
+            "type": "integer",
+            "description": "Strand (negative or positive)",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "successfully_annotated": {
+            "type": "boolean",
+            "description": "Status flag indicating whether variant was succesfully annotated"
+          },
+          "transcript_consequences": {
+            "type": "array",
+            "description": "List of transcripts",
+            "item": "transcriptconsequence"
+          },
+          "variant": {
+            "type": "string",
+            "description": "Variant key"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "allele_string": {
+            "type": "string"
+          },
+          "annotationJSON": {
+            "type": "string"
+          },
+          "assembly_name": {
+            "type": "string"
+          },
+          "colocatedVariants": {
+            "type": "array",
+            "item": "colocatedvariant"
+          },
+          "end": {
+            "type": "integer"
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "genomicLocationExplanation": {
+            "type": "string"
+          },
+          "hgvsg": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "intergenic_consequences": {
+            "type": "array",
+            "item": "intergenicconsequences"
+          },
+          "most_severe_consequence": {
+            "type": "string"
+          },
+          "originalVariantQuery": {
+            "type": "string"
+          },
+          "seq_region_name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "strand": {
+            "type": "integer"
+          },
+          "successfully_annotated": {
+            "type": "boolean"
+          },
+          "transcript_consequences": {
+            "type": "array",
+            "item": "transcriptconsequence"
+          },
+          "variant": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/annotation/{variant}": {
+      "request_params": {
+        "variant": {
+          "type": "string",
+          "description": "Variant. For example 17:g.41242962_41242963insGA"
+        },
+        "isoformOverrideSource": {
+          "type": "string",
+          "description": "Isoform override source. For example uniprot"
+        },
+        "token": {
+          "type": "string",
+          "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+        },
+        "fields": {
+          "type": "array",
+          "constraints": {
+            "enum": [
+              "annotation_summary",
+              "clinvar",
+              "hotspots",
+              "mutation_assessor",
+              "my_variant_info",
+              "nucleotide_context",
+              "oncokb",
+              "ptms",
+              "signal"
+            ]
+          },
+          "items": {
+            "type": "string"
+          },
+          "description": "Comma separated list of fields to include in the annotation (case-sensitive!). Defaults to \"annotation_summary\" if no value passed. Valid values: {annotation_summary, clinvar, hotspots, mutation_assessor, my_variant_info, nucleotide_context, oncokb, ptms, signal}"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "allele_string": {
+            "type": "string",
+            "description": "Allele string (e.g: A/T)"
+          },
+          "annotationJSON": {
+            "type": "string",
+            "description": "Annotation data as JSON string"
+          },
+          "annotation_summary": {},
+          "assembly_name": {
+            "type": "string",
+            "description": "NCBI build number"
+          },
+          "clinvar": {},
+          "colocatedVariants": {
+            "type": "array",
+            "item": "colocatedvariant"
+          },
+          "end": {
+            "type": "integer",
+            "description": "End position",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "genomicLocationExplanation": {
+            "type": "string"
+          },
+          "hgvsg": {
+            "type": "string"
+          },
+          "hotspots": {},
+          "id": {
+            "type": "string",
+            "description": "Variant id"
+          },
+          "intergenic_consequences": {
+            "type": "array",
+            "description": "intergenicConsequences",
+            "item": "intergenicconsequences"
+          },
+          "most_severe_consequence": {
+            "type": "string",
+            "description": "Most severe consequence"
+          },
+          "mutation_assessor": {},
+          "my_variant_info": {},
+          "nucleotide_context": {},
+          "oncokb": {},
+          "originalVariantQuery": {
+            "type": "string",
+            "description": "Original variant query"
+          },
+          "ptms": {},
+          "seq_region_name": {
+            "type": "string",
+            "description": "Chromosome"
+          },
+          "signalAnnotation": {},
+          "start": {
+            "type": "integer",
+            "description": "Start position",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "strand": {
+            "type": "integer",
+            "description": "Strand (negative or positive)",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "successfully_annotated": {
+            "type": "boolean",
+            "description": "Status flag indicating whether variant was succesfully annotated"
+          },
+          "transcript_consequences": {
+            "type": "array",
+            "description": "List of transcripts",
+            "item": "transcriptconsequence"
+          },
+          "variant": {
+            "type": "string",
+            "description": "Variant key"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "allele_string": {
+            "type": "string"
+          },
+          "annotationJSON": {
+            "type": "string"
+          },
+          "assembly_name": {
+            "type": "string"
+          },
+          "colocatedVariants": {
+            "type": "array",
+            "item": "colocatedvariant"
+          },
+          "end": {
+            "type": "integer"
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "genomicLocationExplanation": {
+            "type": "string"
+          },
+          "hgvsg": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "intergenic_consequences": {
+            "type": "array",
+            "item": "intergenicconsequences"
+          },
+          "most_severe_consequence": {
+            "type": "string"
+          },
+          "originalVariantQuery": {
+            "type": "string"
+          },
+          "seq_region_name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "strand": {
+            "type": "integer"
+          },
+          "successfully_annotated": {
+            "type": "boolean"
+          },
+          "transcript_consequences": {
+            "type": "array",
+            "item": "transcriptconsequence"
+          },
+          "variant": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/ensembl/canonical-gene/entrez": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "geneId",
+                "hugoSymbol"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/ensembl/canonical-gene/entrez/{entrezGeneId}": {
+      "request_params": {
+        "entrezGeneId": {
+          "type": "string",
+          "description": "An Entrez Gene Id. For example 23140"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "geneId": {
+            "type": "string",
+            "description": "Ensembl gene id"
+          },
+          "hugoSymbol": {
+            "type": "string",
+            "description": "Approved Hugo symbol"
+          },
+          "synonyms": {
+            "type": "array",
+            "description": "Hugo symbol synonyms",
+            "items": {
+              "type": "string"
+            }
+          },
+          "previousSymbols": {
+            "type": "array",
+            "description": "Previous Hugo symbols",
+            "items": {
+              "type": "string"
+            }
+          },
+          "entrezGeneId": {
+            "type": "string",
+            "description": "Entrez Gene Id"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "geneId": {
+            "type": "string"
+          },
+          "hugoSymbol": {
+            "type": "string"
+          },
+          "synonyms": {
+            "type": "array"
+          },
+          "previousSymbols": {
+            "type": "array"
+          },
+          "entrezGeneId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/ensembl/canonical-gene/hgnc": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "geneId",
+                "hugoSymbol"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/ensembl/canonical-gene/hgnc/{hugoSymbol}": {
+      "request_params": {
+        "hugoSymbol": {
+          "type": "string",
+          "description": "A Hugo Symbol. For example TP53"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "geneId": {
+            "type": "string",
+            "description": "Ensembl gene id"
+          },
+          "hugoSymbol": {
+            "type": "string",
+            "description": "Approved Hugo symbol"
+          },
+          "synonyms": {
+            "type": "array",
+            "description": "Hugo symbol synonyms",
+            "items": {
+              "type": "string"
+            }
+          },
+          "previousSymbols": {
+            "type": "array",
+            "description": "Previous Hugo symbols",
+            "items": {
+              "type": "string"
+            }
+          },
+          "entrezGeneId": {
+            "type": "string",
+            "description": "Entrez Gene Id"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "geneId": {
+            "type": "string"
+          },
+          "hugoSymbol": {
+            "type": "string"
+          },
+          "synonyms": {
+            "type": "array"
+          },
+          "previousSymbols": {
+            "type": "array"
+          },
+          "entrezGeneId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/ensembl/canonical-transcript/hgnc": {
+      "request_params": {
+        "isoformOverrideSource": {
+          "type": "string",
+          "description": "Isoform override source. For example uniprot"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "geneId",
+                "proteinId",
+                "transcriptId"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/ensembl/canonical-transcript/hgnc/{hugoSymbol}": {
+      "request_params": {
+        "hugoSymbol": {
+          "type": "string",
+          "description": "A Hugo Symbol. For example TP53"
+        },
+        "isoformOverrideSource": {
+          "type": "string",
+          "description": "Isoform override source. For example uniprot"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "uniprotId": {
+            "type": "string"
+          },
+          "transcriptId": {
+            "type": "string",
+            "description": "Ensembl transcript id"
+          },
+          "geneId": {
+            "type": "string",
+            "description": "Ensembl gene id"
+          },
+          "proteinId": {
+            "type": "string",
+            "description": "Ensembl protein id"
+          },
+          "proteinLength": {
+            "type": "integer",
+            "description": "Length of protein",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "pfamDomains": {
+            "type": "array",
+            "description": "Pfam domains",
+            "item": "pfamdomainrange"
+          },
+          "hugoSymbols": {
+            "type": "array",
+            "description": "Hugo symbols",
+            "items": {
+              "type": "string"
+            }
+          },
+          "refseqMrnaId": {
+            "type": "string",
+            "description": "RefSeq mRNA ID"
+          },
+          "ccdsId": {
+            "type": "string",
+            "description": "Consensus CDS (CCDS) ID"
+          },
+          "exons": {
+            "type": "array",
+            "description": "Exon information",
+            "item": "exon"
+          },
+          "utrs": {
+            "type": "array",
+            "description": "UTR information",
+            "item": "untranslatedregion"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "uniprotId": {
+            "type": "string"
+          },
+          "transcriptId": {
+            "type": "string"
+          },
+          "geneId": {
+            "type": "string"
+          },
+          "proteinId": {
+            "type": "string"
+          },
+          "proteinLength": {
+            "type": "integer"
+          },
+          "pfamDomains": {
+            "type": "array",
+            "item": "pfamdomainrange"
+          },
+          "hugoSymbols": {
+            "type": "array"
+          },
+          "refseqMrnaId": {
+            "type": "string"
+          },
+          "ccdsId": {
+            "type": "string"
+          },
+          "exons": {
+            "type": "array",
+            "item": "exon"
+          },
+          "utrs": {
+            "type": "array",
+            "item": "untranslatedregion"
+          }
+        }
+      }
+    },
+    "get-/ensembl/transcript": {
+      "request_params": {
+        "geneId": {
+          "type": "string",
+          "description": "An Ensembl gene ID. For example ENSG00000136999"
+        },
+        "proteinId": {
+          "type": "string",
+          "description": "An Ensembl protein ID. For example ENSP00000439985"
+        },
+        "hugoSymbol": {
+          "type": "string",
+          "description": "A Hugo Symbol For example ARF5"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "geneId",
+                "proteinId",
+                "transcriptId"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "post-/ensembl/transcript": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "geneIds": {
+            "type": "array",
+            "description": "List of Ensembl gene IDs. For example [\"ENSG00000136999\", \"ENSG00000272398\", \"ENSG00000198695\"]",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hugoSymbols": {
+            "type": "array",
+            "description": "List of Hugo Symbols. For example [\"TP53\", \"PIK3CA\", \"BRCA1\"]",
+            "items": {
+              "type": "string"
+            }
+          },
+          "proteinIds": {
+            "type": "array",
+            "description": "List of Ensembl protein IDs. For example [\"ENSP00000439985\", \"ENSP00000478460\", \"ENSP00000346196\"]",
+            "items": {
+              "type": "string"
+            }
+          },
+          "transcriptIds": {
+            "type": "array",
+            "description": "List of Ensembl transcript IDs. For example [\"ENST00000361390\", \"ENST00000361453\", \"ENST00000361624\"]",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "geneId",
+                "proteinId",
+                "transcriptId"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/ensembl/transcript/{transcriptId}": {
+      "request_params": {
+        "transcriptId": {
+          "type": "string",
+          "description": "An Ensembl transcript ID. For example ENST00000361390"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "uniprotId": {
+            "type": "string"
+          },
+          "transcriptId": {
+            "type": "string",
+            "description": "Ensembl transcript id"
+          },
+          "geneId": {
+            "type": "string",
+            "description": "Ensembl gene id"
+          },
+          "proteinId": {
+            "type": "string",
+            "description": "Ensembl protein id"
+          },
+          "proteinLength": {
+            "type": "integer",
+            "description": "Length of protein",
+            "constraints": {
+              "format": "int32"
+            }
+          },
+          "pfamDomains": {
+            "type": "array",
+            "description": "Pfam domains",
+            "item": "pfamdomainrange"
+          },
+          "hugoSymbols": {
+            "type": "array",
+            "description": "Hugo symbols",
+            "items": {
+              "type": "string"
+            }
+          },
+          "refseqMrnaId": {
+            "type": "string",
+            "description": "RefSeq mRNA ID"
+          },
+          "ccdsId": {
+            "type": "string",
+            "description": "Consensus CDS (CCDS) ID"
+          },
+          "exons": {
+            "type": "array",
+            "description": "Exon information",
+            "item": "exon"
+          },
+          "utrs": {
+            "type": "array",
+            "description": "UTR information",
+            "item": "untranslatedregion"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "uniprotId": {
+            "type": "string"
+          },
+          "transcriptId": {
+            "type": "string"
+          },
+          "geneId": {
+            "type": "string"
+          },
+          "proteinId": {
+            "type": "string"
+          },
+          "proteinLength": {
+            "type": "integer"
+          },
+          "pfamDomains": {
+            "type": "array",
+            "item": "pfamdomainrange"
+          },
+          "hugoSymbols": {
+            "type": "array"
+          },
+          "refseqMrnaId": {
+            "type": "string"
+          },
+          "ccdsId": {
+            "type": "string"
+          },
+          "exons": {
+            "type": "array",
+            "item": "exon"
+          },
+          "utrs": {
+            "type": "array",
+            "item": "untranslatedregion"
+          }
+        }
+      }
+    },
+    "get-/ensembl/xrefs": {
+      "request_params": {
+        "accession": {
+          "type": "string",
+          "description": "Ensembl gene accession. For example ENSG00000169083"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "db_display_name",
+                "dbname",
+                "description",
+                "display_id",
+                "primary_id",
+                "version"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "post-/pdb/header": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "pdbId",
+                "title"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/pdb/header/{pdbId}": {
+      "request_params": {
+        "pdbId": {
+          "type": "string",
+          "description": "PDB id, for example 1a37"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "compound": {
+            "type": "object"
+          },
+          "pdbId": {
+            "type": "string",
+            "description": "PDB id"
+          },
+          "source": {
+            "type": "object"
+          },
+          "title": {
+            "type": "string",
+            "description": "PDB description"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "compound": {
+            "type": "object"
+          },
+          "pdbId": {
+            "type": "string"
+          },
+          "source": {
+            "type": "object"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "post-/pfam/domain": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "constraints": {
+              "required": [
+                "name",
+                "pfamAccession"
+              ]
+            }
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/pfam/domain/{pfamAccession}": {
+      "request_params": {
+        "pfamAccession": {
+          "type": "string",
+          "description": "A PFAM domain accession ID. For example PF02827"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "description": {
+            "type": "string",
+            "description": "PFAM domain description"
+          },
+          "name": {
+            "type": "string",
+            "description": "PFAM domain name"
+          },
+          "pfamAccession": {
+            "type": "string",
+            "description": "PFAM domain accession"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "description": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "pfamAccession": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "get-/ptm/experimental": {
+      "request_params": {
+        "ensemblTranscriptId": {
+          "type": "string",
+          "description": "Ensembl Transcript ID. For example ENST00000646891"
+        }
+      },
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "post-/ptm/experimental": {
+      "request_params": {},
+      "request_schema_constraints": {
+        "application/json": {
+          "transcriptIds": {
+            "type": "array",
+            "description": "List of Ensembl transcript IDs. For example [\"ENST00000361390\", \"ENST00000361453\", \"ENST00000361624\"]",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "response_params": {
+        "200": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "type": "array",
+          "item": "inline_response_object"
+        }
+      }
+    },
+    "get-/version": {
+      "request_params": {},
+      "request_schema_constraints": {},
+      "response_params": {
+        "200": {
+          "annotationSourcesInfo": {
+            "type": "array",
+            "item": "sourceversioninfo"
+          },
+          "genomeNexus": {},
+          "vep": {}
+        }
+      },
+      "constraints_response": {
+        "200": {
+          "annotationSourcesInfo": {
+            "type": "array",
+            "item": "sourceversioninfo"
+          }
+        }
+      }
+    }
+  },
+  "edge_results": [
+    [
+      "POST /annotation",
+      "POST /annotation/dbsnp/"
+    ],
+    [
+      "POST /annotation",
+      "GET /annotation/dbsnp/{variantId}"
+    ],
+    [
+      "POST /annotation",
+      "POST /annotation/genomic"
+    ],
+    [
+      "POST /annotation",
+      "GET /annotation/genomic/{genomicLocation}"
+    ],
+    [
+      "POST /annotation",
+      "GET /annotation/{variant}"
+    ],
+    [
+      "POST /annotation/dbsnp/",
+      "GET /annotation/dbsnp/{variantId}"
+    ],
+    [
+      "POST /annotation/dbsnp/",
+      "POST /annotation/genomic"
+    ],
+    [
+      "POST /annotation/dbsnp/",
+      "GET /annotation/genomic/{genomicLocation}"
+    ],
+    [
+      "POST /annotation/dbsnp/",
+      "GET /annotation/{variant}"
+    ],
+    [
+      "GET /annotation/dbsnp/{variantId}",
+      "POST /annotation/genomic"
+    ],
+    [
+      "GET /annotation/dbsnp/{variantId}",
+      "GET /annotation/genomic/{genomicLocation}"
+    ],
+    [
+      "GET /annotation/dbsnp/{variantId}",
+      "GET /annotation/{variant}"
+    ],
+    [
+      "POST /annotation/genomic",
+      "GET /annotation/genomic/{genomicLocation}"
+    ],
+    [
+      "POST /annotation/genomic",
+      "GET /annotation/{variant}"
+    ],
+    [
+      "GET /annotation/genomic/{genomicLocation}",
+      "GET /annotation/{variant}"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "POST /ensembl/canonical-gene/hgnc"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "POST /ensembl/canonical-transcript/hgnc"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "GET /ensembl/transcript"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "POST /ensembl/transcript"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "GET /ensembl/transcript/{transcriptId}"
+    ],
+    [
+      "POST /ensembl/canonical-gene/entrez",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "POST /ensembl/canonical-gene/hgnc"
+    ],
+    [
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}"
+    ],
+    [
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "POST /ensembl/canonical-transcript/hgnc"
+    ],
+    [
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}"
+    ],
+    [
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "GET /ensembl/transcript"
+    ],
+    [
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "POST /ensembl/transcript"
+    ],
+    [
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "GET /ensembl/transcript/{transcriptId}"
+    ],
+    [
+      "GET /ensembl/canonical-gene/entrez/{entrezGeneId}",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "POST /ensembl/canonical-gene/hgnc",
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}"
+    ],
+    [
+      "POST /ensembl/canonical-gene/hgnc",
+      "POST /ensembl/canonical-transcript/hgnc"
+    ],
+    [
+      "POST /ensembl/canonical-gene/hgnc",
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}"
+    ],
+    [
+      "POST /ensembl/canonical-gene/hgnc",
+      "GET /ensembl/transcript"
+    ],
+    [
+      "POST /ensembl/canonical-gene/hgnc",
+      "POST /ensembl/transcript"
+    ],
+    [
+      "POST /ensembl/canonical-gene/hgnc",
+      "GET /ensembl/transcript/{transcriptId}"
+    ],
+    [
+      "POST /ensembl/canonical-gene/hgnc",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}",
+      "POST /ensembl/canonical-transcript/hgnc"
+    ],
+    [
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}",
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}"
+    ],
+    [
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}",
+      "GET /ensembl/transcript"
+    ],
+    [
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}",
+      "POST /ensembl/transcript"
+    ],
+    [
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}",
+      "GET /ensembl/transcript/{transcriptId}"
+    ],
+    [
+      "GET /ensembl/canonical-gene/hgnc/{hugoSymbol}",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "POST /ensembl/canonical-transcript/hgnc",
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}"
+    ],
+    [
+      "POST /ensembl/canonical-transcript/hgnc",
+      "GET /ensembl/transcript"
+    ],
+    [
+      "POST /ensembl/canonical-transcript/hgnc",
+      "POST /ensembl/transcript"
+    ],
+    [
+      "POST /ensembl/canonical-transcript/hgnc",
+      "GET /ensembl/transcript/{transcriptId}"
+    ],
+    [
+      "POST /ensembl/canonical-transcript/hgnc",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}",
+      "GET /ensembl/transcript"
+    ],
+    [
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}",
+      "POST /ensembl/transcript"
+    ],
+    [
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}",
+      "GET /ensembl/transcript/{transcriptId}"
+    ],
+    [
+      "GET /ensembl/canonical-transcript/hgnc/{hugoSymbol}",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "GET /ensembl/transcript",
+      "POST /ensembl/transcript"
+    ],
+    [
+      "GET /ensembl/transcript",
+      "GET /ensembl/transcript/{transcriptId}"
+    ],
+    [
+      "GET /ensembl/transcript",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "POST /ensembl/transcript",
+      "GET /ensembl/transcript/{transcriptId}"
+    ],
+    [
+      "POST /ensembl/transcript",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "GET /ensembl/transcript/{transcriptId}",
+      "GET /ensembl/xrefs"
+    ],
+    [
+      "POST /pdb/header",
+      "GET /pdb/header/{pdbId}"
+    ],
+    [
+      "POST /pfam/domain",
+      "GET /pfam/domain/{pfamAccession}"
+    ],
+    [
+      "GET /ptm/experimental",
+      "POST /ptm/experimental"
+    ]
+  ]
+}

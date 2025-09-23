@@ -1,0 +1,8 @@
+1. build config file: java -jar ./target/restest-cli.jar -c spec/GitLab Project/openapi.json
+2. docker run --rm -v .:/files javalenzuela/daikon_agora java -jar daikon_modified.jar /files/declsFile.decls /files/dtraceFile.dtrace > invariants.csv
+
+
+java -jar ./target/restest-cli.jar -o spec/GitLabProject/spec.json
+java -jar ./target/restest-cli.jar -g -e spec/GitLabProject/gitlab_project.properties
+
+java -jar .\target\restest-cli.jar -o [path_to_oas_file] 

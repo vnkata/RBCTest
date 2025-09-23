@@ -1,0 +1,226 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "GitLab API",
+    "version": "1.0.0",
+    "description": "API to create a new merge request"
+  },
+  "servers": [{
+    "url": "http://localhost:30000/api/v4"
+  }],
+  "paths": {
+    "/projects/{id}/merge_requests": {
+      "post": {
+        "summary": "Create a new merge request",
+        "operationId": "createMergeRequest",
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The ID or URL-encoded path of the project"
+        }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "source_branch": {
+                    "type": "string"
+                  },
+                  "target_branch": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "allow_collaboration": {
+                    "type": "boolean"
+                  },
+                  "approvals_before_merge": {
+                    "type": "integer",
+                    "deprecated": true
+                  },
+                  "allow_maintainer_to_push": {
+                    "type": "boolean"
+                  },
+                  "assignee_id": {
+                    "type": "integer"
+                  },
+                  "assignee_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "labels": {
+                    "type": "string"
+                  },
+                  "milestone_id": {
+                    "type": "integer"
+                  },
+                  "remove_source_branch": {
+                    "type": "boolean"
+                  },
+                  "reviewer_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "squash": {
+                    "type": "boolean"
+                  },
+                  "target_project_id": {
+                    "type": "integer"
+                  },
+                  "merge_after": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "required": ["source_branch", "target_branch", "title"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Merge request created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MergeRequest"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MergeRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "iid": {
+            "type": "integer"
+          },
+          "project_id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "source_branch": {
+            "type": "string"
+          },
+          "target_branch": {
+            "type": "string"
+          },
+          "author": {
+            "$ref": "#/components/schemas/User"
+          },
+          "assignee": {
+            "$ref": "#/components/schemas/User"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "milestone": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "due_date": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          },
+          "merge_status": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "merge_user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "merged_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "merge_after": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "pipeline": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "status": {
+                "type": "string"
+              },
+              "web_url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "web_url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  }
+}
