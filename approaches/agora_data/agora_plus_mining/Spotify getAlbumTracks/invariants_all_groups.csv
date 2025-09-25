@@ -1,0 +1,129 @@
+group,invariant,invariantType,variables,pptname,tp
+href,"return.href is Url
+input.id is a substring of return.href
+input.market is a substring of return.href","daikon.inv.unary.string.IsUrl
+daikon.inv.binary.twoString.StdString$SubString
+daikon.inv.binary.twoString.StdString$SubString","(return.href)
+(input.id, return.href)
+(input.market, return.href)","/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT",1.0
+items,input.limit >= size(return.items[]),daikon.inv.binary.twoScalar.IntGreaterEqual,"(input.limit, size(return.items[..]))",/albums/{id}/tracks&getAlbumTracks&200():::EXIT,1.0
+items.artists,"size(return.artists[]) >= 1
+input.limit >= size(return.artists[])
+input.offset > size(return.artists[])","daikon.inv.unary.scalar.LowerBound
+daikon.inv.binary.twoScalar.IntGreaterEqual
+daikon.inv.binary.twoScalar.IntGreaterThan","(size(return.artists[..]))
+(input.limit, size(return.artists[..]))
+(input.offset, size(return.artists[..]))","/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT",0.3333333333333333
+items.artists.href,"LENGTH(return.href)==57
+return.href is Url
+return.id is a substring of return.href
+return.type is a substring of return.href","daikon.inv.unary.string.FixedLengthString
+daikon.inv.unary.string.IsUrl
+daikon.inv.binary.twoString.StdString$SubString
+daikon.inv.binary.twoString.StdString$SubString","(return.href)
+(return.href)
+(return.href, return.id)
+(return.href, return.type)","/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT",1.0
+items.artists.id,"LENGTH(return.id)==22
+return.id is a substring of return.uri","daikon.inv.unary.string.FixedLengthString
+daikon.inv.binary.twoString.StdString$SubString","(return.id)
+(return.id, return.uri)","/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT",1.0
+items.artists.type,"return.type == ""artist""
+LENGTH(return.type)==6
+return.type is a substring of return.uri","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString
+daikon.inv.binary.twoString.StdString$SubString","(return.type)
+(return.type)
+(return.type, return.uri)","/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT",1.0
+items.artists.uri,LENGTH(return.uri)==37,daikon.inv.unary.string.FixedLengthString,(return.uri),/albums/{id}/tracks&getAlbumTracks&200&items&artists():::EXIT,1.0
+items.available_markets,All the elements of return.available_markets[] have LENGTH=2,daikon.inv.unary.stringsequence.SequenceFixedLengthString,(return.available_markets[..]),/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT,1.0
+items.disc_number,"return.disc_number >= 1
+input.limit > return.disc_number","daikon.inv.unary.scalar.LowerBound
+daikon.inv.binary.twoScalar.IntGreaterThan","(return.disc_number)
+(input.limit, return.disc_number)","/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT",0.5
+items.href,"LENGTH(return.href)==56
+return.href is Url
+return.id is a substring of return.href
+return.type is a substring of return.href","daikon.inv.unary.string.FixedLengthString
+daikon.inv.unary.string.IsUrl
+daikon.inv.binary.twoString.StdString$SubString
+daikon.inv.binary.twoString.StdString$SubString","(return.href)
+(return.href)
+(return.href, return.id)
+(return.href, return.type)","/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT",1.0
+items.id,"LENGTH(return.id)==22
+return.id is a substring of return.uri","daikon.inv.unary.string.FixedLengthString
+daikon.inv.binary.twoString.StdString$SubString","(return.id)
+(return.id, return.uri)","/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT",1.0
+items.is_local,return.is_local == false,daikon.inv.unary.scalar.OneOfScalar,(return.is_local),/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT,1.0
+items.linked_from,return.linked_from == null,daikon.inv.unary.scalar.OneOfScalar,(return.linked_from),/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT,0.0
+items.linked_from.external_urls,return.linked_from.external_urls == null,daikon.inv.unary.scalar.OneOfScalar,(return.linked_from.external_urls),/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT,0.0
+items.preview_url,"LENGTH(return.preview_url)==107
+return.preview_url is Url","daikon.inv.unary.string.FixedLengthString
+daikon.inv.unary.string.IsUrl","(return.preview_url)
+(return.preview_url)","/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT",1.0
+items.restrictions.reason,"return.restrictions.reason == ""explicit""
+LENGTH(return.restrictions.reason)==8","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.restrictions.reason)
+(return.restrictions.reason)","/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT",0.0
+items.track_number,return.track_number >= 1,daikon.inv.unary.scalar.LowerBound,(return.track_number),/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT,1.0
+items.type,"return.type == ""track""
+LENGTH(return.type)==5
+return.type is a substring of return.uri","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString
+daikon.inv.binary.twoString.StdString$SubString","(return.type)
+(return.type)
+(return.type, return.uri)","/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT",1.0
+items.uri,LENGTH(return.uri)==36,daikon.inv.unary.string.FixedLengthString,(return.uri),/albums/{id}/tracks&getAlbumTracks&200&items():::EXIT,1.0
+limit,"input.limit == return.limit
+return.limit >= size(return.items[])","daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.binary.twoScalar.IntGreaterEqual","(input.limit, return.limit)
+(return.limit, size(return.items[..]))","/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT",1.0
+next,"return.next is Url
+input.id is a substring of return.next
+input.market is a substring of return.next","daikon.inv.unary.string.IsUrl
+daikon.inv.binary.twoString.StdString$SubString
+daikon.inv.binary.twoString.StdString$SubString","(return.next)
+(input.id, return.next)
+(input.market, return.next)","/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT",1.0
+offset,"input.offset == return.offset
+return.offset >= 0","daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.unary.scalar.LowerBound","(input.offset, return.offset)
+(return.offset)","/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT",1.0
+previous,"return.previous is Url
+input.id is a substring of return.previous
+input.market is a substring of return.previous","daikon.inv.unary.string.IsUrl
+daikon.inv.binary.twoString.StdString$SubString
+daikon.inv.binary.twoString.StdString$SubString","(return.previous)
+(input.id, return.previous)
+(input.market, return.previous)","/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT",1.0
+total,"return.total >= 1
+return.total >= size(return.items[])","daikon.inv.unary.scalar.LowerBound
+daikon.inv.binary.twoScalar.IntGreaterEqual","(return.total)
+(return.total, size(return.items[..]))","/albums/{id}/tracks&getAlbumTracks&200():::EXIT
+/albums/{id}/tracks&getAlbumTracks&200():::EXIT",1.0

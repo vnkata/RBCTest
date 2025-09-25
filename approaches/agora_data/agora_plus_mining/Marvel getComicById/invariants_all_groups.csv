@@ -1,0 +1,244 @@
+group,invariant,invariantType,variables,pptname,tp
+attributionHTML,"return.attributionHTML == ""<a href=\""http://marvel.com\"">Data provided by Marvel. \251 2022 MARVEL</a>""
+LENGTH(return.attributionHTML)==70","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.attributionHTML)
+(return.attributionHTML)","/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT",1.0
+attributionText,"return.attributionText == ""Data provided by Marvel. \251 2022 MARVEL""
+LENGTH(return.attributionText)==38
+return.attributionText is a substring of return.attributionHTML","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString
+daikon.inv.binary.twoString.StdString$SubString","(return.attributionText)
+(return.attributionText)
+(return.attributionText, return.attributionHTML)","/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT",1.0
+code,return.code == 200,daikon.inv.unary.scalar.OneOfScalar,(return.code),/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT,1.0
+copyright,"return.copyright == ""\251 2022 MARVEL""
+LENGTH(return.copyright)==13
+return.copyright is a substring of return.attributionText","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString
+daikon.inv.binary.twoString.StdString$SubString","(return.copyright)
+(return.copyright)
+(return.copyright, return.attributionText)","/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT",1.0
+data.limit,return.data.limit == 20,daikon.inv.unary.scalar.OneOfScalar,(return.data.limit),/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT,1.0
+data.offset,return.data.offset == 0,daikon.inv.unary.scalar.OneOfScalar,(return.data.offset),/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT,1.0
+data.results,return.data.results[] elements == return.data.results[return.data.offset],daikon.inv.binary.sequenceScalar.SeqIntEqual,"(return.data.results[..], return.data.results[return.data.offset])",/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT,1.0
+data.results.characters.available,"return.characters.available >= 1
+return.characters.available >= return.characters.returned
+return.characters.available > return.events.available
+return.characters.available >= size(return.collections[])","daikon.inv.unary.scalar.LowerBound
+daikon.inv.binary.twoScalar.IntGreaterEqual
+daikon.inv.binary.twoScalar.IntGreaterThan
+daikon.inv.binary.twoScalar.IntGreaterEqual","(return.characters.available)
+(return.characters.available, return.characters.returned)
+(return.characters.available, return.events.available)
+(return.characters.available, size(return.collections[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.25
+data.results.characters.collectionURI,return.characters.collectionURI is Url,daikon.inv.unary.string.IsUrl,(return.characters.collectionURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.characters.data.resultsed,"return.characters.returned == size(return.characters.items[])
+return.characters.returned >= 1
+return.characters.returned >= size(return.collections[])","daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.unary.scalar.LowerBound
+daikon.inv.binary.twoScalar.IntGreaterEqual","(return.characters.returned, size(return.characters.items[..]))
+(return.characters.returned)
+(return.characters.returned, size(return.collections[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.3333333333333333
+data.results.characters.items.resourceURI,"LENGTH(return.resourceURI)==54
+return.resourceURI is Url","daikon.inv.unary.string.FixedLengthString
+daikon.inv.unary.string.IsUrl","(return.resourceURI)
+(return.resourceURI)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results&characters&items():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results&characters&items():::EXIT",1.0
+data.results.collectedIssues,"return has only one value
+size(return.collectedIssues[]) one of { 0, 9 }","daikon.inv.unary.scalar.OneOfScalar
+daikon.inv.unary.scalar.OneOfScalar","(return)
+(size(return.collectedIssues[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results&collectedIssues():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.0
+data.results.collectedIssues.resourceURI,return.resourceURI is Url,daikon.inv.unary.string.IsUrl,(return.resourceURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&collectedIssues():::EXIT,1.0
+data.results.collections,"size(return.collections[]) one of { 0, 1, 4 }
+size(return.collections[]) <= size(return.dates[])","daikon.inv.unary.scalar.OneOfScalar
+daikon.inv.binary.twoScalar.IntLessEqual","(size(return.collections[..]))
+(size(return.collections[..]), size(return.dates[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.0
+data.results.collections.resourceURI,return.resourceURI is Url,daikon.inv.unary.string.IsUrl,(return.resourceURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&collections():::EXIT,1.0
+data.results.creators.available,"return.creators.available == return.creators.returned
+return.creators.available == size(return.creators.items[])
+return.creators.available >= return.events.available
+return.creators.available >= size(return.collectedIssues[])","daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.binary.twoScalar.IntGreaterEqual
+daikon.inv.binary.twoScalar.IntGreaterEqual","(return.creators.available, return.creators.returned)
+(return.creators.available, size(return.creators.items[..]))
+(return.creators.available, return.events.available)
+(return.creators.available, size(return.collectedIssues[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.0
+data.results.creators.collectionURI,return.creators.collectionURI is Url,daikon.inv.unary.string.IsUrl,(return.creators.collectionURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.creators.items.resourceURI,return.resourceURI is Url,daikon.inv.unary.string.IsUrl,(return.resourceURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&creators&items():::EXIT,1.0
+data.results.dates,"size(return.dates[]) one of { 2, 3, 4 }",daikon.inv.unary.scalar.OneOfScalar,(size(return.dates[..])),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,0.0
+data.results.diamondCode,LENGTH(return.diamondCode)==9,daikon.inv.unary.string.FixedLengthString,(return.diamondCode),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.digitalId,"return.digitalId >= 0
+return.digitalId >= return.events.available
+return.digitalId >= size(return.collections[])","daikon.inv.unary.scalar.LowerBound
+daikon.inv.binary.twoScalar.IntGreaterEqual
+daikon.inv.binary.twoScalar.IntGreaterEqual","(return.digitalId)
+(return.digitalId, return.events.available)
+(return.digitalId, size(return.collections[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.3333333333333333
+data.results.ean,"return.ean == ""9781302 911775 53499""",daikon.inv.unary.string.OneOfString,(return.ean),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,0.0
+data.results.events.available,"return.events.available == return.events.returned
+return.events.available == size(return.events.items[])
+return.events.available one of { 0, 1 }
+return.events.available <= size(return.textObjects[])
+return.events.available <= size(return.images[])","daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.unary.scalar.OneOfScalar
+daikon.inv.binary.twoScalar.IntLessEqual
+daikon.inv.binary.twoScalar.IntLessEqual","(return.events.available, return.events.returned)
+(return.events.available, size(return.events.items[..]))
+(return.events.available)
+(return.events.available, size(return.textObjects[..]))
+(return.events.available, size(return.images[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.0
+data.results.events.collectionURI,return.events.collectionURI is Url,daikon.inv.unary.string.IsUrl,(return.events.collectionURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.events.items.name,"return.name one of { ""Infinity"", ""Original Sin"", ""Secret Wars"" }",daikon.inv.unary.string.OneOfString,(return.name),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&events&items():::EXIT,0.0
+data.results.events.items.resourceURI,"return.resourceURI one of { ""http://gateway.marvel.com/v1/public/events/270"", ""http://gateway.marvel.com/v1/public/events/315"", ""http://gateway.marvel.com/v1/public/events/319"" }
+LENGTH(return.resourceURI)==46
+return.resourceURI is Url","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString
+daikon.inv.unary.string.IsUrl","(return.resourceURI)
+(return.resourceURI)
+(return.resourceURI)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results&events&items():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results&events&items():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results&events&items():::EXIT",0.3333333333333333
+data.results.id,input.comicId == return.id,daikon.inv.binary.twoScalar.IntEqual,"(input.comicId, return.id)",/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.images,size(return.images[]) >= 1,daikon.inv.unary.scalar.LowerBound,(size(return.images[..])),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,0.0
+data.results.images.extension,"return.extension == ""jpg""
+LENGTH(return.extension)==3","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.extension)
+(return.extension)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results&images():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results&images():::EXIT",0.5
+data.results.images.path,"LENGTH(return.path)==57
+return.path is Url","daikon.inv.unary.string.FixedLengthString
+daikon.inv.unary.string.IsUrl","(return.path)
+(return.path)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results&images():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results&images():::EXIT",1.0
+data.results.isbn,"return.isbn one of { ""0-7851-1857-8"", ""978-1-302-91177-5"" }",daikon.inv.unary.string.OneOfString,(return.isbn),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,0.0
+data.results.issn,LENGTH(return.issn)==9,daikon.inv.unary.string.FixedLengthString,(return.issn),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.pageCount,"return.pageCount >= 0
+return.pageCount >= return.events.available","daikon.inv.unary.scalar.LowerBound
+daikon.inv.binary.twoScalar.IntGreaterEqual","(return.pageCount)
+(return.pageCount, return.events.available)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.0
+data.results.prices,"size(return.prices[]) one of { 1, 2 }",daikon.inv.unary.scalar.OneOfScalar,(size(return.prices[..])),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.prices.price,return.price >= 0.0,daikon.inv.unary.scalar.LowerBoundFloat,(return.price),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&prices():::EXIT,1.0
+data.results.prices.type,"return.type one of { ""digitalPurchasePrice"", ""printPrice"" }",daikon.inv.unary.string.OneOfString,(return.type),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&prices():::EXIT,1.0
+data.results.resourceURI,"return.resourceURI is Url
+return.resourceURI is a substring of return.creators.collectionURI
+return.resourceURI is a substring of return.characters.collectionURI
+return.resourceURI is a substring of return.stories.collectionURI
+return.resourceURI is a substring of return.events.collectionURI","daikon.inv.unary.string.IsUrl
+daikon.inv.binary.twoString.StdString$SubString
+daikon.inv.binary.twoString.StdString$SubString
+daikon.inv.binary.twoString.StdString$SubString
+daikon.inv.binary.twoString.StdString$SubString","(return.resourceURI)
+(return.resourceURI, return.creators.collectionURI)
+(return.resourceURI, return.characters.collectionURI)
+(return.resourceURI, return.stories.collectionURI)
+(return.resourceURI, return.events.collectionURI)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",1.0
+data.results.series.resourceURI,return.series.resourceURI is Url,daikon.inv.unary.string.IsUrl,(return.series.resourceURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.stories.available,"return.stories.available == return.stories.returned
+return.stories.available == size(return.stories.items[])
+return.stories.available >= size(return.textObjects[])
+return.stories.available >= size(return.collections[])
+return.stories.available >= size(return.prices[])","daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.binary.twoScalar.IntGreaterEqual
+daikon.inv.binary.twoScalar.IntGreaterEqual
+daikon.inv.binary.twoScalar.IntGreaterEqual","(return.stories.available, return.stories.returned)
+(return.stories.available, size(return.stories.items[..]))
+(return.stories.available, size(return.textObjects[..]))
+(return.stories.available, size(return.collections[..]))
+(return.stories.available, size(return.prices[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.0
+data.results.stories.collectionURI,return.stories.collectionURI is Url,daikon.inv.unary.string.IsUrl,(return.stories.collectionURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,1.0
+data.results.stories.items.resourceURI,return.resourceURI is Url,daikon.inv.unary.string.IsUrl,(return.resourceURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&stories&items():::EXIT,1.0
+data.results.textObjects,"size(return.textObjects[]) one of { 0, 1, 2 }
+size(return.textObjects[]) <= size(return.urls[])
+size(return.textObjects[]) <= size(return.prices[])","daikon.inv.unary.scalar.OneOfScalar
+daikon.inv.binary.twoScalar.IntLessEqual
+daikon.inv.binary.twoScalar.IntLessEqual","(size(return.textObjects[..]))
+(size(return.textObjects[..]), size(return.urls[..]))
+(size(return.textObjects[..]), size(return.prices[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.0
+data.results.textObjects.language,"return.language == ""en-us""
+LENGTH(return.language)==5","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.language)
+(return.language)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results&textObjects():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results&textObjects():::EXIT",0.5
+data.results.textObjects.type,"return.type one of { ""issue_preview_text"", ""issue_solicit_text"" }
+LENGTH(return.type)==18","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.type)
+(return.type)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results&textObjects():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results&textObjects():::EXIT",0.0
+data.results.thumbnail.extension,"return.thumbnail.extension == ""jpg""
+LENGTH(return.thumbnail.extension)==3","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.thumbnail.extension)
+(return.thumbnail.extension)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.5
+data.results.thumbnail.path,"LENGTH(return.thumbnail.path)==57
+return.thumbnail.path is Url","daikon.inv.unary.string.FixedLengthString
+daikon.inv.unary.string.IsUrl","(return.thumbnail.path)
+(return.thumbnail.path)","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.5
+data.results.title,return.variantDescription is a substring of return.title,daikon.inv.binary.twoString.StdString$SubString,"(return.title, return.variantDescription)",/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,0.0
+data.results.urls,"size(return.urls[]) >= size(return.collections[])
+size(return.urls[]) <= size(return.dates[])
+size(return.urls[]) >= size(return.prices[])","daikon.inv.binary.twoScalar.IntGreaterEqual
+daikon.inv.binary.twoScalar.IntLessEqual
+daikon.inv.binary.twoScalar.IntGreaterEqual","(size(return.urls[..]), size(return.collections[..]))
+(size(return.urls[..]), size(return.dates[..]))
+(size(return.urls[..]), size(return.prices[..]))","/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT",0.0
+data.results.urls.url,return.url is Url,daikon.inv.unary.string.IsUrl,(return.url),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&urls():::EXIT,1.0
+data.results.variantDescription,"return.variantDescription one of { ""I AM AN AVENGER BLANK COVER VARIANT"", ""Variant"" }",daikon.inv.unary.string.OneOfString,(return.variantDescription),/v1/public/comics/{comicId}&getComicIndividual&200&data&results():::EXIT,0.0
+data.results.variants.resourceURI,return.resourceURI is Url,daikon.inv.unary.string.IsUrl,(return.resourceURI),/v1/public/comics/{comicId}&getComicIndividual&200&data&results&variants():::EXIT,1.0
+data.results[data.offset],"return.data.results[return.data.offset] == return.data.results[return.data.total -1]
+return.data.results[return.data.offset] == return.data.results[return.data.count -1]","daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.binary.twoScalar.IntEqual","(return.data.results[return.data.offset], return.data.results[return.data.total -1])
+(return.data.results[return.data.offset], return.data.results[return.data.count -1])","/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT",1.0
+data.total,"return.data.total == return.data.count
+return.data.total == size(return.data.results[])
+return.data.total == 1","daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.binary.twoScalar.IntEqual
+daikon.inv.unary.scalar.OneOfScalar","(return.data.total, return.data.count)
+(return.data.total, size(return.data.results[..]))
+(return.data.total)","/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT",1.0
+etag,LENGTH(return.etag)==40,daikon.inv.unary.string.FixedLengthString,(return.etag),/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT,1.0
+status,"return.status == ""Ok""
+LENGTH(return.status)==2","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.status)
+(return.status)","/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT
+/v1/public/comics/{comicId}&getComicIndividual&200():::EXIT",1.0

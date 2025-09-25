@@ -1,0 +1,8 @@
+group,invariant,invariantType,variables,pptname,tp
+Response,"return.Response == ""True""
+LENGTH(return.Response)==4","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.Response)
+(return.Response)","/&bySearch&200():::EXIT
+/&bySearch&200():::EXIT",1.0
+Search.Poster,return.Poster is Url,daikon.inv.unary.string.IsUrl,(return.Poster),/&bySearch&200&Search():::EXIT,1.0
+totalResults,return.totalResults is Numeric,daikon.inv.unary.string.IsNumeric,(return.totalResults),/&bySearch&200():::EXIT,1.0
