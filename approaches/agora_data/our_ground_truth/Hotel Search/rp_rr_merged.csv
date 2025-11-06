@@ -1,10 +1,10 @@
 endpoint,group,response resource,attribute,description
-get+shopping_hotel-offers,data.offers.guests.adults,HotelProduct_Guests,adults,Attribute adults is responded to by parameter HotelProduct_Guests with a description: Number of adult guests (1-9) per room
-get+shopping_hotel-offers,data.offers.checkInDate,HotelOffer,checkInDate,"Attribute checkInDate is responded to by parameter HotelOffer with a description: Check-in date of the stay (hotel local date). Format YYYY-MM-DD. The lowest accepted value is the present date (no dates in the past). If not present, the default value will be today's date in the GMT time zone"
-get+shopping_hotel-offers,data.offers.checkOutDate,HotelOffer,checkOutDate,"Attribute checkOutDate is responded to by parameter HotelOffer with a description: Check-out date of the stay (hotel local date). Format YYYY-MM-DD. The lowest accepted value is checkInDate+1. If not present, it will default to checkInDate +1"
-get+shopping_hotel-offers,data.offers.price.total,HotelProduct_HotelPrice,total,"Attribute priceRange is responded to by parameter HotelProduct_HotelPrice with a description: Filter hotel offers by price per night interval (ex: 200-300 or -300 or 100).
+get+shopping_hotel-offers,data.offers.guests.adults,HotelProduct_Guests,adults,Attribute adults is responded to by parameter adults with a description: Number of adult guests (1-9) per room
+get+shopping_hotel-offers,data.offers.checkInDate,HotelOffer,checkInDate,"Attribute checkInDate is responded to by parameter checkInDate with a description: Check-in date of the stay (hotel local date). Format YYYY-MM-DD. The lowest accepted value is the present date (no dates in the past). If not present, the default value will be today's date in the GMT time zone"
+get+shopping_hotel-offers,data.offers.checkOutDate,HotelOffer,checkOutDate,"Attribute checkOutDate is responded to by parameter checkOutDate with a description: Check-out date of the stay (hotel local date). Format YYYY-MM-DD. The lowest accepted value is checkInDate+1. If not present, it will default to checkInDate +1"
+get+shopping_hotel-offers,data.offers.price.total,HotelProduct_HotelPrice,total,"Attribute total is responded to by parameter priceRange with a description: Filter hotel offers by price per night interval (ex: 200-300 or -300 or 100).
 It is mandatory to include a currency when this field is set"
-get+shopping_hotel-offers,data.offers.price.currency,HotelProduct_HotelPrice,currency,"Attribute currency is responded to by parameter HotelProduct_HotelPrice with a description: Use this parameter to request a specific currency. ISO currency code (http://www.iso.org/iso/home/standards/currency_codes.htm).
+get+shopping_hotel-offers,data.offers.price.currency,HotelProduct_HotelPrice,currency,"Attribute currency is responded to by parameter currency with a description: Use this parameter to request a specific currency. ISO currency code (http://www.iso.org/iso/home/standards/currency_codes.htm).
 If a hotel does not support the requested currency, the prices for the hotel will be returned in the local currency of the hotel"
 get+shopping_hotel-offers,data.offers.id,HotelOffer,id,"Unique identifier of this offer. Might be valid for a temporary period only. schema: {""example"": ""63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3"", ""type"": ""string"", ""minLength"": 2, ""maxLength"": 100, ""pattern"": ""^[A-Z0-9]*$""} schema: {""example"": ""63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3"", ""type"": ""string"", ""minLength"": 2, ""maxLength"": 100, ""pattern"": ""^[A-Z0-9]*$""}"
 get+shopping_hotel-offers,data.offers.checkInDate,HotelOffer,checkInDate,"check-in date of the stay (hotel local date). Format YYYY-MM-DD
@@ -97,3 +97,33 @@ Example - AD (Value Hotels) is the Provider/Merchant, and RT (Accor) is the Bran
 get+shopping_hotel-offers,data.hotel.cityCode,Hotel,cityCode,"Warning: The IATA city code associated to the hotel (not necessary the real Hotel City) schema: {""example"": ""PAR"", ""type"": ""string"", ""pattern"": ""^[A-Z]{3}$""} schema: {""example"": ""PAR"", ""type"": ""string"", ""pattern"": ""^[A-Z]{3}$""}"
 get+shopping_hotel-offers,data.hotel.latitude,Hotel,latitude,"Latitude schema: {""type"": ""number""} schema: {""type"": ""number""}"
 get+shopping_hotel-offers,data.hotel.longitude,Hotel,longitude,"Longitude schema: {""type"": ""number""} schema: {""type"": ""number""}"
+get+shopping_hotel-offers,data.offers.policies.cancellation.deadline,HotelProduct_CancellationPolicy,deadline,"Represents the deadline after which the penalty applies. DateTime is in ISO 8601 [https://www.w3.org/TR/NOTE-datetime].
+Example: 2010-08-14T12:00:00+01:00
+Example: 2010-08-14T12:00:00Z
+Example: 2010-08-14T12:00:00-01:00
+The value is expressed in the hotel local time zone, with the added time zone difference. So you can compute the deadline in UTC(GMT"
+get+shopping_hotel-offers,data.offers.policies.cancellation.percentage,HotelProduct_CancellationPolicy,percentage,Percentage of the total stay amount to be paid in case of cancellation. Value is between 0 and 100
+get+shopping_hotel-offers,data.offers.policies.holdTime.deadline,HotelProduct_HoldPolicy,deadline,"The date and time of the deadline in ISO 8601[https://www.w3.org/TR/NOTE-datetime]. 
+ Example: 2010-08-14T13:00:00
+ Please note that this value is expressed in the hotels local time zone"
+get+shopping_hotel-offers,data.offers.price.markups.amount,Markup,amount,"Defines the monetary value with decimal position as a String, schema: {""type"": ""string"", ""example"": ""10""}"
+get+shopping_hotel-offers,data.offers.price.variations.average.markups.amount,Markup,amount,"Defines the monetary value with decimal position as a String, schema: {""type"": ""string"", ""example"": ""10""}"
+get+shopping_hotel-offers,data.offers.price.variations.changes.markups.amount,Markup,amount,"Defines the monetary value with decimal position as a String, schema: {""type"": ""string"", ""example"": ""10""}"
+get+shopping_hotel-offers,data.offers.price.taxes.amount,Tax,amount,Defines amount with decimal separator
+get+shopping_hotel-offers,data.offers.price.taxes.pricingMode,Tax,pricingMode,"Specifies if the tax applies per occupant or per room
+  - PER_OCCUPANT
+  - PER_PRODUCT"
+get+shopping_hotel-offers,data.offers.price.variations.average.currency,Price,currency,currency Code apply to all elements of the price
+get+shopping_hotel-offers,data.offers.price.variations.average.sellingTotal,Price,sellingTotal,sellingTotal = Total + margins + markup + totalFees - discounts
+get+shopping_hotel-offers,data.offers.self,HotelOffer,self,"A self link to the object. Use this to refresh the Offer price, schema: {""type"": ""string"", ""example"": ""https://test.travel.api.amadeus.com/v2/shopping/hotel-offers/63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3""}"
+get+shopping_hotel-offers,data.type,HotelOffers,type,the type of the object (hotel-offers
+get+shopping_hotel-offers,data.offers.policies.deposit.deadline,HotelProduct_DepositPolicy,deadline,"The date and time of the deadline in ISO 8601[https://www.w3.org/TR/NOTE-datetime]. 
+ Example: 2010-08-14T13:00:00
+ Please note that this value is expressed in the hotels local time zone"
+get+shopping_hotel-offers,data.offers.policies.prepay.deadline,HotelProduct_DepositPolicy,deadline,"The date and time of the deadline in ISO 8601[https://www.w3.org/TR/NOTE-datetime]. 
+ Example: 2010-08-14T13:00:00
+ Please note that this value is expressed in the hotels local time zone"
+get+shopping_hotel-offers,data.offers.price.taxes.percentage,Tax,percentage,"In the case of a tax on TST value, the percentage of the tax will be indicated in this field"
+get+shopping_hotel-offers,data.offers.price.taxes.pricingFrequency,Tax,pricingFrequency,"Specifies if the tax applies per stay or per night
+  - PER_STAY
+  - PER_NIGHT"

@@ -387,7 +387,7 @@ class ConstraintExtractor:
                         data_type = data_type,
                         description = description
                     )
-                    description_observation_response = GPTChatCompletion(description_observation_prompt, model="gpt-4-turbo")
+                    description_observation_response = GPTChatCompletion(description_observation_prompt, model="gpt-4o")
                     
                     # assert that the description implies constraints
                     constraint_confirmation_prompt = CONSTRAINT_CONFIRMATION.format(
@@ -396,7 +396,7 @@ class ConstraintExtractor:
                         description = description,
                         description_observation = description_observation_response
                     )
-                    constraint_confirmation_response = GPTChatCompletion(constraint_confirmation_prompt, model="gpt-4-turbo")
+                    constraint_confirmation_response = GPTChatCompletion(constraint_confirmation_prompt, model="gpt-4o")
                     confirmation = extract_answer(constraint_confirmation_response) # 'yes' or 'no'
                     
                     if confirmation != 'yes':
@@ -489,7 +489,7 @@ class ConstraintExtractor:
                     )
                     print(description_observation_prompt)
                     print(f"Observing operation: {operation} - part: {part} - parameter: {parameter_name}")
-                    description_observation_response = GPTChatCompletion(description_observation_prompt,model = "gpt-4-turbo")
+                    description_observation_response = GPTChatCompletion(description_observation_prompt,model = "gpt-4o")
                     print(description_observation_response)
                     constraint_confirmation_prompt = CONSTRAINT_CONFIRMATION.format(
                         attribute = parameter_name,
@@ -499,7 +499,7 @@ class ConstraintExtractor:
                         param_schema = param_schema
                     )
 
-                    constraint_confirmation_response = GPTChatCompletion(constraint_confirmation_prompt, model = "gpt-4-turbo")
+                    constraint_confirmation_response = GPTChatCompletion(constraint_confirmation_prompt, model = "gpt-4o")
                     print("---\n", constraint_confirmation_prompt)
                     confirmation = extract_answer(constraint_confirmation_response) # 'yes' or 'no'
                     print (f"Operation: {operation} - part: {part} - parameter: {parameter_name} - Confirmation: {confirmation}")
@@ -584,7 +584,7 @@ class ConstraintExtractor:
                     description = description
                 )
 
-                constraint_confirmation_response = GPTChatCompletion(constraint_confirmation_prompt, model = "gpt-4-turbo")
+                constraint_confirmation_response = GPTChatCompletion(constraint_confirmation_prompt, model = "gpt-o")
                 confirmation = extract_answer(constraint_confirmation_response) # 'yes' or 'no'
 
                 if confirmation == 'yes':
@@ -676,7 +676,7 @@ class ConstraintExtractor:
                     param_schema = ""
                 )
                 print(f"Observing schema: {schema} - attribute: {parameter_name}")
-                description_observation_response = GPTChatCompletion(description_observation_prompt,model = "gpt-4-turbo")
+                description_observation_response = GPTChatCompletion(description_observation_prompt,model = "gpt-4o")
                 with open("prompt.txt", "w") as file:
                     file.write(f"PROMPT: {description_observation_prompt}\n")
                     file.write(f"---\n")
@@ -691,7 +691,7 @@ class ConstraintExtractor:
                 )
 
                 print(f"Confirming schema: {schema} - attribute: {parameter_name}")
-                constraint_confirmation_response = GPTChatCompletion(constraint_confirmation_prompt, model = "gpt-4-turbo")
+                constraint_confirmation_response = GPTChatCompletion(constraint_confirmation_prompt, model = "gpt-4o")
                 confirmation = extract_answer(constraint_confirmation_response) # 'yes' or 'no'
                 with open("prompt.txt", "a") as file:
                     file.write(f"PROMPT: {constraint_confirmation_prompt}\n")
@@ -711,7 +711,7 @@ class ConstraintExtractor:
 def get_simplified_schema(spec: dict):
     simplified_schema_dict = {}
     
-    # Xử lý cho Swagger 2.0 (definitions) và OpenAPI 3.0 (components/schemas)
+    # Handle Swagger 2.0 (definitions) and OpenAPI 3.0 (components/schemas)
     schemas = {}
     if "components" in spec and "schemas" in spec["components"]:
         schemas = spec["components"]["schemas"]
@@ -722,7 +722,7 @@ def get_simplified_schema(spec: dict):
     print(">>>>>> [code]5", "-----",schemas)    
     
     for schema_name, schema_body in schemas.items():
-        # Xử lý schema với get_description=True
+        # Process schema with get_description=True
         schema_params = get_schema_params(schema_body, spec, get_description=True)
         if schema_params:
             simplified_schema_dict[schema_name] = schema_params
@@ -756,41 +756,48 @@ def get_schema_params(body, spec, visited_refs=None, get_description=False, max_
             
             # Check the get_description flag
             if get_description:
-                # Lấy description nếu có
+                # Get description if available
                 description = ""
                 description_parent = find_object_with_key(prop_details, "description")
                 if description_parent and not isinstance(description_parent["description"], dict):
                     description = description_parent["description"].strip(' .')
                 
-                # Kiểm tra các từ khóa đặc biệt
+                # Check for special keywords
                 has_keywords = False
                 schema_str = ""
 
-                # Kiểm tra example
+                # Check example
                 if "example" in prop_details:
                     has_keywords = True
                     schema_str = json.dumps({"type": prop_details.get("type", "string"), "example": prop_details["example"]})
-                # Kiểm tra format
+                # Check format
                 if "format" in prop_details:
                     has_keywords = True
                     schema_str = json.dumps({"type": prop_details.get("type", "string"), "format": prop_details["format"]})
                 
-                # Kiểm tra enum
+                # Check enum
                 elif "enum" in prop_details:
                     has_keywords = True
                     schema_str = json.dumps({"type": prop_details.get("type", "string"), "enum": prop_details["enum"]})
                 
-                # Kiểm tra min/max
+                # Check min/max constraints
                 elif any(key in prop_details for key in ["minimum", "maximum", "minLength", "maxLength"]):
                     has_keywords = True
                     schema_str = json.dumps({k: v for k, v in prop_details.items() if k in ["type", "minimum", "maximum", "minLength", "maxLength"]})
                 
-                # Kiểm tra URL/URI
+                # Check URL/URI hints
                 elif any(key in str(prop_details).lower() for key in ["url", "uri"]):
                     has_keywords = True
                     schema_str = json.dumps({"type": prop_details.get("type", "string"), "format": "uri"})
-                
-                # Tạo description string
+                    
+                # Check low quality of spec
+                if prop_details.get("type", "string") == "string" and not  prop_details.get("format", "") and not description:
+                    has_keywords = True
+                    schema_str = json.dumps({"type": prop_details.get("type", "string")})
+                if "object" in prop_details.get("type", "string"):
+                    has_keywords = False
+
+                # Build the description string
                 if has_keywords:
                     if description:
                         description_string = f" (description: {description}, schema: {schema_str})"

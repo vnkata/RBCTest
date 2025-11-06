@@ -1,8 +1,7 @@
-# Thông qua input parameter
 from response_body_verification.data_model_buiding import *
 from response_body_verification.constraint_inference import *
 from response_body_verification.parameter_responsebody_mapping import *
-from utils.convert_json_to_excel_annotation_file import convert_json_to_excel_request_response_constraints
+from utils.convert_json_to_excel_annotation_file import convert_json_to_excel_response_property_constraints
 import openai
 
 import os
@@ -12,24 +11,9 @@ openai.api_key = os.getenv('OPENAI_KEY')
 
 
 def main():
-#     service_names =[
-#   "Canada Holidays",
-#   "GitLab Branch",
-#   "GitLab Commit",
-#   "GitLab Groups",
-#   "GitLab Issues",
-#   "GitLab Project",
-#   "GitLab Repository",
-#   "LanguageTool",
-#   "magento",
-#   "omdb",
-#   "spotifyweb",
-#   "StripeClone",
-#   "telegrambot",
-#   "travinq-provesio",
-#   "twitter"
-# ]
-    service_names = [
+    experiment_folder = "experiment_our"
+
+    rest_services = [
     "Github CreateOrganizationRepository",
     "Github GetOrganizationRepositories",
     "Hotel Search",
@@ -43,49 +27,41 @@ def main():
     "Youtube GetVideos"
     ]
 
+    for rest_service in rest_services:
+        print("\n"+"*"*20)
+        print(rest_service)
+        print("*"*20)
 
-    
-    for service_name in service_names:
-        print(f"Processing {service_name}...")
-        
-        # Đường dẫn đến file openapi.json
-        openapi_path = f"RBCTest_dataset/{service_name}/openapi.json"
-        
-        # Đường dẫn đến thư mục output
-        output_dir = f"experiment_our/{service_name}"
-        os.makedirs(output_dir, exist_ok=True)
-        
-        # Khởi tạo ConstraintExtractor
-        constraint_extractor = ConstraintExtractor(
-            openapi_path=openapi_path,
-            save_and_load=True,
-            experiment_folder="experiment_our"
-        )
-        
-        # Lấy constraints từ input parameters
-        outfile = f"{output_dir}/input_parameter.json"
-        input_parameter_constraints = constraint_extractor.get_input_parameter_constraints(outfile=outfile)
-        
-        # Khởi tạo ParameterResponseMapper
-        outfile = f"{output_dir}/request_response_constraints.json"
+        openapi_path = f"RBCTest_dataset/{rest_service}/openapi.json"
+
+        openapi_spec = load_openapi(openapi_path)
+        service_name = openapi_spec["info"]["title"]
+        os.makedirs(f"{experiment_folder}/{service_name}", exist_ok=True)
+
+        # Find parameter constraints
+        if rest_service == "StripeClone":
+            pass
+            # constraint_extractor = ConstraintExtractor(
+            #     openapi_path, save_and_load=False, list_of_operations=selected_operations)
+        else:
+            constraint_extractor = ConstraintExtractor(
+                openapi_path, save_and_load=False)
+
+        outfile = f"{experiment_folder}/{service_name}/input_parameter.json"
+        constraint_extractor.get_input_parameter_constraints(outfile=outfile)
+        with open(f"{experiment_folder}/{service_name}/input_parameter.json", "w") as f:
+            json.dump(
+                constraint_extractor.input_parameter_constraints, f, indent=2)
+        outfile = f"{
+            experiment_folder}/{service_name}/request_response_constraints.json"
         parameterResponseMapper = ParameterResponseMapper(
-            openapi_path=openapi_path,
-            service_name=service_name,
-            experiment_folder="experiment_our",
-            outfile=outfile
-        )
-        
-        # Chuyển đổi JSON sang Excel
-        outfile = f"{output_dir}/request_response_constraints.xlsx"
-        convert_json_to_excel_request_response_constraints(
-            json_file=f"{output_dir}/request_response_constraints.json",
-            openapi_spec_file=openapi_path,
-            output_file=outfile
-        )
-        
-        # Lấy constraints từ response body
-        outfile = f"{output_dir}/response_property_constraints.json"
-        constraint_extractor.get_inside_response_body_constraints(outfile=outfile)
+            openapi_path, save_and_load=False, outfile=outfile)
+        with open(f"{experiment_folder}/{service_name}/request_response_constraints.json", "w") as f:
+            json.dump(
+                parameterResponseMapper.response_body_input_parameter_mappings, f, indent=2)
+            
+        convert_json_to_excel_response_property_constraints(
+            outfile, openapi_path, outfile.replace(".json", ".xlsx"))
 
 
 if __name__ == "__main__":

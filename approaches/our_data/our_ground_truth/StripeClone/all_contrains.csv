@@ -1,21 +1,21 @@
 endpoint,group,description
 get+v1_apple_pay_domains,data.created,"Time at which the object was created. Measured in seconds since the Unix epoch. {""format"": ""unix-time"", ""type"": ""integer""}"
 get+v1_apple_pay_domains,data.domain_name," {""maxLength"": 5000, ""type"": ""string""}"
-get+v1_apple_pay_domains,data.id,"Attribute ending_before is responded to by parameter apple_pay_domain with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
-Attribute starting_after is responded to by parameter apple_pay_domain with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
+get+v1_apple_pay_domains,data.id,"Attribute id is responded to by parameter ending_before with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
+Attribute id is responded to by parameter starting_after with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
 Unique identifier for the object. {""maxLength"": 5000, ""type"": ""string""}"
 get+v1_apple_pay_domains,data.object,"String representing the object's type. Objects of the same type share the same value. {""enum"": [""apple_pay_domain""], ""type"": ""string""}"
 get+v1_apple_pay_domains,object,nan
 get+v1_apple_pay_domains,url,nan
 get+v1_radar_value_list_items,data.created,"Time at which the object was created. Measured in seconds since the Unix epoch. {""format"": ""unix-time"", ""type"": ""integer""}"
 get+v1_radar_value_list_items,data.created_by,"The name or email address of the user who added this item to the value list. {""maxLength"": 5000, ""type"": ""string""}"
-get+v1_radar_value_list_items,data.id,"Attribute starting_after is responded to by parameter radar.value_list_item with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
-Attribute ending_before is responded to by parameter radar.value_list_item with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
+get+v1_radar_value_list_items,data.id,"Attribute id is responded to by parameter starting_after with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
+Attribute id is responded to by parameter ending_before with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
 Unique identifier for the object. {""maxLength"": 5000, ""type"": ""string""}"
 get+v1_radar_value_list_items,data.object,"String representing the object's type. Objects of the same type share the same value. {""enum"": [""radar.value_list_item""], ""type"": ""string""}"
-get+v1_radar_value_list_items,data.value,"Attribute value is responded to by parameter radar.value_list_item with a description: Return items belonging to the parent list whose value matches the specified value (using an ""is like"" match)
+get+v1_radar_value_list_items,data.value,"Attribute value is responded to by parameter value with a description: Return items belonging to the parent list whose value matches the specified value (using an ""is like"" match)
 The value of the item. {""maxLength"": 5000, ""type"": ""string""}"
-get+v1_radar_value_list_items,data.value_list,"Attribute value_list is responded to by parameter radar.value_list_item with a description: Identifier for the parent value list this item belongs to
+get+v1_radar_value_list_items,data.value_list,"Attribute value_list is responded to by parameter value_list with a description: Identifier for the parent value list this item belongs to
 The identifier of the value list this item belongs to. {""maxLength"": 5000, ""type"": ""string""}"
 get+v1_radar_value_list_items,object,nan
 get+v1_radar_value_list_items,url,nan
@@ -27,17 +27,18 @@ get+v1_reporting_report_types,data.object,"String representing the object's type
 get+v1_reporting_report_types,data.updated,"When this Report Type was latest updated. Measured in seconds since the Unix epoch. {""format"": ""unix-time"", ""type"": ""integer""}"
 get+v1_reporting_report_types,object,nan
 get+v1_reporting_report_types,url,nan
-get+v1_tax_rates,data.active,Attribute active is responded to by parameter tax_rate with a description: Optional flag to filter by tax rates that are either active or inactive (archived)
+get+v1_tax_rates,data.active,Attribute active is responded to by parameter active with a description: Optional flag to filter by tax rates that are either active or inactive (archived)
 get+v1_tax_rates,data.country,"Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)). {""maxLength"": 5000, ""nullable"": true, ""type"": ""string""}"
 get+v1_tax_rates,data.created,"Time at which the object was created. Measured in seconds since the Unix epoch. {""format"": ""unix-time"", ""type"": ""integer""}"
 get+v1_tax_rates,data.description,"An arbitrary string attached to the tax rate for your internal use only. It will not be visible to your customers. {""maxLength"": 5000, ""nullable"": true, ""type"": ""string""}"
+get+v1_tax_rates,data.display_name,nan
 get+v1_tax_rates,data.effective_percentage,"Actual/effective tax rate percentage out of 100. For tax calculations with automatic_tax[enabled]=true,
 this percentage reflects the rate actually used to calculate tax based on the product's taxability
 and whether the user is registered to collect taxes in the corresponding jurisdiction. {""nullable"": true, ""type"": ""number""}"
-get+v1_tax_rates,data.id,"Attribute ending_before is responded to by parameter tax_rate with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
-Attribute starting_after is responded to by parameter tax_rate with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
+get+v1_tax_rates,data.id,"Attribute id is responded to by parameter ending_before with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
+Attribute id is responded to by parameter starting_after with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
 Unique identifier for the object. {""maxLength"": 5000, ""type"": ""string""}"
-get+v1_tax_rates,data.inclusive,Attribute inclusive is responded to by parameter tax_rate with a description: Optional flag to filter by tax rates that are inclusive (or those that are not inclusive)
+get+v1_tax_rates,data.inclusive,Attribute inclusive is responded to by parameter inclusive with a description: Optional flag to filter by tax rates that are inclusive (or those that are not inclusive)
 get+v1_tax_rates,data.jurisdiction,"The jurisdiction for the tax rate. You can use this label field for tax reporting purposes. It also appears on your customerâ€™s invoice. {""maxLength"": 5000, ""nullable"": true, ""type"": ""string""}"
 get+v1_tax_rates,data.jurisdiction_level,"The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates. {""enum"": [""city"", ""country"", ""county"", ""district"", ""multiple"", ""state""], ""nullable"": true, ""type"": ""string""}"
 get+v1_tax_rates,data.metadata,"Set of [key-value pairs](https://stripe.com/docs/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. {""additionalProperties"": {""maxLength"": 500, ""type"": ""string""}, ""nullable"": true, ""type"": ""object""}"
@@ -50,8 +51,8 @@ get+v1_tax_rates,url,nan
 get+v1_test_helpers_test_clocks,data.created,"Time at which the object was created. Measured in seconds since the Unix epoch. {""format"": ""unix-time"", ""type"": ""integer""}"
 get+v1_test_helpers_test_clocks,data.deletes_after,"Time at which this clock is scheduled to auto delete. {""format"": ""unix-time"", ""type"": ""integer""}"
 get+v1_test_helpers_test_clocks,data.frozen_time,"Time at which all objects belonging to this clock are frozen. {""format"": ""unix-time"", ""type"": ""integer""}"
-get+v1_test_helpers_test_clocks,data.id,"Attribute starting_after is responded to by parameter test_helpers.test_clock with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
-Attribute ending_before is responded to by parameter test_helpers.test_clock with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
+get+v1_test_helpers_test_clocks,data.id,"Attribute id is responded to by parameter starting_after with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
+Attribute id is responded to by parameter ending_before with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
 Unique identifier for the object. {""maxLength"": 5000, ""type"": ""string""}"
 get+v1_test_helpers_test_clocks,data.name,"The custom name supplied at creation. {""maxLength"": 5000, ""nullable"": true, ""type"": ""string""}"
 get+v1_test_helpers_test_clocks,data.object,"String representing the object's type. Objects of the same type share the same value. {""enum"": [""test_helpers.test_clock""], ""type"": ""string""}
@@ -62,8 +63,8 @@ get+v1_webhook_endpoints,data.api_version,"The API version events are rendered a
 get+v1_webhook_endpoints,data.application,"The ID of the associated Connect application. {""maxLength"": 5000, ""nullable"": true, ""type"": ""string""}"
 get+v1_webhook_endpoints,data.created,"Time at which the object was created. Measured in seconds since the Unix epoch. {""format"": ""unix-time"", ""type"": ""integer""}"
 get+v1_webhook_endpoints,data.description,"An optional description of what the webhook is used for. {""maxLength"": 5000, ""nullable"": true, ""type"": ""string""}"
-get+v1_webhook_endpoints,data.id,"Attribute ending_before is responded to by parameter webhook_endpoint with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
-Attribute starting_after is responded to by parameter webhook_endpoint with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
+get+v1_webhook_endpoints,data.id,"Attribute id is responded to by parameter ending_before with a description: A cursor for use in pagination. `ending_before` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list
+Attribute id is responded to by parameter starting_after with a description: A cursor for use in pagination. `starting_after` is an object ID that defines your place in the list. For instance, if you make a list request and receive 100 objects, ending with `obj_foo`, your subsequent call can include `starting_after=obj_foo` in order to fetch the next page of the list
 Unique identifier for the object. {""maxLength"": 5000, ""type"": ""string""}"
 get+v1_webhook_endpoints,data.metadata,"Set of [key-value pairs](https://stripe.com/docs/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. {""additionalProperties"": {""maxLength"": 500, ""type"": ""string""}, ""type"": ""object""}"
 get+v1_webhook_endpoints,data.object,"String representing the object's type. Objects of the same type share the same value. {""enum"": [""webhook_endpoint""], ""type"": ""string""}"
@@ -91,6 +92,18 @@ post+v1_radar_value_list_items,id,"Unique identifier for the object. {""maxLengt
 post+v1_radar_value_list_items,object,"String representing the object's type. Objects of the same type share the same value. {""enum"": [""radar.value_list_item""], ""type"": ""string""}"
 post+v1_radar_value_list_items,value,"The value of the item. {""maxLength"": 5000, ""type"": ""string""}"
 post+v1_radar_value_list_items,value_list,"The identifier of the value list this item belongs to. {""maxLength"": 5000, ""type"": ""string""}"
+post+v1_tax_rates,country,nan
+post+v1_tax_rates,created,nan
+post+v1_tax_rates,description,nan
+post+v1_tax_rates,display_name,nan
+post+v1_tax_rates,effective_percentage,nan
+post+v1_tax_rates,id,nan
+post+v1_tax_rates,jurisdiction,nan
+post+v1_tax_rates,jurisdiction_level,nan
+post+v1_tax_rates,object,nan
+post+v1_tax_rates,percentage,nan
+post+v1_tax_rates,state,nan
+post+v1_tax_rates,tax_type,nan
 post+v1_test_helpers_test_clocks,created,"Time at which the object was created. Measured in seconds since the Unix epoch. {""format"": ""unix-time"", ""type"": ""integer""}"
 post+v1_test_helpers_test_clocks,deletes_after,"Time at which this clock is scheduled to auto delete. {""format"": ""unix-time"", ""type"": ""integer""}"
 post+v1_test_helpers_test_clocks,frozen_time,"Time at which all objects belonging to this clock are frozen. {""format"": ""unix-time"", ""type"": ""integer""}"

@@ -400,7 +400,7 @@ class VerificationScriptGenerator:
             with open(f"{self.experiment_dir}/prompts.txt", "a") as file:
                 file.write(f"Prompt for constraint {index}:\n{python_verification_script_generation_prompt}\n")
         
-            python_verification_script_response = GPTChatCompletion(python_verification_script_generation_prompt, model="gpt-4-turbo")
+            python_verification_script_response = GPTChatCompletion(python_verification_script_generation_prompt, model="gpt-4o")
 
             # export_file(python_verification_script_generation_prompt, python_verification_script_response, f"constraint_{index}.txt")
             
@@ -431,7 +431,7 @@ class VerificationScriptGenerator:
             #     generated_verification_script = python_verification_script
             # )
 
-            # confirmation_response = GPTChatCompletion(python_verification_script_confirm_prompt, model="gpt-4-turbo")
+            # confirmation_response = GPTChatCompletion(python_verification_script_confirm_prompt, model="gpt-4o")
 
             # export_file(python_verification_script_confirm_prompt, confirmation_response, f"constraint_{index}.txt")
 
@@ -643,7 +643,7 @@ class VerificationScriptGenerator:
                 print(python_verification_script_generation_prompt)
                 # input(f"{index} - Press Enter to continue...")
 
-                python_verification_script_response = GPTChatCompletion(python_verification_script_generation_prompt, model="gpt-4-turbo")
+                python_verification_script_response = GPTChatCompletion(python_verification_script_generation_prompt, model="gpt-4o")
                 python_verification_script = extract_python_code(python_verification_script_response)
                 # script_string, status = execute_request_parameter_constraint_verification_script(python_verification_script, row['API response'], row['request information'])
                 verification_scripts[index] = python_verification_script
@@ -666,7 +666,7 @@ class VerificationScriptGenerator:
                 #     generated_verification_script = python_verification_script
                 # )
 
-                # confirmation_response = GPTChatCompletion(python_verification_script_confirm_prompt, model="gpt-4-turbo")
+                # confirmation_response = GPTChatCompletion(python_verification_script_confirm_prompt, model="gpt-4o")
                 # export_file(python_verification_script_confirm_prompt, confirmation_response, f"constraint_{index}.txt")
                 # # input("Press Enter to continue...")
 

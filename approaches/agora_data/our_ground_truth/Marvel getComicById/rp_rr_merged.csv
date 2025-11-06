@@ -1,5 +1,5 @@
 endpoint,group,response resource,attribute,description
-get+v1_public_comics_{comicid},data.results.id,Comic,id,Attribute comicId is responded to by parameter Comic with a description: A single comic
+get+v1_public_comics_{comicid},data.results.id,Comic,id,Attribute id is responded to by parameter comicId with a description: A single comic
 get+v1_public_comics_{comicid},data.offset,ComicDataContainer,offset,"The requested offset (number of skipped results) of the call. schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
 get+v1_public_comics_{comicid},data.limit,ComicDataContainer,limit,"The requested result limit. schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
 get+v1_public_comics_{comicid},data.total,ComicDataContainer,total,"The total number of resources available given the current filter set. schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
@@ -35,3 +35,18 @@ get+v1_public_comics_{comicid},data.results.characters.returned,CharacterList,re
 get+v1_public_comics_{comicid},data.results.stories.available,StoryList,available,"The number of total available stories in this list. Will always be greater than or equal to the ""returned"" value. schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
 get+v1_public_comics_{comicid},data.results.stories.returned,StoryList,returned,"The number of stories returned in this collection (up to 20). schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
 get+v1_public_comics_{comicid},data.results.events.available,EventList,available,"The number of total available events in this list. Will always be greater than or equal to the ""returned"" value. schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
+get+v1_public_comics_{comicid},code,ComicDataWrapper,code,"The HTTP status code of the returned result, schema: {""type"": ""integer"", ""format"": ""int32""}"
+get+v1_public_comics_{comicid},data.results.characters.collectionURI,CharacterList,collectionURI,The path to the full list of characters in this collection
+get+v1_public_comics_{comicid},data.results.events.collectionURI,EventList,collectionURI,The path to the full list of events in this collection
+get+v1_public_comics_{comicid},data.results.stories.collectionURI,StoryList,collectionURI,The path to the full list of stories in this collection
+get+v1_public_comics_{comicid},data.results.creators.collectionURI,CreatorList,collectionURI,The path to the full list of creators in this collection
+get+v1_public_comics_{comicid},data.results.characters.items.resourceURI,CharacterSummary,resourceURI,The path to the individual character resource
+get+v1_public_comics_{comicid},data.results.creators.items.resourceURI,CreatorSummary,resourceURI,The path to the individual creator resource
+get+v1_public_comics_{comicid},data.results.events.returned,EventList,returned,The number of events returned in this collection (up to 20
+get+v1_public_comics_{comicid},data.results.series.resourceURI,SeriesSummary,resourceURI,The path to the individual series resource
+get+v1_public_comics_{comicid},data.results.stories.items.resourceURI,StorySummary,resourceURI,The path to the individual story resource
+get+v1_public_comics_{comicid},data.results.stories.items.type,StorySummary,type,The type of the story (interior or cover
+get+v1_public_comics_{comicid},data.results.textObjects.type,TextObject,type,"The canonical type of the text object (e.g. solicit text, preview text, etc."
+get+v1_public_comics_{comicid},data.results.urls.url,Url,url,"A full URL (including scheme, domain, and path"
+get+v1_public_comics_{comicid},data.results.events.items.resourceURI,EventSummary,resourceURI,The path to the individual event resource
+get+v1_public_comics_{comicid},data.results.modified,Comic,modified,The date the resource was most recently modified

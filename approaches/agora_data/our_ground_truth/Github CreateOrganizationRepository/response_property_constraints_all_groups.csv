@@ -88,3 +88,6 @@ post-/orgs/{org}/repos,repository,created_at,created_at,"{""type"": ""string"", 
 post-/orgs/{org}/repos,repository,updated_at,updated_at,"{""type"": ""string"", ""format"": ""date-time"", ""example"": ""2011-01-26T19:14:43Z"", ""nullable"": true} schema: {""type"": ""string"", ""format"": ""date-time"", ""example"": ""2011-01-26T19:14:43Z"", ""nullable"": true}"
 post-/orgs/{org}/repos,repository,starred_at,starred_at,"{""type"": ""string"", ""example"": ""\""2020-07-09T00:17:42Z\""""} schema: {""type"": ""string"", ""example"": ""\""2020-07-09T00:17:42Z\""""}"
 post-/orgs/{org}/repos,repository,visibility,visibility,"The repository visibility: public, private, or internal"
+post-/orgs/{org}/repos,repository,events_url,events_url,"{""type"": ""string"", ""format"": ""uri""}"
+post-/orgs/{org}/repos,simple-user,starred_at,owner.starred_at,"{""type"": ""string"", ""example"": ""\""2020-07-09T00:17:55Z\""""}"
+post-/orgs/{org}/repos,simple-user,starred_at,organization.starred_at,"{""type"": ""string"", ""example"": ""\""2020-07-09T00:17:55Z\""""}"

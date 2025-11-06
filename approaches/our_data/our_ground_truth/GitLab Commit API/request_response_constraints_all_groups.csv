@@ -57,3 +57,5 @@ post-/projects/{id}/statuses/{sha},CommitStatus,name,name,,requestBody,name,The 
 post-/projects/{id}/statuses/{sha},CommitStatus,ref,ref,,requestBody,ref,The ref (branch or tag) to which the status refers
 post-/projects/{id}/statuses/{sha},CommitStatus,sha,sha,,parameters,sha,The commit SHA
 post-/projects/{id}/statuses/{sha},CommitStatus,target_url,target_url,,requestBody,target_url,The target URL to associate with this status
+get-/projects,BasicProjectDetails,issues_enabled,issues_enabled,issues_enabled,parameters,with_issues_enabled,Limit by enabled issues feature
+get-/projects,BasicProjectDetails,merge_requests_enabled,merge_requests_enabled,merge_requests_enabled,parameters,with_merge_requests_enabled,Limit by enabled merge requests feature

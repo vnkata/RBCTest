@@ -1,2 +1,3 @@
 operation,response resource,attribute,group,description,part,corresponding attribute,corresponding attribute description
 get-/,Response,Type,Search.Type,,parameters,type,Return movie or series
+get-/,Response,Year,Search.Year,,parameters,y,Year of release

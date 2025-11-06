@@ -19,3 +19,6 @@ get-/artists/{id}/albums,artist-simple,href,items.artists.href,"A link to the We
 get-/artists/{id}/albums,album-simple-page,next,next,"URL to the next page of items. (null if none schema: {""type"": ""integer""} schema: {""type"": ""integer""}"
 get-/artists/{id}/albums,album-simple,available_markets,items.available_markets,"The markets in which the album is available: ISO 3166-1 alpha-2 country codes. Note that an album is considered available in a market when at least 1 of its tracks is available in that market. schema: {""type"": ""array""} schema: {""type"": ""array""}"
 get-/artists/{id}/albums,album-simple,available_markets,items.available_markets,The markets in which the album is available: ISO 3166-1 alpha-2 country codes. Note that an album is considered available in a market when at least 1 of its tracks is available in that market
+get-/artists/{id}/albums,artist-simple,uri,items.artists.uri,"The Spotify URI for the artist, schema: {""type"": ""string"", ""format"": ""uri""}"
+get-/artists/{id}/albums,album-simple,type,items.external_urls.type,The object type: 'album'
+get-/artists/{id}/albums,album-simple,type,items.type,The object type: 'album'

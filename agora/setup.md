@@ -12,7 +12,7 @@
 
 ---
 ### Note
-The **spec** folder inside **RESTest** contains the specification and configuration files of **our dataset**.
+The **spec** folder inside **RESTest** contains the specification and configuration files of **RBCTest dataset**.
 
 # AGORA+
 

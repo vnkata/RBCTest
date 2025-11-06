@@ -34,3 +34,18 @@ get-/v1/public/comics/{comicid},CharacterList,returned,data.results.characters.r
 get-/v1/public/comics/{comicid},StoryList,available,data.results.stories.available,"The number of total available stories in this list. Will always be greater than or equal to the ""returned"" value. schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
 get-/v1/public/comics/{comicid},StoryList,returned,data.results.stories.returned,"The number of stories returned in this collection (up to 20). schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
 get-/v1/public/comics/{comicid},EventList,available,data.results.events.available,"The number of total available events in this list. Will always be greater than or equal to the ""returned"" value. schema: {""type"": ""integer"", ""format"": ""int32""} schema: {""type"": ""integer"", ""format"": ""int32""}"
+get-/v1/public/comics/{comicid},ComicDataWrapper,code,code,"The HTTP status code of the returned result, schema: {""type"": ""integer"", ""format"": ""int32""}"
+get-/v1/public/comics/{comicid},CharacterList,collectionURI,data.results.characters.collectionURI,The path to the full list of characters in this collection
+get-/v1/public/comics/{comicid},EventList,collectionURI,data.results.events.collectionURI,The path to the full list of events in this collection
+get-/v1/public/comics/{comicid},StoryList,collectionURI,data.results.stories.collectionURI,The path to the full list of stories in this collection
+get-/v1/public/comics/{comicid},CreatorList,collectionURI,data.results.creators.collectionURI,The path to the full list of creators in this collection
+get-/v1/public/comics/{comicid},CharacterSummary,resourceURI,data.results.characters.items.resourceURI,The path to the individual character resource
+get-/v1/public/comics/{comicid},CreatorSummary,resourceURI,data.results.creators.items.resourceURI,The path to the individual creator resource
+get-/v1/public/comics/{comicid},EventList,returned,data.results.events.returned,The number of events returned in this collection (up to 20
+get-/v1/public/comics/{comicid},SeriesSummary,resourceURI,data.results.series.resourceURI,The path to the individual series resource
+get-/v1/public/comics/{comicid},StorySummary,resourceURI,data.results.stories.items.resourceURI,The path to the individual story resource
+get-/v1/public/comics/{comicid},StorySummary,type,data.results.stories.items.type,The type of the story (interior or cover
+get-/v1/public/comics/{comicid},TextObject,type,data.results.textObjects.type,"The canonical type of the text object (e.g. solicit text, preview text, etc."
+get-/v1/public/comics/{comicid},Url,url,data.results.urls.url,"A full URL (including scheme, domain, and path"
+get-/v1/public/comics/{comicid},EventSummary,resourceURI,data.results.events.items.resourceURI,The path to the individual event resource
+get-/v1/public/comics/{comicid},Comic,modified,data.results.modified,The date the resource was most recently modified

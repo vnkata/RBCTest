@@ -20,3 +20,10 @@ post+users_{user_id}_playlists,tracks.next,playlist-track-page,next,"URL to the 
 post+users_{user_id}_playlists,tracks.offset,playlist-track-page,offset,"The offset of the items returned (as set in the query or by default). schema: {""type"": ""integer""} schema: {""type"": ""integer""}"
 post+users_{user_id}_playlists,tracks.previous,playlist-track-page,previous,"URL to the previous page of items. (null if none) schema: {""type"": ""string"", ""x-nullable"": true} schema: {""type"": ""string"", ""x-nullable"": true}"
 post+users_{user_id}_playlists,uri,playlist,uri,"Spotify URI of the playlist. schema: {""type"": ""string""} schema: {""type"": ""string""}"
+post+users_{user_id}_playlists,followers.href,playlist,href,A link to the Web API endpoint providing full details of the playlist
+post+users_{user_id}_playlists,href,playlist,href,A link to the Web API endpoint providing full details of the playlist
+post+users_{user_id}_playlists,images.url,image,url,"The source URL of the image, schema: {""type"": ""string"", ""format"": ""uri""}"
+post+users_{user_id}_playlists,owner.followers.href,followers,href,A link to the Web API endpoint providing full details of the followers; null if not available
+post+users_{user_id}_playlists,tracks.items.added_by.followers.href,followers,href,A link to the Web API endpoint providing full details of the followers; null if not available
+post+users_{user_id}_playlists,tracks.href,playlist-track-page,href,A link to the Web API endpoint returning the full result of the request
+post+users_{user_id}_playlists,type,playlist,type,The object type: 'playlist'

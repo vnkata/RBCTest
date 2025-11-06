@@ -96,3 +96,18 @@ post-/v1/webhook_endpoints,webhook_endpoint,object,object,String representing th
 post-/v1/webhook_endpoints,webhook_endpoint,secret,secret,"The endpoint's secret, used to generate [webhook signatures](https://stripe.com/docs/webhooks/signatures). Only returned at creation.","{""maxLength"": 5000, ""type"": ""string""}"
 post-/v1/webhook_endpoints,webhook_endpoint,status,status,The status of the webhook. It can be `enabled` or `disabled`.,"{""maxLength"": 5000, ""type"": ""string""}"
 post-/v1/webhook_endpoints,webhook_endpoint,url,url,The URL of the webhook endpoint.,"{""maxLength"": 5000, ""type"": ""string""}"
+post-/v1/tax_rates,tax_rate,country,country,Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2,
+get-/v1/tax_rates,tax_rate,display_name,data.display_name,"The display name of the tax rates as it will appear to your customer on their receipt email, PDF, and the hosted invoice page, schema: {""maxLength"": 5000, ""type"": ""string""}",
+post-/v1/tax_rates,tax_rate,created,created,"Time at which the object was created. Measured in seconds since the Unix epoch, schema: {""type"": ""integer"", ""format"": ""unix-time""}",
+post-/v1/tax_rates,tax_rate,description,description,"An arbitrary string attached to the tax rate for your internal use only. It will not be visible to your customers, schema: {""maxLength"": 5000, ""type"": ""string""}",
+post-/v1/tax_rates,tax_rate,display_name,display_name,"The display name of the tax rates as it will appear to your customer on their receipt email, PDF, and the hosted invoice page, schema: {""maxLength"": 5000, ""type"": ""string""}",
+post-/v1/tax_rates,tax_rate,effective_percentage,effective_percentage,"Actual/effective tax rate percentage out of 100. For tax calculations with automatic_tax[enabled]=true,
+this percentage reflects the rate actually used to calculate tax based on the product's taxability
+and whether the user is registered to collect taxes in the corresponding jurisdiction, schema: {""type"": ""number"", ""format"": ""uri""}",
+post-/v1/tax_rates,tax_rate,id,id,"Unique identifier for the object, schema: {""maxLength"": 5000, ""type"": ""string""}",
+post-/v1/tax_rates,tax_rate,jurisdiction,jurisdiction,"The jurisdiction for the tax rate. You can use this label field for tax reporting purposes. It also appears on your customer’s invoice, schema: {""maxLength"": 5000, ""type"": ""string""}",
+post-/v1/tax_rates,tax_rate,jurisdiction_level,jurisdiction_level,"The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates, schema: {""type"": ""string"", ""enum"": [""city"", ""country"", ""county"", ""district"", ""multiple"", ""state""]}",
+post-/v1/tax_rates,tax_rate,object,object,"String representing the object's type. Objects of the same type share the same value, schema: {""type"": ""string"", ""enum"": [""tax_rate""]}",
+post-/v1/tax_rates,tax_rate,percentage,percentage,"Tax rate percentage out of 100. For tax calculations with automatic_tax[enabled]=true, this percentage includes the statutory tax rate of non-taxable jurisdictions, schema: {""type"": ""number"", ""format"": ""uri""}",
+post-/v1/tax_rates,tax_rate,state,state,[ISO 3166-2 subdivision code](https://en.wikipedia.org/wiki/ISO_3166-2:US,
+post-/v1/tax_rates,tax_rate,tax_type,tax_type,"The high-level tax type, such as `vat` or `sales_tax`, schema: {""type"": ""string"", ""enum"": [""amusement_tax"", ""communications_tax"", ""gst"", ""hst"", ""igst"", ""jct"", ""lease_tax"", ""pst"", ""qst"", ""rst"", ""sales_tax"", ""vat""]}",

@@ -1,8 +1,9 @@
 endpoint,group,response resource,attribute,description
-get+,Title,Response,Title,Attribute t is responded to by parameter Response with a description: Title of movie or series
-get+,imdbID,Response,imdbID,Attribute i is responded to by parameter Response with a description: A valid IMDb ID (e.g. tt0000001)
-get+,Type,Response,Type,"Attribute type is responded to by parameter Response with a description: Return movie, series or episode"
-get+,Plot,Response,Plot,Attribute plot is responded to by parameter Response with a description: Return short or full plot
+get+,Title,Response,Title,Attribute Title is responded to by parameter t with a description: Title of movie or series
+get+,imdbID,Response,imdbID,Attribute imdbID is responded to by parameter i with a description: A valid IMDb ID (e.g. tt0000001)
+get+,Type,Response,Type,"Attribute Type is responded to by parameter type with a description: Return movie, series or episode"
+get+,Plot,Response,Plot,Attribute Plot is responded to by parameter plot with a description: Return short or full plot
+get+,Year,Response,Year,Attribute Year is responded to by parameter y with a description: Year of release
 get+,Response,Response,Response,"{""type"": ""string"", ""enum"": [""True"", ""False""], ""example"": ""True""} schema: {""type"": ""string"", ""enum"": [""True"", ""False""], ""example"": ""True""}"
 get+,Year,Response,Year,"{""type"": ""string"", ""example"": 2013} schema: {""type"": ""string"", ""example"": 2013}"
 get+,Released,Response,Released,"{""type"": ""string"", ""example"": ""12 Jun 2013""} schema: {""type"": ""string"", ""example"": ""12 Jun 2013""}"

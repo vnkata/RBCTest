@@ -38,6 +38,9 @@ This repository contains the resources and code related to the paper "RBCTest: L
    ```
    Please ensure that your key supports the required models.
 
+### LLM Config:
+- Edit LLM model in [`src\utils\gptcall.py`](src\utils\gptcall.py) default to GPT-4o and temperature = 0
+
 ### Constraint Mining
 
 1. **Request-Response Constraints:**
@@ -101,5 +104,3 @@ This repository contains the resources and code related to the paper "RBCTest: L
 - Details: see [`approaches/agora_data`](approaches/agora_data) (each subfolder is an API-under-test) of AGORA Dataset and [`approaches/our_mining`](approaches/our_mining) (each subfolder is an API-under-test) of RBCTest Dataset
 ### RQ5 Ablation
 - Ablation study: see [`approaches/ablation`](approaches/ablation)
-
-# Question/Ans

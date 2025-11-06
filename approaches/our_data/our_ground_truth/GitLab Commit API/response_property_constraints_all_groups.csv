@@ -33,3 +33,5 @@ post-/projects/{id}/repository/commits,RepoCommitDetail,web_url,web_url,"{""type
 post-/projects/{id}/statuses/{sha},Author,web_url,author.web_url,"{""type"": ""string""}"
 post-/projects/{id}/statuses/{sha},Author,avatar_url,author.avatar_url,"{""type"": ""string""}"
 post-/projects/{id}/statuses/{sha},CommitStatus,target_url,target_url,"{""type"": ""string""}"
+get-/projects/{id}/repository/commits/{sha}/signature,X509Issuer,crl_url,x509_certificate.x509_issuer.crl_url,"{ ""type"": ""string"" }"
+post-/projects,BasicProjectDetails,marked_for_deletion_at,marked_for_deletion_at,"{""type"": ""string"", ""format"": ""date""}"

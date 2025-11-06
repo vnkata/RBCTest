@@ -54,8 +54,10 @@ def find_previous_response(prompt: str) -> str:
                 return data['response']
     return None
 
-def GPTChatCompletion(prompt, system="", model='gpt-4-turbo', temperature=0.2, top_p = 0.9, max_tokens=-1):
+def GPTChatCompletion(prompt, system="", model='gpt-4o', temperature=0.0, top_p = 0.9, max_tokens=-1):
+    model = "gpt-4o"  # Updated model name
     previous_response = find_previous_response(prompt)
+
     if previous_response:
         return previous_response
     

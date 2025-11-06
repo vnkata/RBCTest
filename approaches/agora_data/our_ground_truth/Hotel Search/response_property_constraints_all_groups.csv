@@ -90,3 +90,33 @@ Example - AD (Value Hotels) is the Provider/Merchant, and RT (Accor) is the Bran
 get-/shopping/hotel-offers,Hotel,cityCode,data.hotel.cityCode,"Warning: The IATA city code associated to the hotel (not necessary the real Hotel City) schema: {""example"": ""PAR"", ""type"": ""string"", ""pattern"": ""^[A-Z]{3}$""} schema: {""example"": ""PAR"", ""type"": ""string"", ""pattern"": ""^[A-Z]{3}$""}"
 get-/shopping/hotel-offers,Hotel,latitude,data.hotel.latitude,"Latitude schema: {""type"": ""number""} schema: {""type"": ""number""}"
 get-/shopping/hotel-offers,Hotel,longitude,data.hotel.longitude,"Longitude schema: {""type"": ""number""} schema: {""type"": ""number""}"
+get-/shopping/hotel-offers,HotelProduct_CancellationPolicy,deadline,data.offers.policies.cancellation.deadline,"Represents the deadline after which the penalty applies. DateTime is in ISO 8601 [https://www.w3.org/TR/NOTE-datetime].
+Example: 2010-08-14T12:00:00+01:00
+Example: 2010-08-14T12:00:00Z
+Example: 2010-08-14T12:00:00-01:00
+The value is expressed in the hotel local time zone, with the added time zone difference. So you can compute the deadline in UTC(GMT"
+get-/shopping/hotel-offers,HotelProduct_CancellationPolicy,percentage,data.offers.policies.cancellation.percentage,Percentage of the total stay amount to be paid in case of cancellation. Value is between 0 and 100
+get-/shopping/hotel-offers,HotelProduct_HoldPolicy,deadline,data.offers.policies.holdTime.deadline,"The date and time of the deadline in ISO 8601[https://www.w3.org/TR/NOTE-datetime]. 
+ Example: 2010-08-14T13:00:00
+ Please note that this value is expressed in the hotels local time zone"
+get-/shopping/hotel-offers,Markup,amount,data.offers.price.markups.amount,"Defines the monetary value with decimal position as a String, schema: {""type"": ""string"", ""example"": ""10""}"
+get-/shopping/hotel-offers,Markup,amount,data.offers.price.variations.average.markups.amount,"Defines the monetary value with decimal position as a String, schema: {""type"": ""string"", ""example"": ""10""}"
+get-/shopping/hotel-offers,Markup,amount,data.offers.price.variations.changes.markups.amount,"Defines the monetary value with decimal position as a String, schema: {""type"": ""string"", ""example"": ""10""}"
+get-/shopping/hotel-offers,Tax,amount,data.offers.price.taxes.amount,Defines amount with decimal separator
+get-/shopping/hotel-offers,Tax,pricingMode,data.offers.price.taxes.pricingMode,"Specifies if the tax applies per occupant or per room
+  - PER_OCCUPANT
+  - PER_PRODUCT"
+get-/shopping/hotel-offers,Price,currency,data.offers.price.variations.average.currency,currency Code apply to all elements of the price
+get-/shopping/hotel-offers,Price,sellingTotal,data.offers.price.variations.average.sellingTotal,sellingTotal = Total + margins + markup + totalFees - discounts
+get-/shopping/hotel-offers,HotelOffer,self,data.offers.self,"A self link to the object. Use this to refresh the Offer price, schema: {""type"": ""string"", ""example"": ""https://test.travel.api.amadeus.com/v2/shopping/hotel-offers/63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3""}"
+get-/shopping/hotel-offers,HotelOffers,type,data.type,the type of the object (hotel-offers
+get-/shopping/hotel-offers,HotelProduct_DepositPolicy,deadline,data.offers.policies.deposit.deadline,"The date and time of the deadline in ISO 8601[https://www.w3.org/TR/NOTE-datetime]. 
+ Example: 2010-08-14T13:00:00
+ Please note that this value is expressed in the hotels local time zone"
+get-/shopping/hotel-offers,HotelProduct_DepositPolicy,deadline,data.offers.policies.prepay.deadline,"The date and time of the deadline in ISO 8601[https://www.w3.org/TR/NOTE-datetime]. 
+ Example: 2010-08-14T13:00:00
+ Please note that this value is expressed in the hotels local time zone"
+get-/shopping/hotel-offers,Tax,percentage,data.offers.price.taxes.percentage,"In the case of a tax on TST value, the percentage of the tax will be indicated in this field"
+get-/shopping/hotel-offers,Tax,pricingFrequency,data.offers.price.taxes.pricingFrequency,"Specifies if the tax applies per stay or per night
+  - PER_STAY
+  - PER_NIGHT"
