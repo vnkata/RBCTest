@@ -4,13 +4,11 @@ This repository contains the resources and code related to the paper "RBCTest: L
 
 ## Major Revision ICSE 2026
 1. We followed the suggested procedure to obtain request-response pairs in [`agora/Beet/spec`](agora/Beet/spec).
-
 2. We have repeated 5 times all our experiments involving RBCTest to generate the outputs and computed/reported the mean results
 - RBCTest Dateset:  [`approaches/our_data/our_mining`](approaches/our_data/our_mining)
 - AGORA+ Dateset:  [`approaches/agora_data/our_mining`](approaches/agora_data/our_mining)
 3. We have augmented the current description of the mismatches with the actual mismatch/actual response obtained in the experiments (See in paper)
-
-4. We have computed and updated those TP, FP, and FN values for RBCTest
+4. We have computed and updated those TP, FP, and FN values:
 - RBCTest Dateset:  [`approaches/our_data/Compare Our Data.xlsx`](approaches/our_data/Compare%20Our%20Data.xlsx)
 - AGORA+ Dateset:  [`approaches/agora_data/Compare Our Data.xlsx`](approaches/agora_data/Compare%20Our%20Data.xlsx)
 5. We have added details and reported the categories of oracles:
