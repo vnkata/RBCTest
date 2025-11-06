@@ -2,6 +2,15 @@
 
 This repository contains the resources and code related to the paper "RBCTest: Leveraging LLMs to Mine and Verify Oracles ofAPI Response Bodies for RESTful API Testing."
 
+## Major Revision ICSE 2026
+- Either use the same sets of 50 request-response pairs from the AGORA+ paper, or generate sets of request-responses that are realistic enough (not based on the default RESTest configuration).
+
+- Repeat the experiments N times and report mean results.
+  
+- Provide more details on how the oracles from the RBCTest dataset were derived. In particular, make sure that the oracles supported by AGORA+ were taken into account when generating this dataset.
+
+- Report TP, FP and FN for each of the two approaches.
+
 ## Folder Structure
 
 - [`RBCTest_dataset`](RBCTest_dataset): Our self-collected dataset, contains of 8 services, including an OpenAPI specification for each service.
