@@ -3,13 +3,16 @@
 This repository contains the resources and code related to the paper "RBCTest: Leveraging LLMs to Mine and Verify Oracles ofAPI Response Bodies for RESTful API Testing."
 
 ## Major Revision ICSE 2026
-1. We followed the suggested procedure to obtain request-response pairs with REStest Config in
+1. We followed the suggested procedure to obtain request-response pairs in [`agora/Beet/spec`](agora/Beet/spec).
 
-2. We have repeated 5 times all our experiments involving RBCTest to generate the outputs and computed/reported the mean results.
-
-3. We have added details on the procedure on how we curated our RBCTest dataset in 
+2. We have repeated 5 times all our experiments involving RBCTest to generate the outputs and computed/reported the mean results
+- RBCTest Dateset:  [`approaches/our_data/our_mining`](approaches/our_data/our_mining)
+- AGORA+ Dateset:  [`approaches/agora_data/our_mining`](approaches/agora_data/our_mining)
+3. We have augmented the current description of the mismatches with the actual mismatch/actual response obtained in the experiments (See in paper)
 
 4. We have computed and updated those TP, FP, and FN values for RBCTest in
+
+3. We have added details on the procedure on how we curated our RBCTest dataset in 
 
 ## Folder Structure
 
