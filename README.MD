@@ -11,9 +11,9 @@ This repository contains the resources and code related to the paper "RBCTest: L
 4. We have computed and updated those TP, FP, and FN values:
 - RBCTest Dateset:  [`approaches/our_data/Compare Our Data.xlsx`](approaches/our_data/Compare%20Our%20Data.xlsx)
 - AGORA+ Dateset:  [`approaches/agora_data/Compare Our Data.xlsx`](approaches/agora_data/Compare%20Our%20Data.xlsx)
-5. We have added details and reported the categories of oracles:
-- RBCTest Dataset: [`approaches/our_data/our_ground_truth`](approaches/our_data/our_ground_truth)
-- AGORA+ Dataset: [`approaches/agora_data/our_ground_truth`](approaches/agora_data/our_ground_truth)
+5. We have added details and reported the categories of oracles in RBCTest Dataset: [`approaches/our_data/our_ground_truth`](approaches/our_data/our_ground_truth)
+<!-- 
+- AGORA+ Dataset: [`approaches/agora_data/our_ground_truth`](approaches/agora_data/our_ground_truth) -->
 
 ## Folder Structure
 
