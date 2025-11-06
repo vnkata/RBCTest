@@ -10,8 +10,9 @@ This repository contains the resources and code related to the paper "RBCTest: L
 - AGORA+ Dateset:  [`approaches/agora_data/our_mining`](approaches/agora_data/our_mining)
 3. We have augmented the current description of the mismatches with the actual mismatch/actual response obtained in the experiments (See in paper)
 
-4. We have computed and updated those TP, FP, and FN values for RBCTest in
-
+4. We have computed and updated those TP, FP, and FN values for RBCTest
+- RBCTest Dateset:  [`approaches/our_data/Compare Our Data.xlsx`](approaches/our_data/Compare%20Our%20Data.xlsx)
+- AGORA+ Dateset:  [`approaches/agora_data/Compare Our Data.xlsx`](approaches/agora_data/Compare%20Our%20Data.xlsx)
 3. We have added details on the procedure on how we curated our RBCTest dataset in 
 
 ## Folder Structure
