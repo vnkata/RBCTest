@@ -1,0 +1,4 @@
+operation,response resource,attribute,group,description,tp
+get-/businesses/search,BusinessesResult,price,businesses.price,"{""""type"""": """"string"""", """"enum"""": [""""$"""", """"$$"""", """"$$$"""", """"$$$$"""", """"¬£"""", """"¬£¬£"""", """"¬£¬£¬£"""", """"¬£¬£¬£¬£"""", """"‚Ç¨"""", """"‚Ç¨‚Ç¨"""", """"‚Ç¨‚Ç¨‚Ç¨"""", """"‚Ç¨‚Ç¨‚Ç¨‚Ç¨"""", """"Ôø•"""", """"Ôø•Ôø•"""", """"Ôø•Ôø•Ôø•"""", """"Ôø•Ôø•Ôø•Ôø•""""]}",1
+get-/businesses/search,BusinessesResult,rating,businesses.rating,"{""type"": ""number"", ""minimum"": 1, ""maximum"": 5} schema: {""type"": ""number"", ""minimum"": 1, ""maximum"": 5}",1
+get-/businesses/search,BusinessesResult,url,businesses.url,"{""type"": ""string""} schema: {""type"": ""string""}",1

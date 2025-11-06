@@ -1,0 +1,5 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+VideoListResponse,resultsPerPage,,get-/youtube/v3/videos,parameters,maxResults,"The *maxResults* parameter specifies the maximum number of items that should be returned in the result set. *Note:* This parameter is supported for use in conjunction with the myRating and chart parameters, but it is not supported for use in conjunction with the id parameter",0
+VideoListResponse,widthPixels,,get-/youtube/v3/videos,parameters,maxWidth,Return the player with maximum height specified in,0
+VideoListResponse,items,,get-/youtube/v3/videos,parameters,myRating,Return videos liked/disliked by the authenticated user. Does not support RateType.RATED_TYPE_NONE,0
+VideoListResponse,items,,get-/youtube/v3/videos,parameters,videoCategoryId,Use chart that is specific to the specified video category,0

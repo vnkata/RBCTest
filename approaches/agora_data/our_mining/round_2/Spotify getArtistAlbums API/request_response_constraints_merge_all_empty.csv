@@ -1,0 +1,3 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+album-simple-page,items,,get-/artists/{id}/albums,parameters,id,The Spotify ID for the artist,0
+album-simple-page,available_markets,,get-/artists/{id}/albums,parameters,market,The market (an ISO 3166-1 alpha-2 country code),1

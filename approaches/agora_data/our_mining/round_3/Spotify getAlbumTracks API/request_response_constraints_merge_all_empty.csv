@@ -1,0 +1,2 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+track-simple-page,id,,get-/albums/{id}/tracks,parameters,id,The Spotify ID for the album,0

@@ -1,0 +1,2 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+playlist,owner,,post-/users/{user_id}/playlists,parameters,user_id,The user's Spotify user ID,0

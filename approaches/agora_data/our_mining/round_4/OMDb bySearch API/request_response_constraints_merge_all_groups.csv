@@ -1,0 +1,7 @@
+operation,response resource,attribute,group,description,part,corresponding attribute,corresponding attribute description,tp
+get-/,Response,Title,Search.Title,,parameters,s,Title of movie or series,0
+get-/,Response,Type,Search.Type,,parameters,type,Return movie or series,1
+get-/,Response,Type,Search.Type,,parameters,r,The response type to return,0
+get-/,Response,Type,Search.Type,,parameters,type,Return movie or series,1
+get-/,Response,Type,Search.Type,,parameters,r,The response type to return,0
+get-/,Response,Year,Search.Year,,parameters,y,Year of release,1

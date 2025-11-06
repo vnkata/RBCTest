@@ -1,0 +1,6 @@
+operation,response resource,attribute,group,description,tp
+get-/,Response,Response,Response,"{""type"": ""string"", ""enum"": [""True"", ""False""]}",1
+get-/,Response,Year,Search.Year,"{""type"": ""string"", ""example"": 2013}",1
+get-/,Response,imdbID,Search.imdbID,"{""type"": ""string"", ""example"": ""tt1245492""}",1
+get-/,Response,Poster,Search.Poster,"{""type"": ""string"", ""example"": ""https://m.media-amazon.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1_SX300.jpg""}",1
+get-/,Response,totalResults,totalResults,"{""type"": ""string"", ""example"": 2}",1

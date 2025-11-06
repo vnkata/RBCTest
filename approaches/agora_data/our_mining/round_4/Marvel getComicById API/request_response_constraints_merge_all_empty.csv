@@ -1,0 +1,2 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+ComicDataWrapper,id,,get-/v1/public/comics/{comicId},parameters,comicId,A single comic,1

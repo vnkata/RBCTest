@@ -1,0 +1,2 @@
+operation,response resource,attribute,description,tp
+get-/albums/{id}/tracks,track-simple,linked_from,"Part of the response when Track Relinking is applied, and the requested track has been replaced with different track. The track in the linked_from object contains information about the originally requested track, schema: {""type"": ""object"", ""format"": ""uri""}",1

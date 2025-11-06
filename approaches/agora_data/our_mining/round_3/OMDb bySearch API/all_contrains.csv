@@ -1,0 +1,10 @@
+endpoint,group,description,tp
+get+,Response,"{""type"": ""string"", ""enum"": [""True"", ""False""]}",1.0
+get+,Search.Poster,"{""type"": ""string"", ""example"": ""https://m.media-amazon.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1_SX300.jpg""}",1.0
+get+,Search.Title,Attribute Title is responded to by parameter s with a description: Title of movie or series,0.0
+get+,Search.Type,"Attribute Type is responded to by parameter r with a description: The response type to return
+Attribute Type is responded to by parameter type with a description: Return movie or series",0.5
+get+,Search.Year,"Attribute Year is responded to by parameter y with a description: Year of release
+{""type"": ""string"", ""example"": 2013}",1.0
+get+,Search.imdbID,"{""type"": ""string"", ""example"": ""tt1245492""}",1.0
+get+,totalResults,"{""type"": ""string"", ""example"": 2}",1.0

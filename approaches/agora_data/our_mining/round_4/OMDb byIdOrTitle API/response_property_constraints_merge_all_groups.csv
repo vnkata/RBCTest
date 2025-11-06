@@ -1,0 +1,10 @@
+operation,response resource,attribute,group,description,tp
+get-/,Response,Response,Response,"{""type"": ""string"", ""enum"": [""True"", ""False""]}",1
+get-/,Response,Year,Year,"{""type"": ""string"", ""example"": 2013}",1
+get-/,Response,DVD,DVD,"{""type"": ""string"", ""example"": ""01 Oct 2013""}",1
+get-/,Response,Poster,Poster,"{""type"": ""string"", ""example"": ""https://m.media-amazon.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1_SX300.jpg""}",1
+get-/,Response,Released,Released,"{""type"": ""string"", ""example"": ""12 Jun 2013""}",1
+get-/,Response,BoxOffice,BoxOffice,"{""type"": ""string"", ""example"": ""$96,200,000""}",1
+get-/,Response,Runtime,Runtime,"{""type"": ""string"", ""example"": ""107 min""}",1
+get-/,Response,seriesID,seriesID,"{""type"": ""string"", ""example"": ""tt0341939""}",1
+get-/,Response,imdbID,imdbID,"{""type"": ""string"", ""example"": ""tt1245492""} schema: {""type"": ""string"", ""example"": ""tt1245492""}",1

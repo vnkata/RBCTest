@@ -1,0 +1,5 @@
+operation,response resource,attribute,description,tp,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10
+get-/orgs/{org}/repos,license-simple,url,"{""type"": ""string"", ""format"": ""uri""}",1,,,,,,
+get-/orgs/{org}/repos,license-simple,html_url,"{""type"": ""string"", ""format"": ""uri""}",1,,,,,,
+get-/orgs/{org}/repos,repository,template_repository,"{""type"": ""object"", ""format"": ""uri""}",0,,,,,,
+get-/orgs/{org}/repos,minimal-repository,license,"{""type"": ""object"", ""format"": ""uri""}",0,,,,,,
