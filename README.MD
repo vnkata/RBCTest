@@ -18,8 +18,9 @@ This repository contains the resources and code related to the paper "RBCTest: L
 
 5. We have added details and reported the categories of oracles:
 
-- RBCTest Dataset: [`approaches/our_data/our_ground_truth`](approaches/our_data/our_ground_truth)
-- AGORA+ Dataset: [`approaches/agora_data/our_ground_truth`](approaches/agora_data/our_ground_truth)
+- RBCTest Dataset: [`approaches/our_data/our_ground_truth`](approaches/our_data/our_ground_truth).
+- AGORA+ Dataset: [`approaches/agora_data/our_ground_truth`](approaches/agora_data/our_ground_truth).
+
 
 ## Folder Structure
 
