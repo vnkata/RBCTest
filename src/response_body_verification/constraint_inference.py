@@ -718,9 +718,6 @@ def get_simplified_schema(spec: dict):
     elif "definitions" in spec:
         schemas = spec["definitions"]
     
-    print(">>>>>> [code]5", "-----",spec)
-    print(">>>>>> [code]5", "-----",schemas)    
-    
     for schema_name, schema_body in schemas.items():
         # Process schema with get_description=True
         schema_params = get_schema_params(schema_body, spec, get_description=True)
@@ -741,7 +738,6 @@ def get_schema_params(body, spec, visited_refs=None, get_description=False, max_
     ref = find_object_with_key(body, "$ref")
     schema = find_object_with_key(body, "schema")
 
-    print(">>>>>> [code]4", "-----",properties,"-----",ref,"-----",schema) 
     
     new_schema = {}
     if properties:

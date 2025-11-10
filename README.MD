@@ -13,8 +13,8 @@ This repository contains the resources and code related to the paper "RBCTest: L
 3. We have augmented the current description of the mismatches with the actual mismatch/actual response obtained in the experiments (See in paper)
 4. We have computed and updated those TP, FP, and FN values:
 
-- RBCTest Dataset:  [`approaches/our_data/Compare Our Data.xlsx`](approaches/our_data/Compare%20Our%20Data.xlsx)
-- AGORA+ Dataset:  [`approaches/agora_data/Compare Our Data.xlsx`](approaches/agora_data/Compare%20Our%20Data.xlsx)
+- RBCTest Dataset:  [`approaches/our_data/CompareOurData.xlsx`](approaches/our_data/CompareOurData.xlsx)
+- AGORA+ Dataset:  [`approaches/agora_data/CompareOurData.xlsx`](approaches/agora_data/CompareOurData.xlsx)
 
 5. We have added details and reported the categories of oracles:
 
