@@ -25,7 +25,7 @@ This repository contains the resources and code related to the paper "RBCTest: L
 ## Folder Structure
 
 - [`RBCTest_dataset`](RBCTest_dataset): Our self-collected dataset, contains of 8 services, including an OpenAPI specification for each service.
-- [`agora_dataset`](AGORA_dataset): AGORA's dataset.
+- [`agora_dataset`](agora_dataset): AGORA's dataset.
 - [`approaches`](approaches): Includes our ground-truth constraints,agora plus mining, detected constraints from RBCTest, RBCTest- and testsets used to evaluation mismatch.
 - [`src`](src): Source code.
 - Benchmark for API Constraints Mining in [`approaches/agora_data/our_ground_truth`](approaches/agora_data/our_ground_truth) and [`approaches/our_data/our_ground_truth`](approaches/our_data/our_ground_truth).
