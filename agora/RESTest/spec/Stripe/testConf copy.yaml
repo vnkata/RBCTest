@@ -1,0 +1,623 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+    - testPath: /v1/account_links
+      operationId: PostAccountLinks
+      method: post
+      testParameters:
+        - name: account
+          in: formData
+          weight: 0.5
+          generators:
+            - type: RandomEnglishWord
+              genParameters:
+                - name: maxWords
+                  values:
+                    - 1
+                  objectValues: null
+              valid: true
+        - name: collect
+          in: formData
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: values
+                  values:
+                    - currently_due
+                    - eventually_due
+                  objectValues: null
+              valid: true
+        - name: "collection_options[fields]"
+          in: formData
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: values
+                  values:
+                    - currently_due
+                    - eventually_due
+                  objectValues: null
+              valid: true
+        - name: "collection_options[future_requirements]"
+          in: formData
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: values
+                  values:
+                    - include
+                    - omit
+                  objectValues: null
+              valid: true
+        - name: "expand[]"
+          in: formData
+          weight: 0.5
+          generators:
+            - type: RandomEnglishWord
+              genParameters:
+                - name: maxWords
+                  values:
+                    - 1
+                  objectValues: null
+              valid: true
+        - name: refresh_url
+          in: formData
+          weight: 0.5
+          generators:
+            - type: RandomEnglishWord
+              genParameters:
+                - name: maxWords
+                  values:
+                    - 1
+                  objectValues: null
+              valid: true
+        - name: return_url
+          in: formData
+          weight: 0.5
+          generators:
+            - type: RandomEnglishWord
+              genParameters:
+                - name: maxWords
+                  values:
+                    - 1
+                  objectValues: null
+              valid: true
+        - name: type
+          in: formData
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: values
+                  values:
+                    - account_onboarding
+                    - account_update
+                  objectValues: null
+              valid: true
+      expectedResponse: 200
+  # - testPath: /v1/apple_pay/domains
+  #   operationId: GetApplePayDomains
+  #   method: get
+  #   testParameters:
+  #   - name: domain_name
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: ending_before
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: expand
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: limit
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomNumber
+  #       genParameters:
+  #       - name: type
+  #         values:
+  #         - integer
+  #         objectValues: null
+  #       - name: min
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       - name: max
+  #         values:
+  #         - 100
+  #         objectValues: null
+  #       valid: true
+  #   - name: starting_after
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200
+  # - testPath: /v1/ephemeral_keys
+  #   operationId: PostEphemeralKeys
+  #   method: post
+  #   testParameters:
+  #   - name: customer
+  #     in: formData
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: "expand[]"
+  #     in: formData
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: issuing_card
+  #     in: formData
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: nonce
+  #     in: formData
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: verification_session
+  #     in: formData
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200
+  # - testPath: "/v1/issuing/settlements/{settlement}"
+  #   operationId: GetIssuingSettlementsSettlement
+  #   method: get
+  #   testParameters:
+  #   - name: expand
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: settlement
+  #     in: path
+  #     weight: null
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200
+  # - testPath: /v1/radar/value_list_items
+  #   operationId: GetRadarValueListItems
+  #   method: get
+  #   testParameters:
+  #   - name: created
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomInputValue
+  #       genParameters:
+  #       - name: values
+  #         values:
+  #         - value 1
+  #         - value 2
+  #         objectValues: null
+  #       valid: true
+  #   - name: ending_before
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: expand
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: limit
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomNumber
+  #       genParameters:
+  #       - name: type
+  #         values:
+  #         - integer
+  #         objectValues: null
+  #       - name: min
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       - name: max
+  #         values:
+  #         - 100
+  #         objectValues: null
+  #       valid: true
+  #   - name: starting_after
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: value
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: value_list
+  #     in: query
+  #     weight: null
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200
+  # - testPath: /v1/reporting/report_types
+  #   operationId: GetReportingReportTypes
+  #   method: get
+  #   testParameters:
+  #   - name: expand
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200
+  # - testPath: /v1/tax_codes
+  #   operationId: GetTaxCodes
+  #   method: get
+  #   testParameters:
+  #   - name: ending_before
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: expand
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: limit
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomNumber
+  #       genParameters:
+  #       - name: type
+  #         values:
+  #         - integer
+  #         objectValues: null
+  #       - name: min
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       - name: max
+  #         values:
+  #         - 100
+  #         objectValues: null
+  #       valid: true
+  #   - name: starting_after
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200
+  # - testPath: /v1/tax_rates
+  #   operationId: GetTaxRates
+  #   method: get
+  #   testParameters:
+  #   - name: active
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomBoolean
+  #       genParameters: []
+  #       valid: true
+  #   - name: created
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomInputValue
+  #       genParameters:
+  #       - name: values
+  #         values:
+  #         - value 1
+  #         - value 2
+  #         objectValues: null
+  #       valid: true
+  #   - name: ending_before
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: expand
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: inclusive
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomBoolean
+  #       genParameters: []
+  #       valid: true
+  #   - name: limit
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomNumber
+  #       genParameters:
+  #       - name: type
+  #         values:
+  #         - integer
+  #         objectValues: null
+  #       - name: min
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       - name: max
+  #         values:
+  #         - 100
+  #         objectValues: null
+  #       valid: true
+  #   - name: starting_after
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200
+  # - testPath: /v1/test_helpers/test_clocks
+  #   operationId: GetTestHelpersTestClocks
+  #   method: get
+  #   testParameters:
+  #   - name: ending_before
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: expand
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: limit
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomNumber
+  #       genParameters:
+  #       - name: type
+  #         values:
+  #         - integer
+  #         objectValues: null
+  #       - name: min
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       - name: max
+  #         values:
+  #         - 100
+  #         objectValues: null
+  #       valid: true
+  #   - name: starting_after
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200
+  # - testPath: /v1/webhook_endpoints
+  #   operationId: GetWebhookEndpoints
+  #   method: get
+  #   testParameters:
+  #   - name: ending_before
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: expand
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   - name: limit
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomNumber
+  #       genParameters:
+  #       - name: type
+  #         values:
+  #         - integer
+  #         objectValues: null
+  #       - name: min
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       - name: max
+  #         values:
+  #         - 100
+  #         objectValues: null
+  #       valid: true
+  #   - name: starting_after
+  #     in: query
+  #     weight: 0.5
+  #     generators:
+  #     - type: RandomEnglishWord
+  #       genParameters:
+  #       - name: maxWords
+  #         values:
+  #         - 1
+  #         objectValues: null
+  #       valid: true
+  #   expectedResponse: 200

@@ -1,0 +1,1706 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+    # - testPath: /projects
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #   - name: archived
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: id_after
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   - name: id_before
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   - name: last_activity_after
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomDate
+    #       genParameters:
+    #       - name: format
+    #         values:
+    #         - yyyy-MM-dd'T'HH:mm:ss'Z'
+    #         objectValues: null
+    #       valid: true
+    #   - name: last_activity_before
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomDate
+    #       genParameters:
+    #       - name: format
+    #         values:
+    #         - yyyy-MM-dd'T'HH:mm:ss'Z'
+    #         objectValues: null
+    #       valid: true
+    #   - name: membership
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: min_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - 0
+    #         - 10
+    #         - 20
+    #         - 30
+    #         - 40
+    #         - 50
+    #         objectValues: null
+    #       valid: true
+    #   - name: order_by
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - id
+    #         - name
+    #         - path
+    #         - created_at
+    #         - updated_at
+    #         - last_activity_at
+    #         - repository_size
+    #         - storage_size
+    #         - packages_size
+    #         - wiki_size
+    #         objectValues: null
+    #       valid: true
+    #   - name: owned
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: repository_storage
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: search_namespaces
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: search
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: simple
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: sort
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - asc
+    #         - desc
+    #         objectValues: null
+    #       valid: true
+    #   - name: starred
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: statistics
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: visibility
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - public
+    #         - internal
+    #         - private
+    #         objectValues: null
+    #       valid: true
+    #   - name: with_custom_attributes
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: with_issues_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: with_merge_requests_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: with_programming_language
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   expectedResponse: 200
+    # - testPath: /projects
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #   - name: allow_merge_on_skipped_pipeline
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: auto_cancel_pending_pipelines
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - enabled
+    #         - disabled
+    #         objectValues: null
+    #       valid: true
+    #   - name: auto_devops_deploy_strategy
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - continuous
+    #         - manual
+    #         - timed_incremental
+    #         objectValues: null
+    #       valid: true
+    #   - name: auto_devops_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: autoclose_referenced_issues
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: avatar
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: build_coverage_regex
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: build_git_strategy
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: build_timeout
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   - name: builds_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         objectValues: null
+    #       valid: true
+    #   - name: ci_config_path
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: container_registry_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: default_branch
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: description
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: emails_disabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: forking_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         objectValues: null
+    #       valid: true
+    #   - name: import_url
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: initialize_with_readme
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: issues_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         objectValues: null
+    #       valid: true
+    #   - name: issues_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: jobs_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: lfs_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: merge_method
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - merge
+    #         - rebase_merge
+    #         - ff
+    #         objectValues: null
+    #       valid: true
+    #   - name: merge_requests_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         objectValues: null
+    #       valid: true
+    #   - name: merge_requests_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: name
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: namespace_id
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   - name: only_allow_merge_if_all_discussions_are_resolved
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: only_allow_merge_if_pipeline_succeeds
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: packages_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: pages_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         - public
+    #         objectValues: null
+    #       valid: true
+    #   - name: requirements_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         - public
+    #         objectValues: null
+    #       valid: true
+    #   - name: path
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: printing_merge_request_link_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: public_builds
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: remove_source_branch_after_merge
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: repository_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         objectValues: null
+    #       valid: true
+    #   - name: repository_storage
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: request_access_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: resolve_outdated_diff_discussions
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: shared_runners_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: show_default_award_emojis
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: snippets_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         objectValues: null
+    #       valid: true
+    #   - name: snippets_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: tag_list
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: template_name
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: visibility
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - private
+    #         - internal
+    #         - public
+    #         objectValues: null
+    #       valid: true
+    #   - name: wiki_access_level
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomInputValue
+    #       genParameters:
+    #       - name: values
+    #         values:
+    #         - disabled
+    #         - private
+    #         - enabled
+    #         objectValues: null
+    #       valid: true
+    #   - name: wiki_enabled
+    #     in: query
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: cadence
+    #     in: formData
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: enabled
+    #     in: formData
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomBoolean
+    #       genParameters: []
+    #       valid: true
+    #   - name: keep_n
+    #     in: formData
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomNumber
+    #       genParameters:
+    #       - name: type
+    #         values:
+    #         - integer
+    #         objectValues: null
+    #       - name: min
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       - name: max
+    #         values:
+    #         - 100
+    #         objectValues: null
+    #       valid: true
+    #   - name: older_than
+    #     in: formData
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: name_regex
+    #     in: formData
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: name_regex_delete
+    #     in: formData
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: name_regex_keep
+    #     in: formData
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomEnglishWord
+    #       genParameters:
+    #       - name: maxWords
+    #         values:
+    #         - 1
+    #         objectValues: null
+    #       valid: true
+    #   - name: next_run_at
+    #     in: formData
+    #     weight: 0.5
+    #     generators:
+    #     - type: RandomDate
+    #       genParameters:
+    #       - name: format
+    #         values:
+    #         - yyyy-MM-dd'T'HH:mm:ss'Z'
+    #         objectValues: null
+    #       valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: ref_name
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: since
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomDate
+    #           genParameters:
+    #             - name: format
+    #               values:
+    #                 - yyyy-MM-dd'T'HH:mm:ss'Z'
+    #               objectValues: null
+    #           valid: true
+    #     - name: until
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomDate
+    #           genParameters:
+    #             - name: format
+    #               values:
+    #                 - yyyy-MM-dd'T'HH:mm:ss'Z'
+    #               objectValues: null
+    #           valid: true
+    #     - name: path
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: all
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: with_stats
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: first_parent
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: order
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - default
+    #                 - topo
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    - testPath: "/projects/{id}/repository/commits"
+      operationId: <SET OPERATION ID>
+      method: post
+      testParameters:
+        - name: id
+          in: path
+          weight: null
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/all_projects.csv
+            # - type: RandomNumber
+            #   genParameters:
+            #     - name: type
+            #       values:
+            #         - integer
+            #       objectValues: null
+            #     - name: min
+            #       values:
+            #         - 1
+            #       objectValues: null
+            #     - name: max
+            #       values:
+            #         - 1300
+            #       objectValues: null
+            #   valid: true
+            # - type: RandomEnglishWord
+            #   genParameters:
+            #     - name: maxWords
+            #       values:
+            #         - 1
+            #       objectValues: null
+            #   valid: true
+        - name: branch
+          in: query
+          weight: null
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/branch_name.csv
+            # - type: RandomEnglishWord
+            #   genParameters:
+            #     - name: maxWords
+            #       values:
+            #         - 1
+            #       objectValues: null
+            #   valid: true
+        - name: commit_message
+          in: query
+          weight: null
+          generators:
+            - type: RandomEnglishWord
+              genParameters:
+                - name: maxWords
+                  values:
+                    - 10
+                  objectValues: null
+              valid: true
+
+        - name: start_branch
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/branch_name.csv
+            # - type: RandomEnglishWord
+            #   genParameters:
+            #     - name: maxWords
+            #       values:
+            #         - 1
+            #       objectValues: null
+            #   valid: true
+        - name: start_sha
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/branch_sha.csv
+            # - type: RandomEnglishWord
+            #   genParameters:
+            #     - name: maxWords
+            #       values:
+            #         - 1
+            #       objectValues: null
+            #   valid: true
+        - name: start_project
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/all_projects.csv
+            # - type: RandomNumber
+            #   genParameters:
+            #     - name: type
+            #       values:
+            #         - integer
+            #       objectValues: null
+            #     - name: min
+            #       values:
+            #         - 1
+            #       objectValues: null
+            #     - name: max
+            #       values:
+            #         - 1300
+            #       objectValues: null
+            #   valid: true
+            # - type: RandomEnglishWord
+            #   genParameters:
+            #     - name: maxWords
+            #       values:
+            #         - 1
+            #       objectValues: null
+            #   valid: true
+        - name: author_email
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: csv
+                  values:
+                    - src/test/resources/GitLabBranch/author_email.csv
+        - name: author_name
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomInputValue
+              genParameters:
+                - name: values
+                  values:
+                    - user01
+                    - user02
+                    - user03
+                    - user04
+                    - admin
+                    - alice
+                    - bob
+                    - john
+                    - smith
+                  objectValues: null
+              valid: true
+        - name: stats
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomBoolean
+              genParameters: []
+              valid: true
+        - name: force
+          in: query
+          weight: 0.5
+          generators:
+            - type: RandomBoolean
+              genParameters: []
+              valid: true
+        - name: body
+          in: body
+          weight: null
+          generators:
+            - type: BodyGenerator
+              genParameters: []
+              valid: true
+      expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: stats
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/refs"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: type
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - branch
+    #                 - tag
+    #                 - all
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/cherry_pick"
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: dry_run
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: branch
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/revert"
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: dry_run
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: branch
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/diff"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/comments"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: note
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: path
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: line
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - int32
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: line_type
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - new
+    #                 - old
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/discussions"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/statuses"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: ref
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: stage
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - build
+    #                 - test
+    #                 - deploy
+    #               objectValues: null
+    #           valid: true
+    #     - name: name
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: all
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomBoolean
+    #           genParameters: []
+    #           valid: true
+    #     - name: page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - int32
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: per_page
+    #       in: query
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - int32
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/statuses/{sha}"
+    #   operationId: <SET OPERATION ID>
+    #   method: post
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: state
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomInputValue
+    #           genParameters:
+    #             - name: values
+    #               values:
+    #                 - pending
+    #                 - running
+    #                 - success
+    #                 - failed
+    #                 - canceled
+    #               objectValues: null
+    #           valid: true
+    #     - name: ref
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: target_url
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: description
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: name
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: context
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: coverage
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - integer
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #     - name: pipeline_id
+    #       in: formData
+    #       weight: 0.5
+    #       generators:
+    #         - type: RandomNumber
+    #           genParameters:
+    #             - name: type
+    #               values:
+    #                 - int32
+    #               objectValues: null
+    #             - name: min
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #             - name: max
+    #               values:
+    #                 - 100
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/merge_requests"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
+
+    # - testPath: "/projects/{id}/repository/commits/{sha}/signature"
+    #   operationId: <SET OPERATION ID>
+    #   method: get
+    #   testParameters:
+    #     - name: id
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #     - name: sha
+    #       in: path
+    #       weight: null
+    #       generators:
+    #         - type: RandomEnglishWord
+    #           genParameters:
+    #             - name: maxWords
+    #               values:
+    #                 - 1
+    #               objectValues: null
+    #           valid: true
+    #   expectedResponse: 200
