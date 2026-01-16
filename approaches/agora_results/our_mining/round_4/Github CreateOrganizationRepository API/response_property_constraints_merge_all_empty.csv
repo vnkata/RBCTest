@@ -1,0 +1,2 @@
+operation,response resource,attribute,description,tp
+post-/orgs/{org}/repos,repository,template_repository,"{""type"": ""object"", ""format"": ""uri""}",0

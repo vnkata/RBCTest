@@ -1,0 +1,7 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+Branches,id,,get-/projects/{id}/repository/branches,parameters,id,The ID or URL-encoded path of the project owned by the authenticated user,0
+Branch,id,,get-/projects/{id}/repository/branches/{branch},parameters,id,The ID or URL-encoded path of the project owned by the authenticated user,0
+ProtectedBranch,access_level,,post-/projects/{id}/protected_branches,parameters,unprotect_access_level,Access levels allowed to unprotect,0
+ProtectedBranch,access_level,,post-/projects/{id}/protected_branches,parameters,push_access_level,Access levels allowed to push,0
+ProtectedBranch,merge_access_levels,,post-/projects/{id}/protected_branches,parameters,merge_access_level,Access levels allowed to merge,1
+Branches,name,,get-/projects/{id}/repository/branches,parameters,search,Return list of branches containing the search string,1

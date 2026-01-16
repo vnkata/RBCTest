@@ -1,0 +1,2 @@
+operation,response resource,attribute,description
+GET /artists/{id}/albums,track-simple,type,The object type: 'track'

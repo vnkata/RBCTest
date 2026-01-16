@@ -1,0 +1,2 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+minimal-repository,owner.organizations_url,,get-/orgs/{org}/repos,parameters,org,No description provided,0

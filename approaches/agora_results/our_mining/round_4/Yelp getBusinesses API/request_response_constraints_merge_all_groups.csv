@@ -1,0 +1,4 @@
+operation,response resource,attribute,group,description,part,corresponding attribute,corresponding attribute description,tp
+get-/businesses/search,BusinessesResult,price,businesses.price,,parameters,price,No description provided,0
+get-/businesses/search,BusinessesResult,is_closed,businesses.is_closed,,parameters,open_now,No description provided,1
+get-/businesses/search,BusinessesResult,name,businesses.name,,parameters,term,,0

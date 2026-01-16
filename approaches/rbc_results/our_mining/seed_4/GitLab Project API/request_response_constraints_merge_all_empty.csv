@@ -1,0 +1,2 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+Starrer,id,,get-/projects/{id}/starrers,parameters,id,The ID or URL-encoded path of the project,0

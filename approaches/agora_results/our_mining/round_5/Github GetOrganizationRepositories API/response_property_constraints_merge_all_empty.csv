@@ -1,0 +1,4 @@
+operation,response resource,attribute,description,tp
+get-/orgs/{org}/repos,license-simple,url,"{""type"": ""string"", ""format"": ""uri""}",1
+get-/orgs/{org}/repos,minimal-repository,license,"{""type"": ""object"", ""format"": ""uri""}",0
+get-/orgs/{org}/repos,license-simple,html_url,"{""type"": ""string"", ""format"": ""uri""}",1

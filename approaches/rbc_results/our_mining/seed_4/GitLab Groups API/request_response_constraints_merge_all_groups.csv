@@ -1,0 +1,52 @@
+operation,response resource,attribute,group,description,part,corresponding attribute,corresponding attribute description,tp
+get-/groups,Group,name,name,,parameters,order_by,"Order groups byname,pathorid. Default is name",0
+post-/groups,Group,name,name,,requestBody,name,The name of the group,1
+post-/groups,Group,visibility,visibility,,parameters,visibility,"The group's visibility. Can be private,internal, orpublic",1
+post-/groups,Group,share_with_group_lock,share_with_group_lock,,parameters,share_with_group_lock,Prevent sharing a project with another group within this group,1
+post-/groups,Group,require_two_factor_authentication,require_two_factor_authentication,,parameters,require_two_factor_authentication,Require all users in this group to setup Two-factor authentication,1
+post-/groups,Group,two_factor_grace_period,two_factor_grace_period,,parameters,two_factor_grace_period,Time before Two-factor authentication is enforced (in hours),1
+post-/groups,Group,project_creation_level,project_creation_level,,parameters,project_creation_level,"Determine if developers can create projects in the group. Can benoone(No one),maintainer(Maintainers), or developer(Developers + Maintainers)",1
+post-/groups,Group,subgroup_creation_level,subgroup_creation_level,,parameters,subgroup_creation_level,"Allowed to create subgroups. Can be owner(Owners), or maintainer(Maintainers)",1
+post-/groups,Group,lfs_enabled,lfs_enabled,,parameters,lfs_enabled,Enable/disable Large File Storage (LFS) for the projects in this group,1
+get-/groups/{id}/subgroups,Group,id,id,,parameters,id,The ID orURL-encoded path of the groupof the immediate parent group,0
+post-/groups,Group,default_branch_protection,default_branch_protection,,parameters,default_branch_protection,SeeOptions fordefault_branch_protection. Default to the global level default branch protection setting,1
+post-/groups,Group,path,path,,requestBody,path,The path of the group,1
+post-/groups,Group,description,description,,requestBody,description,The group's description,1
+get-/groups/{id},GroupDetails,id,id,,parameters,id,The ID orURL-encoded path of the groupowned by the authenticated user,1
+put-/groups/{id},GroupDetails,name,name,,parameters,name,The name of the group,1
+put-/groups/{id},GroupDetails,path,path,,parameters,path,The path of the group,1
+put-/groups/{id},GroupDetails,description,description,,parameters,description,The description of the group,1
+put-/groups/{id},GroupDetails,visibility,visibility,,parameters,visibility,"The visibility level of the group. Can beprivate,internal, orpublic",1
+get-/groups/{id}/hooks/{hook_id},Hook,id,id,,parameters,hook_id,The ID of a group hook,1
+get-/groups/{id}/hooks/{hook_id},Hook,id,id,,parameters,hook_id,The ID of a group hook,0
+get-/groups/{id}/hooks/{hook_id},Hook,id,id,,parameters,hook_id,The ID of a group hook,1
+get-/groups/{id}/hooks/{hook_id},Hook,id,id,,parameters,hook_id,The ID of a group hook,0
+put-/groups/{id}/hooks/{hook_id},Hook,url,url,,parameters,url,The hook URL,1
+post-/groups/{id}/hooks,Hook,push_events,push_events,,parameters,push_events,Trigger hook on push events,1
+put-/groups/{id}/hooks/{hook_id},Hook,issues_events,issues_events,,parameters,issues_events,Trigger hook on issues events,1
+post-/groups/{id}/hooks,Hook,confidential_issues_events,confidential_issues_events,,parameters,confidential_issues_events,Trigger hook on confidential issues events,1
+put-/groups/{id}/hooks/{hook_id},Hook,merge_requests_events,merge_requests_events,,parameters,merge_requests_events,Trigger hook on merge requests events,1
+put-/groups/{id}/hooks/{hook_id},Hook,tag_push_events,tag_push_events,,parameters,tag_push_events,Trigger hook on tag push events,1
+post-/groups/{id}/hooks,Hook,note_events,note_events,,parameters,note_events,Trigger hook on note events,1
+post-/groups/{id}/hooks,Hook,confidential_note_events,confidential_note_events,,parameters,confidential_note_events,Trigger hook on confidential note events,1
+put-/groups/{id}/hooks/{hook_id},Hook,job_events,job_events,,parameters,job_events,Trigger hook on job events,1
+post-/groups/{id}/hooks,Hook,pipeline_events,pipeline_events,,parameters,pipeline_events,Trigger hook on pipeline events,1
+post-/groups/{id}/hooks,Hook,wiki_page_events,wiki_page_events,,parameters,wiki_page_events,Trigger hook on wiki events,1
+put-/groups/{id}/hooks/{hook_id},Hook,deployment_events,deployment_events,,parameters,deployment_events,Trigger hook on deployment events,1
+put-/groups/{id}/hooks/{hook_id},Hook,releases_events,releases_events,,parameters,releases_events,Trigger hook on release events,1
+put-/groups/{id}/hooks/{hook_id},Hook,enable_ssl_verification,enable_ssl_verification,,parameters,enable_ssl_verification,Do SSL verification when triggering the hook,1
+post-/groups/{id}/projects/{project_id},SharedProject,id,id,,parameters,project_id,The ID orURL-encoded path of the project,0
+get-/groups/{id}/projects/shared,SharedProject,archived,archived,,parameters,archived,Limit by archived status,1
+post-/groups,Group,full_path,full_path,,requestBody,path,The path of the group,1
+post-/groups/{id}/share,GroupDetails,id,id,,parameters,group_id,The ID of the group to share with,1
+put-/groups/{id},GroupDetails,full_path,full_path,,parameters,path,The path of the group,1
+put-/groups/{id},GroupDetails,request_access_enabled,request_access_enabled,,parameters,request_access_enabled,Allow users to request member access,1
+post-/groups/{id}/hooks,Hook,group_id,group_id,,parameters,id,The ID orURL-encoded path of the group,1
+get-/groups/{id}/projects,Project,archived,archived,,parameters,archived,Limit by archived status,1
+get-/groups/{id}/projects,Project,visibility,visibility,,parameters,visibility,"Limit by visibilitypublic,internal, orprivate",1
+get-/groups/{id}/projects,Project,issues_enabled,issues_enabled,,parameters,with_issues_enabled,Limit by projects with issues feature enabled. Default is false,1
+get-/groups/{id}/projects,Project,merge_requests_enabled,merge_requests_enabled,,parameters,with_merge_requests_enabled,Limit by projects with merge requests feature enabled. Default is false,1
+get-/groups/{id}/projects/shared,SharedProject,visibility,visibility,,parameters,visibility,"Limit by visibilitypublic,internal, orprivate",1
+get-/groups/{id}/projects/shared,SharedProject,created_at,created_at,,parameters,order_by,"Return projects ordered byid,name,path,created_at,updated_at,similarity(1), orlast_activity_atfields. Default iscreated_at",0
+get-/groups/{id}/projects/shared,SharedProject,issues_enabled,issues_enabled,,parameters,with_issues_enabled,Limit by projects with issues feature enabled. Default is false,1
+get-/groups/{id}/projects/shared,SharedProject,merge_requests_enabled,merge_requests_enabled,,parameters,with_merge_requests_enabled,Limit by projects with merge requests feature enabled. Default is false,1

@@ -1,0 +1,13 @@
+group,invariant,invariantType,variables,pptname,tp
+Response,"return.Response == ""True""
+LENGTH(return.Response)==4","daikon.inv.unary.string.OneOfString
+daikon.inv.unary.string.FixedLengthString","(return.Response)
+(return.Response)","/&bySearch&200():::EXIT
+/&bySearch&200():::EXIT",1.0
+Search.Poster,return.Poster is Url,daikon.inv.unary.string.IsUrl,(return.Poster),/&bySearch&200&Search():::EXIT,1.0
+Search.Type,"input.type == return.Type
+return.Type one of { ""game"", ""movie"", ""series"" }","daikon.inv.binary.twoString.StringEqual
+daikon.inv.unary.string.OneOfString","(input.type, return.Type)
+(return.Type)","/&bySearch&200&Search():::EXIT
+/&bySearch&200&Search():::EXIT",0.5
+totalResults,return.totalResults is Numeric,daikon.inv.unary.string.IsNumeric,(return.totalResults),/&bySearch&200():::EXIT,1.0

@@ -1,0 +1,5 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+BusinessesResult,businesses[].location,,get-/businesses/search,parameters,location,No description provided,0
+BusinessesResult,region.center.latitude,,get-/businesses/search,parameters,latitude,No description provided,0
+BusinessesResult,region.center.longitude,,get-/businesses/search,parameters,longitude,No description provided,0
+BusinessesResult,categories,,get-/businesses/search,parameters,categories,No description provided,0

@@ -1,0 +1,2 @@
+operation,response resource,attribute,description,tp
+get-/businesses/search,BusinessesResult,businesses,"{""type"": ""array"", ""format"": ""uri""}",0

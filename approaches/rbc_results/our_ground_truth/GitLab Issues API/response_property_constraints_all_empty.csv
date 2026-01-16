@@ -1,0 +1,4 @@
+operation,response resource,attribute,description
+GET /projects/{id}/issues/{issue_iid}/related_merge_requests,Milestone,milestone.closed_at,"{""type"": ""string"", ""format"": ""date-time""}"
+GET /projects/{id}/issues/{issue_iid}/related_merge_requests,Milestone,milestone.created_at,"{""type"": ""string"", ""format"": ""date-time""}"
+GET /projects/{id}/issues/{issue_iid}/related_merge_requests,Milestone,milestone.updated_at,"{""type"": ""string"", ""format"": ""date-time""}"

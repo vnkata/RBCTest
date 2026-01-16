@@ -1,0 +1,3 @@
+response resource,attribute,description,operation,part,corresponding attribute,corresponding attribute description,tp
+repository,organizations_url,,post-/orgs/{org}/repos,parameters,org,No description provided,0
+repository,license,,post-/orgs/{org}/repos,requestBody,license_template,"Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://help.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, ""mit"" or ""mpl-2.0""",0

@@ -1,0 +1,22 @@
+operation,response resource,attribute,group,description,tp
+get-/albums/{id}/tracks,artist-simple,uri,items.artists.uri,"The Spotify URI for the artist, schema: {""type"": ""string"", ""format"": ""uri""}",1
+get-/albums/{id}/tracks,artist-simple,uri,items.linked_from.uri,"The Spotify URI for the artist, schema: {""type"": ""string"", ""format"": ""uri""}",1
+get-/albums/{id}/tracks,track-simple,duration_ms,items.duration_ms,The track length in milliseconds,1
+get-/albums/{id}/tracks,track-simple,is_playable,items.is_playable,"Part of the response when Track Relinking is applied. If true, the track is playable in the given market. Otherwise false",0
+get-/albums/{id}/tracks,track-simple,uri,items.uri,"The Spotify URI for the track, schema: {""type"": ""string"", ""format"": ""uri""}",1
+get-/albums/{id}/tracks,artist-simple,type,items.artists.type,The object type: 'artist',1
+get-/albums/{id}/tracks,artist-simple,type,items.linked_from.type,The object type: 'artist',1
+get-/albums/{id}/tracks,track-simple-page,next,next,URL to the next page of items. (null if none,1
+get-/albums/{id}/tracks,artist-simple,external_urls,items.artists.external_urls,"Known external URLs for this artist, schema: {""type"": ""object"", ""format"": ""uri""}",1
+get-/albums/{id}/tracks,artist-simple,external_urls,items.linked_from.external_urls,"Known external URLs for this artist, schema: {""type"": ""object"", ""format"": ""uri""}",1
+get-/albums/{id}/tracks,track-simple,type,items.type,The object type: 'track',1
+get-/albums/{id}/tracks,track-simple,explicit,items.explicit,Whether or not the track has explicit lyrics (true = yes it does; false = no it does not OR unknown,1
+get-/albums/{id}/tracks,track-simple,preview_url,items.preview_url,A URL to a 30 second preview (MP3 format,1
+get-/albums/{id}/tracks,track-simple,available_markets,items.available_markets,"A list of the countries in which the track can be played, identified by their ISO 3166-1 alpha-2 code",1
+get-/albums/{id}/tracks,track-simple,external_urls,items.external_urls,"Known external URLs for this track, schema: {""type"": ""object"", ""format"": ""uri""}",0
+get-/albums/{id}/tracks,track-simple,href,items.href,A link to the Web API endpoint providing full details of the track,1
+get-/albums/{id}/tracks,artist-simple,href,items.artists.href,A link to the Web API endpoint providing full details of the artist,1
+get-/albums/{id}/tracks,artist-simple,href,items.linked_from.href,A link to the Web API endpoint providing full details of the artist,1
+get-/albums/{id}/tracks,track-simple-page,total,total,The total number of items available to return,0
+get-/albums/{id}/tracks,track-simple-page,href,href,A link to the Web API endpoint returning the full result of the request,1
+get-/albums/{id}/tracks,track-simple-page,previous,previous,URL to the previous page of items. (null if none,1

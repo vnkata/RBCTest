@@ -1,0 +1,17 @@
+endpoint,group,description,tp
+get+,BoxOffice,"{""type"": ""string"", ""example"": ""$96,200,000""}",1.0
+get+,DVD,"{""type"": ""string"", ""example"": ""01 Oct 2013""}",1.0
+get+,Metascore,"{""type"": ""string"", ""example"": 67}",1.0
+get+,Plot,Attribute Plot is responded to by parameter plot with a description: Return short or full plot,1.0
+get+,Poster,"{""type"": ""string"", ""example"": ""https://m.media-amazon.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1_SX300.jpg""}",1.0
+get+,Released,"{""type"": ""string"", ""example"": ""12 Jun 2013""}",1.0
+get+,Response,"{""type"": ""string"", ""enum"": [""True"", ""False""]}",1.0
+get+,Runtime,"{""type"": ""string"", ""example"": ""107 min""}",1.0
+get+,Title,Attribute Title is responded to by parameter t with a description: Title of movie or series,1.0
+get+,Type,"Attribute Type is responded to by parameter r with a description: The response type to return
+Attribute Type is responded to by parameter type with a description: Return movie, series or episode",0.5
+get+,Year,"Attribute Year is responded to by parameter y with a description: Year of release
+{""type"": ""string"", ""example"": 2013} schema: {""type"": ""string"", ""example"": 2013}",1.0
+get+,imdbID,"Attribute imdbID is responded to by parameter i with a description: A valid IMDb ID (e.g. tt0000001)
+{""type"": ""string"", ""example"": ""tt1245492""}",1.0
+get+,seriesID,"{""type"": ""string"", ""example"": ""tt0341939""}",1.0
