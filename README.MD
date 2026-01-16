@@ -4,7 +4,7 @@ This repository contains the resources and code related to the paper "RBCTest: L
 
 ## Major Revision
 
-1. We followed the suggested procedure to obtain request-response pairs in [`agora/Beet/spec`](agora/Beet/spec).
+1. We followed the suggested procedure to obtain request-response pairs in [`baselines/agora/Beet/spec`](baselines/agora/Beet/spec).
 2. We have repeated 5 times all our experiments involving RBCTest to generate the outputs and computed/reported the mean results
 
 - RBCTest Dataset:  [`approaches/our_data/our_mining`](approaches/our_data/our_mining)
@@ -24,8 +24,8 @@ This repository contains the resources and code related to the paper "RBCTest: L
 
 ## Folder Structure
 
-- [`RBCTest_dataset`](RBCTest_dataset): Our self-collected dataset, contains of 8 services, including an OpenAPI specification for each service.
-- [`agora_dataset`](agora_dataset): AGORA's dataset.
+- [`datasets/RBCTest`](datasets/RBCTest): Our self-collected dataset, contains of 8 services, including an OpenAPI specification for each service.
+- [`datasets/agora`](datasets/agora): AGORA's dataset.
 - [`approaches`](approaches): Includes our ground-truth constraints,agora plus mining, detected constraints from RBCTest, RBCTest- and testsets used to evaluation mismatch.
 - [`src`](src): Source code.
 - Benchmark for API Constraints Mining in [`approaches/agora_data/our_ground_truth`](approaches/agora_data/our_ground_truth) and [`approaches/our_data/our_ground_truth`](approaches/our_data/our_ground_truth).
@@ -108,15 +108,15 @@ This repository contains the resources and code related to the paper "RBCTest: L
 
 #### AGORA Dataset
 
-- All Dynamic (AGORA) detected invariants: [`AGORA-eval/agora_all.xlsx`](AGORA-eval/agora_all.xlsx)
+- All Dynamic (AGORA) detected invariants: [`approaches/agora_data/agora_plus_mining/`](approaches/agora_data/agora_plus_mining)
 - All Static (LLM-based) detected constraints: see sub-folders in [`approaches/agora_data/our_mining`](approaches/agora_data/our_mining)
-- Overlapping analysis: [`AGORA-eval/overlapping_analysis_all.xlsx`](AGORA-eval/overlapping_analysis_all.xlsx)
+- Overlapping analysis: [`approaches/agora_data/Overlapping.xlsx`](approaches/agora_data/Overlapping.xlsx)
 
 #### RBCTest Dataset
 
 - All Dynamic (AGORA) detected invariants: see file invariants.csv in each sub-folders [`approaches/our_data/agora_mining/`](approaches/our_data/agora_mining)
 - All Static (LLM-based) detected constraints: see sub-folders in [`approaches/our_data/our_mining/`](approaches/our_data/our_mining/)
-- Overlapping analysis: [`approaches/agora_data/Overlapping.xlsx`](approaches/agora_data/Overlapping.xlsx) and [`approaches/our_data/Overlapping.xlsx`](approaches/our_data/Overlapping.xlsx)
+- Overlapping analysis: [`approaches/our_data/Overlapping.xlsx`](approaches/our_data/Overlapping.xlsx)
 
 **Annotation:** in column "Better"
 
